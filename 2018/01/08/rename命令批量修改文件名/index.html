@@ -109,7 +109,7 @@
 <meta property="og:image" content="http://yoursite.com/image/modifyFile/txt.jpg">
 <meta property="og:image" content="http://yoursite.com/image/modifyFile/error.jpg">
 <meta property="og:image" content="http://yoursite.com/image/modifyFile/end.jpg">
-<meta property="og:updated_time" content="2019-01-30T08:33:05.836Z">
+<meta property="og:updated_time" content="2019-01-30T09:14:46.589Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="rename命令批量修改文件名">
 <meta name="twitter:description" content="rename命令批量修改文件名  注：如果你要修改的文件相对来说比较少的话，手动创建一个txt文件，将rename命令写入该文件（命令格式见下方），最后再将该txt文件改成bat格式的文件然后双击运行即可修改文件名了，就不需要再向下看了  rename命令使用：rename + 空格 + 原文件名 + 空格 + 要修改的文件名  如：ren oldfilename.jpg  newfilename">
@@ -359,19 +359,19 @@
 
       
         <h2 id="rename命令批量修改文件名"><a href="#rename命令批量修改文件名" class="headerlink" title="rename命令批量修改文件名"></a><strong>rename命令批量修改文件名</strong></h2><p>  <strong>注：</strong>如果你要修改的文件相对来说比较少的话，手动创建一个txt文件，将rename命令写入该文件（命令格式见下方），最后再将该txt文件改成bat格式的文件然后双击运行即可修改文件名了，就不需要再向下看了<br>  <strong>rename命令使用</strong>：rename + 空格 + 原文件名 + 空格 + 要修改的文件名<br>  如：ren oldfilename.jpg  newfilename.png （ren为rename的简写）<br>​          ren *.html  *.php  （将当前目录下的所有.html文件修改成.php文件）<br>​          话说修改的文件少的话直接f2不就好了😭！！！也是哈</p>
-<h3 id="01-第一步"><a href="#01-第一步" class="headerlink" title="01.第一步"></a>01.第一步</h3><p>在资源管理器中打开要修改原文件的文件夹，在文件路径中输入cmd回车打开cmd命令行工具, shift + 右键也可以在你想要批量修改的文件目录下打开cmd<br>！！！重点：一定要在被修改的文件目录下打开cmd或者你用cd命令切换到该目录也可可可可…</p>
+<h3 id="第一步"><a href="#第一步" class="headerlink" title="第一步"></a>第一步</h3><p>在资源管理器中打开要修改原文件的文件夹，在文件路径中输入cmd回车打开cmd命令行工具, shift + 右键也可以在你想要批量修改的文件目录下打开cmd<br>！！！重点：一定要在被修改的文件目录下打开cmd或者你用cd命令切换到该目录也可可可可…</p>
 <p><img src="/image/modifyFile/cmd.jpg" alt="img"></p>
-<h3 id="02-第二步"><a href="#02-第二步" class="headerlink" title="02.第二步"></a><strong>02.第二步</strong></h3><p>  使用命令行工具创建表格文件在命令行中输入dir /b &gt;rename.xls（该命令创建的excel表格中会在第一列自动生成所有的原文件名，这是使用命令行创建该文件的最大原因）<br>  示例中的部分路径被我给擦除了     手动匿名 打码<strong>~~~~</strong>哈哈哈，没什么影响只要在你要修改的文件目录下打开命令行窗口就行</p>
+<h3 id="第二步"><a href="#第二步" class="headerlink" title="第二步"></a><strong>第二步</strong></h3><p>  使用命令行工具创建表格文件在命令行中输入dir /b &gt;rename.xls（该命令创建的excel表格中会在第一列自动生成所有的原文件名，这是使用命令行创建该文件的最大原因）<br>  示例中的部分路径被我给擦除了     手动匿名 打码<strong>~~~~</strong>哈哈哈，没什么影响只要在你要修改的文件目录下打开命令行窗口就行</p>
 <p><img src="/image/modifyFile/xls.jpg" alt="img"></p>
-<h3 id="03-第三步"><a href="#03-第三步" class="headerlink" title="03.第三步"></a>03.第三步</h3><p>  鼠标单击选中B列的第一个单元格并在第一栏中的画红线的部分输入要修改的文件名（建议使用数字，可以使用其他名称命名，此处只是为了方便演示）然后将鼠标移至第一个单元格的右下角会有一个加号鼠标点击向下拉动数字的部分就会自增生成不同的文件名</p>
+<h3 id="第三步"><a href="#第三步" class="headerlink" title="第三步"></a>第三步</h3><p>  鼠标单击选中B列的第一个单元格并在第一栏中的画红线的部分输入要修改的文件名（建议使用数字，可以使用其他名称命名，此处只是为了方便演示）然后将鼠标移至第一个单元格的右下角会有一个加号鼠标点击向下拉动数字的部分就会自增生成不同的文件名</p>
 <p><img src="/image/modifyFile/modify.jpg" alt="img"></p>
-<h3 id="04第四步（关键）"><a href="#04第四步（关键）" class="headerlink" title="04第四步（关键）"></a>04第四步（关键）</h3><p>  在表格的C列中输入生成批量rename更改文件命令（如图所示）  ‘A1’ ‘B1’  分别代表A列和B列的第一格    ‘&amp;’符号起连接（拼接）作用    字符（如ren）一定要使用双引号引起来‘ “ “ ’，空格也要使用双引号包裹起来<br>  实际上这一步是在生成ren修改文件的命令（核心点）</p>
+<h3 id="第四步（关键）"><a href="#第四步（关键）" class="headerlink" title="第四步（关键）"></a>第四步（关键）</h3><p>  在表格的C列中输入生成批量rename更改文件命令（如图所示）  ‘A1’ ‘B1’  分别代表A列和B列的第一格    ‘&amp;’符号起连接（拼接）作用    字符（如ren）一定要使用双引号引起来‘ “ “ ’，空格也要使用双引号包裹起来<br>  实际上这一步是在生成ren修改文件的命令（核心点）</p>
 <p><img src="/image/modifyFile/core.jpg" alt="img"></p>
-<h3 id="05第五步"><a href="#05第五步" class="headerlink" title="05第五步"></a>05第五步</h3><p>  创建一个txt文件将上一步中的C列复制拷贝到创建的txt文件，其中如果使用命令行创建的txt文件则该txt文件中会生成原文件名，这些原文件名要删除掉替换成表格的C列内容(也可以不使用命令行创建)，然后将文件后缀名改为bat格式双击运行即可，就可以达到批量修改文件名的目的了</p>
+<h3 id="第五步"><a href="#第五步" class="headerlink" title="第五步"></a>第五步</h3><p>  创建一个txt文件将上一步中的C列复制拷贝到创建的txt文件，其中如果使用命令行创建的txt文件则该txt文件中会生成原文件名，这些原文件名要删除掉替换成表格的C列内容(也可以不使用命令行创建)，然后将文件后缀名改为bat格式双击运行即可，就可以达到批量修改文件名的目的了</p>
 <p><img src="/image/modifyFile/txt.jpg" alt="img"></p>
-<h3 id="06第六步"><a href="#06第六步" class="headerlink" title="06第六步"></a>06第六步</h3><p>  如果你以上步骤没有任何错误，那么恭喜你可以洗洗睡了完事了哈哈哈哈，而如果出错那么极大可能是你的原文件名中可能有空格导致的，然后给大家看一下我在点击运行bat文件时命令行一直显示系统命令错误（艹fuck）错误示例如下（空格导致）</p>
+<h3 id="第六步"><a href="#第六步" class="headerlink" title="第六步"></a>第六步</h3><p>  如果你以上步骤没有任何错误，那么恭喜你可以洗洗睡了完事了哈哈哈哈，而如果出错那么极大可能是你的原文件名中可能有空格导致的，然后给大家看一下我在点击运行bat文件时命令行一直显示系统命令错误（艹fuck）错误示例如下（空格导致）</p>
 <p><img src="/image/modifyFile/error.jpg" alt="img"></p>
-<h3 id="07最后"><a href="#07最后" class="headerlink" title="07最后"></a>07最后</h3><p>  查了一下才知道可能是文件空格导致的，于是就选了一个带空格的文件将空格去了试下再修改就成功了，因为cmd不识别空格为了让cmd识别空格只要将原文件的空格使用双引号引起即可（机器傻的很可爱。。。也✌很单纯。。。）</p>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>  查了一下才知道可能是文件空格导致的，于是就选了一个带空格的文件将空格去了试下再修改就成功了，因为cmd不识别空格为了让cmd识别空格只要将原文件的空格使用双引号引起即可（机器傻的很可爱。。。也✌很单纯。。。）</p>
 <p><img src="/image/modifyFile/end.jpg" alt="img"></p>
 
       
@@ -534,7 +534,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#rename命令批量修改文件名"><span class="nav-number">1.</span> <span class="nav-text">rename命令批量修改文件名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#01-第一步"><span class="nav-number">1.1.</span> <span class="nav-text">01.第一步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#02-第二步"><span class="nav-number">1.2.</span> <span class="nav-text">02.第二步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#03-第三步"><span class="nav-number">1.3.</span> <span class="nav-text">03.第三步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#04第四步（关键）"><span class="nav-number">1.4.</span> <span class="nav-text">04第四步（关键）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#05第五步"><span class="nav-number">1.5.</span> <span class="nav-text">05第五步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#06第六步"><span class="nav-number">1.6.</span> <span class="nav-text">06第六步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#07最后"><span class="nav-number">1.7.</span> <span class="nav-text">07最后</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#rename命令批量修改文件名"><span class="nav-number">1.</span> <span class="nav-text">rename命令批量修改文件名</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一步"><span class="nav-number">1.1.</span> <span class="nav-text">第一步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第二步"><span class="nav-number">1.2.</span> <span class="nav-text">第二步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第三步"><span class="nav-number">1.3.</span> <span class="nav-text">第三步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第四步（关键）"><span class="nav-number">1.4.</span> <span class="nav-text">第四步（关键）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第五步"><span class="nav-number">1.5.</span> <span class="nav-text">第五步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#第六步"><span class="nav-number">1.6.</span> <span class="nav-text">第六步</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后"><span class="nav-number">1.7.</span> <span class="nav-text">最后</span></a></li></ol></li></ol></div>
             
 
           </div>
