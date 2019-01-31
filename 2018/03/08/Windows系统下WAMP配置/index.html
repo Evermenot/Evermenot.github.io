@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="WAMP Apache PHP,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="一.Apache服务器软件安装即配置  第一步：创建文件夹WAMP(Windows、Apache、MySQL、PHP缩写)  第二步：安装Apache的运行环境VC++、而且php也需要C++的运行环境  第三步：将解压好的Apache免安装文件拷贝到WAMP文件夹下   (我的是免安装版64位的)  第四步：找到Apache文件夹下的conf/http.conf文件 123456&amp;gt;   /">
+<meta name="keywords" content="WAMP Apache PHP">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Windows系统下的Apache配置并支持PHP">
+<meta property="og:url" content="http://yoursite.com/2018/03/08/Windows系统下WAMP配置/index.html">
+<meta property="og:site_name" content="Le&#39;s Blog">
+<meta property="og:description" content="一.Apache服务器软件安装即配置  第一步：创建文件夹WAMP(Windows、Apache、MySQL、PHP缩写)  第二步：安装Apache的运行环境VC++、而且php也需要C++的运行环境  第三步：将解压好的Apache免安装文件拷贝到WAMP文件夹下   (我的是免安装版64位的)  第四步：找到Apache文件夹下的conf/http.conf文件 123456&amp;gt;   /">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-01-31T01:27:30.952Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Windows系统下的Apache配置并支持PHP">
+<meta name="twitter:description" content="一.Apache服务器软件安装即配置  第一步：创建文件夹WAMP(Windows、Apache、MySQL、PHP缩写)  第二步：安装Apache的运行环境VC++、而且php也需要C++的运行环境  第三步：将解压好的Apache免安装文件拷贝到WAMP文件夹下   (我的是免安装版64位的)  第四步：找到Apache文件夹下的conf/http.conf文件 123456&amp;gt;   /">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/08/Windows系统下WAMP配置/">
+
+
+
+
+
+  <title>Windows系统下的Apache配置并支持PHP | Le's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Le's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">禁止拔胡子！Le...</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/08/Windows系统下WAMP配置/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Le">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Le's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Windows系统下的Apache配置并支持PHP</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-08T16:54:09+08:00">
+                2018-03-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="一-Apache服务器软件安装即配置"><a href="#一-Apache服务器软件安装即配置" class="headerlink" title="一.Apache服务器软件安装即配置"></a>一.Apache服务器软件安装即配置</h3><blockquote>
+<ul>
+<li><p>第一步：创建文件夹WAMP(Windows、Apache、MySQL、PHP缩写)</p>
+</li>
+<li><p>第二步：安装Apache的运行环境VC++、而且php也需要C++的运行环境</p>
+</li>
+<li><p>第三步：将解压好的Apache免安装文件拷贝到WAMP文件夹下   (我的是免安装版64位的)</p>
+</li>
+<li><p>第四步：找到Apache文件夹下的conf/http.conf文件</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;   <span class="comment">// 修改http.conf文件</span></span><br><span class="line">&gt;   <span class="number">1.</span> 找到Define SRVROOT  修改为：Define SRVROOT <span class="string">"apache的安装路径"</span></span><br><span class="line">&gt;   <span class="number">2.</span> 找到DocumentRoot    修改为：DocumentRoot <span class="string">"网站根目录的路径"</span>（如：PHP文件）</span><br><span class="line">&gt;   <span class="number">3.</span> 修改&lt;Directory&gt;     修改为：&lt;Directory <span class="string">"网站根目录的路径"</span>&gt;</span><br><span class="line">&gt;   <span class="comment">// 路径方面一定要使用全英文，apache不识别中文</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><p>第五步：找到Apache文件夹下的bin/httpd.exe双击运行 不黑屏闪退即安装成功  在浏览器中输入127.0.0.1验证       （netstat  -ano 查看端口使用情况）</p>
+</li>
+<li><p>第六步：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;   <span class="comment">// 找到&lt;IfModule dir_module&gt;&lt;IfModule&gt;</span></span><br><span class="line">&gt;   <span class="comment">/* 修改为： &lt;IfModule dir_module&gt;</span></span><br><span class="line"><span class="comment">&gt;              		DirectoryIndex index.html index.php    </span></span><br><span class="line"><span class="comment">&gt;              		// 默认加载页依次去找，前面的优先级最高，没有则启用目录浏览</span></span><br><span class="line"><span class="comment">&gt;              &lt;IfModule&gt;*/</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><p>第七步：安装Apache服务</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&gt;   <span class="comment">// 安装服务</span></span><br><span class="line">&gt;   <span class="number">1.</span> httpd.exe -k install -n <span class="string">"Apache"</span>   (-n 指定服务名称·非强制性)</span><br><span class="line">&gt;   <span class="comment">// 卸载服务</span></span><br><span class="line">&gt;   <span class="number">2.</span> httpd.exe -k uninstall -n <span class="string">"Apache"</span></span><br><span class="line">&gt;   *注：在没有配置前六步的情况下直接安装会报错，执行<span class="string">'httpd.exe -t'</span>测试配置文件，显示Syntax OK即表示成功</span><br><span class="line">&gt;</span><br><span class="line">&gt;   <span class="comment">// 启动服务</span></span><br><span class="line">&gt;   <span class="number">3.</span> httpd.exe -k start -n <span class="string">"Apache"</span></span><br><span class="line">&gt;   <span class="comment">// 重启服务</span></span><br><span class="line">&gt;   <span class="number">4.</span> httpd.exe -k restart -n <span class="string">"Apache"</span>或httpd -k shutdown -n <span class="string">"Apache"</span></span><br><span class="line">&gt;   <span class="comment">// 停止服务</span></span><br><span class="line">&gt;   <span class="number">5.3</span>. httpd.exe -k stop -n <span class="string">"Apache"</span></span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>  ​</p>
+</blockquote>
+<h3 id="二-PHP安装及配置"><a href="#二-PHP安装及配置" class="headerlink" title="二.PHP安装及配置"></a>二.PHP安装及配置</h3><blockquote>
+<ul>
+<li><p>第一步：将解压好的PHP免安装文件拷贝到WAMP文件下</p>
+</li>
+<li><p>第二步：在Apache中添加PHP的配置</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&gt;   <span class="comment">// 在Apache的httpd.conf文件的末尾 添加 如下几行命令</span></span><br><span class="line">&gt;   <span class="comment">// 在Apache上挂载 php</span></span><br><span class="line">&gt;   <span class="number">1.</span> LoadModule php5_module <span class="string">"D:/WAPM/PHP/php5apache2_4.dll"</span></span><br><span class="line">&gt;</span><br><span class="line">&gt;   <span class="comment">// 将.php后缀名的文件交Apache处理</span></span><br><span class="line">&gt;   <span class="number">2.</span> AddType application/x-httpd-php .php</span><br><span class="line">&gt;</span><br><span class="line">&gt;   <span class="comment">// php.ini php的配置文件</span></span><br><span class="line">&gt;   <span class="number">3.</span> PHPIniDir <span class="string">"D:/WAPM/PHP/php.ini"</span></span><br><span class="line">&gt;</span><br><span class="line">&gt;   <span class="comment">// 不配置的话，php文件只能原封不动的显示到页面上，因为Apache只能处理静态文件请求，.php文件为动态文件</span></span><br><span class="line">&gt;   <span class="comment">// 如果以上步骤还不能成功加载.php文件，试下再将PHP文件夹下的php.ini-development或php.ini-production 修改成php.ini文件</span></span><br><span class="line">&gt;   <span class="comment">// 并修改php.ini文件 734行 </span></span><br><span class="line">&gt;   <span class="number">4.</span> extension_dir = <span class="string">"ext"</span>  修改成：extension_dir = <span class="string">"D:/WAMP/PHP/ext"</span></span><br><span class="line">&gt;</span><br><span class="line">&gt;   <span class="comment">//注：指定php相应扩展的目录(apache默认去Windows目录下找php.ini)，如果这个不设置，只能使用php核心功能，另外的curl操作，mbstring字符串操作，xml操作，mysql操作都不能进行，让php通过php.ini配置文件读取ext扩展目录</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>  ​</p>
+<ul>
+<li><p>第三步：其他配置</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt;   <span class="comment">// 开启扩展  php.ini   890行</span></span><br><span class="line">&gt;   <span class="number">1.</span> 添加字符串扩展mbstring，mysql及mysqli扩展等 </span><br><span class="line">&gt;   <span class="comment">// 修改时区  [Date]    935行</span></span><br><span class="line">&gt;   <span class="number">2.</span> date.timezone = Asia/Shanghai或者date.timezone = PRC</span><br><span class="line">&gt;   <span class="comment">// 在程序里面用date_default_timezone_set()函数设置相同，默认是UTC格林威治时间，和北京时间相差8个小时</span></span><br><span class="line">&gt;</span><br><span class="line">&gt;   <span class="comment">// 开发阶段错误提示扩展</span></span><br><span class="line">&gt;   <span class="number">3.</span> display_errors = On    (开发设置为On，上线设置为Off)</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>  相关参考文章<a href="https://www.cnblogs.com/freeweb/p/5056979.html" target="_blank" rel="noopener">https://www.cnblogs.com/freeweb/p/5056979.html</a></p>
+<p>  ​</p>
+</blockquote>
+<h3 id="三-MySQL安装"><a href="#三-MySQL安装" class="headerlink" title="三. MySQL安装"></a>三. MySQL安装</h3><blockquote>
+<ul>
+<li><p>第一步：将解压好的MySQL免安装文件拷贝到WAMP文件下</p>
+</li>
+<li><p>第二步：安装服务</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&gt;   <span class="comment">// 命令行切换到bin目录下</span></span><br><span class="line">&gt;   <span class="comment">// 初始化数据所需要的文件以及获取一个临时访问密码</span></span><br><span class="line">&gt;   <span class="number">1.</span> mysqld --initialize --user=mysql --<span class="built_in">console</span>   </span><br><span class="line">&gt;   <span class="comment">// 生成一个data文件夹 临时密码记得拷贝下来  不然还得重来</span></span><br><span class="line">&gt;</span><br><span class="line">&gt;   <span class="comment">// 安装为服务</span></span><br><span class="line">&gt;   <span class="number">2.</span> mysqld --install MySQL   （非强制名称）</span><br><span class="line">&gt;   <span class="comment">// 进入MySQL (使用刚刚备份的临时密码登录)</span></span><br><span class="line">&gt;   <span class="number">3.</span> mysql -u root -p</span><br><span class="line">&gt;   <span class="comment">// 设置数据库密码</span></span><br><span class="line">&gt;   <span class="number">4.</span> set password <span class="keyword">for</span> root@localhost = password(<span class="string">'root'</span>);</span><br><span class="line">&gt;</span><br><span class="line">&gt;   <span class="comment">// 退出验证密码</span></span><br><span class="line">&gt;   <span class="number">5.</span> exit 重复步骤<span class="number">3</span></span><br><span class="line">&gt;</span><br><span class="line">&gt;   注：数据库操作命令记得加上分号啊啊啊<span class="string">';'</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>  ​</p>
+</blockquote>
+<h3 id="四-配置虚拟主机"><a href="#四-配置虚拟主机" class="headerlink" title="四.配置虚拟主机"></a>四.配置虚拟主机</h3><blockquote>
+<ul>
+<li><p>第一步：开启虚拟主机配置</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;   <span class="comment">// 配置虚拟主机的目的：实现一台服务器可以提供多站点服务（即部署多个网站），实质就是访问服务器上的不同目录，配置apache虚拟主机的方式有：基于域名的配置、基于端口和IP的配置方法</span></span><br><span class="line">&gt;</span><br><span class="line">&gt;   <span class="comment">// 找到httpd.conf文件的494行 Virtual hosts   实质：载入虚拟主机配置文件文件</span></span><br><span class="line">&gt;   1. 开启虚拟主机将'Include conf/extra/httpd-vhosts.conf'前的#号去掉</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>  ​</p>
+<ul>
+<li><p>第二步：添加配置选项</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&gt;   <span class="comment">// 找到conf/extra/httpd-vhosts.conf</span></span><br><span class="line">&gt;   <span class="number">2.</span> 在配置文件的末尾添加如下配置：</span><br><span class="line">&gt;   # 配置虚拟主机</span><br><span class="line">&gt;   &lt;VirtualHost *:80&gt;</span><br><span class="line">&gt;      # 网站管理员邮箱   可以随意写（可删）</span><br><span class="line">&gt;      ServerAdmin webmaster@dummy-host2.example.com</span><br><span class="line">&gt;      # 虚拟主机的根目录 即站点的文件（代码目录）</span><br><span class="line">&gt;      DocumentRoot "C:/Users/v_enlli/Desktop/website01"</span><br><span class="line">&gt;      # 虚拟主机的域名</span><br><span class="line">&gt;      ServerName web01.com</span><br><span class="line">&gt;      # 虚拟主机的别名alias *代表'.'前面部分通配</span><br><span class="line">&gt;      ServerAlias web01.com *.web01.com</span><br><span class="line">&gt;      # 虚拟主机的错误日志  一般在apache的logs目录下（可删）</span><br><span class="line">&gt;      ErrorLog "logs/dummy-host2.example.com-error.log"</span><br><span class="line">&gt;      # 虚拟主机访问日志(可删)</span><br><span class="line">&gt;      CustomLog "logs/dummy-host2.example.com-access.log" common</span><br><span class="line">&gt;</span><br><span class="line">&gt;      # 默认加载页（非必须）</span><br><span class="line">&gt;      DirectoryIndex index.html</span><br><span class="line">&gt;      # 文件访问权限设置</span><br><span class="line">&gt;      &lt;Directory "C:/Users/v_enlli/Desktop/website01"&gt;</span><br><span class="line">&gt;           # FollowSymLinks: 在该目录下允许文件系统使用符号连接</span><br><span class="line">&gt;           # Indexes: 当用户访问该目录时，如果用户找不到DirectoryIndex指定的主页文件(例如index.html),则返回该目录下的文件列表给用户</span><br><span class="line">&gt;           Options Indexes FollowSymLinks</span><br><span class="line">&gt;           # AllowOverride All 表示允许使用.htaccess文件重写URL</span><br><span class="line">&gt;           AllowOverride None</span><br><span class="line">&gt;           Order allow,deny</span><br><span class="line">&gt;           Allow from all</span><br><span class="line">&gt;           Require all granted</span><br><span class="line">&gt;      &lt;/Directory&gt;</span><br><span class="line">&gt;   &lt;/VirtualHost&gt;</span><br><span class="line">&gt;</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<ul>
+<li><p>其他</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;   <span class="comment">// 报错：Invalid command 'Order', perhaps misspelled or defined by a module not included in the server config</span></span><br><span class="line">&gt;   <span class="comment">// 解决：将LoadModule access_compat_module modules/mod_access_compat.so前#号去掉</span></span><br><span class="line">&gt;   <span class="comment">// 403 Forbidden  （原因有很多 我的是添加了下面的命令）</span></span><br><span class="line">&gt;   <span class="comment">// 解决：添加 Require all granted   允许所有的请求</span></span><br><span class="line">&gt;   <span class="comment">// 注：记得将httpd.conf文件中的关于之前主机的配置项给注释掉哦哦哦</span></span><br><span class="line">&gt;   参考文章：http:<span class="comment">//blog.csdn.net/stefshawn/article/details/6826194</span></span><br><span class="line">&gt;            http:<span class="comment">//www.cnblogs.com/yeer/archive/2011/01/18/1938024.html</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<blockquote>
+<p>  ​</p>
+</blockquote>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/WAMP-Apache-PHP/" rel="tag"># WAMP Apache PHP</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/07/git使用/" rel="next" title="git使用">
+                <i class="fa fa-chevron-left"></i> git使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/27/DOS命令创建文件/" rel="prev" title="DOS命令创建文件">
+                DOS命令创建文件 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Le">
+          <p class="site-author-name" itemprop="name">Le</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives/">
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              
+                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-name">标签</span>
+              
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+
+
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-Apache服务器软件安装即配置"><span class="nav-number">1.</span> <span class="nav-text">一.Apache服务器软件安装即配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-PHP安装及配置"><span class="nav-number">2.</span> <span class="nav-text">二.PHP安装及配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三-MySQL安装"><span class="nav-number">3.</span> <span class="nav-text">三. MySQL安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四-配置虚拟主机"><span class="nav-number">4.</span> <span class="nav-text">四.配置虚拟主机</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Le</span>
+</div>
+
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Gemini
+  </a>
+</div>
+
+
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
