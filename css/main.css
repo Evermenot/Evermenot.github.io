@@ -1808,7 +1808,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #17db63;
+  background: #73e5bf;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3021,4 +3021,18 @@ pre .javascript .function {
 }
 #music163player {
   height: 88px;
+}
+.bg_content {
+  position: fixed;
+  top: 0;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+#canvas {
+  width: 100%;
+  height: 100%;
+}
+.header {
+  background: transparent;
 }
