@@ -1808,7 +1808,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffff40;
+  background: #8fb97a;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3000,7 +3000,7 @@ pre .javascript .function {
   height: 3px;
 }
 ::-webkit-scrollbar-track {
-  background: rgba(255,255,255,0.8);
+  background: rgba(255,255,255,0.1);
 }
 ::-webkit-scrollbar-thumb {
   border-radius: 2px;
