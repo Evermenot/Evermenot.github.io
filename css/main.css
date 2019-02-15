@@ -1808,7 +1808,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #8fb97a;
+  background: #86b5da;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3065,4 +3065,10 @@ pre .javascript .function {
   -ms-transform: rotate(360deg) scale(1.1);
   -o-transform: rotate(360deg) scale(1.1);
   transform: rotate(360deg) scale(1.1);
+}
+.hbe-input-container label {
+  font-size: 14px;
+}
+.hbe-input-container input {
+  background: rgba(255,255,255,0);
 }
