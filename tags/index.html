@@ -11,7 +11,16 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="theme-color" content="#222">
-
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
 
 
 
@@ -289,10 +298,10 @@
         
           <div class="tag-cloud">
             <div class="tag-cloud-title">
-                目前共计 7 个标签
+                目前共计 8 个标签
             </div>
             <div class="tag-cloud-tags">
-              <a href="/tags/Apache/" style="font-size: 12px; color: #ccc">Apache</a> <a href="/tags/DOS命令/" style="font-size: 12px; color: #ccc">DOS命令</a> <a href="/tags/PHP/" style="font-size: 12px; color: #ccc">PHP</a> <a href="/tags/WAMP/" style="font-size: 12px; color: #ccc">WAMP</a> <a href="/tags/git/" style="font-size: 12px; color: #ccc">git</a> <a href="/tags/vue/" style="font-size: 12px; color: #ccc">vue</a> <a href="/tags/冷宫小知识/" style="font-size: 12px; color: #ccc">冷宫小知识</a>
+              <a href="/tags/Apache/" style="font-size: 12px; color: #ccc">Apache</a> <a href="/tags/DOS命令/" style="font-size: 12px; color: #ccc">DOS命令</a> <a href="/tags/PHP/" style="font-size: 12px; color: #ccc">PHP</a> <a href="/tags/WAMP/" style="font-size: 12px; color: #ccc">WAMP</a> <a href="/tags/git/" style="font-size: 12px; color: #ccc">git</a> <a href="/tags/vue/" style="font-size: 12px; color: #ccc">vue</a> <a href="/tags/冷宫小知识/" style="font-size: 12px; color: #ccc">冷宫小知识</a> <a href="/tags/心情/" style="font-size: 12px; color: #ccc">心情</a>
             </div>
           </div>
         
@@ -350,7 +359,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">5</span>
+                <span class="site-state-item-count">6</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -361,7 +370,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-count">2</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -372,7 +381,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
