@@ -121,7 +121,7 @@
 
 <meta property="og:type" content="website">
 <meta property="og:title" content="Le&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/书摘/index.html">
+<meta property="og:url" content="http://yoursite.com/tags/阅读/index.html">
 <meta property="og:site_name" content="Le&#39;s Blog">
 <meta property="og:locale" content="zh-Hans">
 <meta name="twitter:card" content="summary">
@@ -154,13 +154,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/书摘/">
+  <link rel="canonical" href="http://yoursite.com/tags/阅读/">
 
 
 
 
 
-  <title>标签: 书摘 | Le's Blog</title>
+  <title>标签: 阅读 | Le's Blog</title>
   
 
 
@@ -309,7 +309,7 @@
 
     <div id="posts" class="posts-collapse">
       <div class="collection-title">
-        <h1>书摘<small>标签</small>
+        <h1>阅读<small>标签</small>
         </h1>
       </div>
 
@@ -614,7 +614,7 @@
 
   <canvas id="canvas"></canvas>
 <script>
-    (function(win, doc) {
+    function init(win, doc) {
         const maxW = win.innerWidth;
         const maxH = win.innerHeight;
         const maxSize = 5;
@@ -626,6 +626,7 @@
         canvas.width = maxW;
         canvas.height = maxH;
         let ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, maxW, maxH);
 
         let stars = [];      // 存放作为背景使用的星星
         let move_stars = []; // 存放鼠标移动时绘制的星星
@@ -809,11 +810,17 @@
         }, false);
 
         window.CanvasStar = CanvasStar;
-    })(window, document);
+    };
 </script>
 <script>
+    init(window, document)
     let canvasStar = new CanvasStar(200);
     canvasStar.render();
+    window.addEventListener('resize', function(e) {
+        init(window, document)
+        let canvasStar2 = new CanvasStar(200);
+        canvasStar2.render();
+    }, false)
 </script>
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/assets/wanko.model.json"},"display":{"superSample":2,"width":75,"height":150,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
