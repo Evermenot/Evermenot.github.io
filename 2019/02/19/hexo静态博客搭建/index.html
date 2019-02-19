@@ -127,7 +127,7 @@
 <meta property="og:site_name" content="Le&#39;s Blog">
 <meta property="og:description" content="前言​    一直以来都希望搭建一个简约而不简单的个人装X博客（本质目的还是为了写写心得哒~），最近因为时间宽裕的原因（其实是之前太懒233~），所以着手开始搭建，并记录下折腾的过程，以便之后回顾。 搭建环境 下载安装Node.js （作用：生成静态页面；默认安装npm）  下载安装Git（作用：提交本地的hexo到github上去）  下载安装Hexo （npm install -g hexo）">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-19T08:29:38.942Z">
+<meta property="og:updated_time" content="2019-02-19T08:48:28.105Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo静态博客搭建">
 <meta name="twitter:description" content="前言​    一直以来都希望搭建一个简约而不简单的个人装X博客（本质目的还是为了写写心得哒~），最近因为时间宽裕的原因（其实是之前太懒233~），所以着手开始搭建，并记录下折腾的过程，以便之后回顾。 搭建环境 下载安装Node.js （作用：生成静态页面；默认安装npm）  下载安装Git（作用：提交本地的hexo到github上去）  下载安装Hexo （npm install -g hexo）">
@@ -395,20 +395,21 @@
 <li><p>下载安装Git（作用：提交本地的hexo到github上去）</p>
 </li>
 <li><p>下载安装Hexo （npm install -g hexo）</p>
-<p>注：npm安装依赖包是从国外服务器上下载，受网络影响较大（容易‘便秘’），建议自己再安装个淘宝团队支持的cnpm来替代npm（cnpm服务器在国内），命令：<code>npm install -g cnpm</code></p>
+<p>注：npm安装依赖包是从国外服务器上下载，受网络影响较大（容易‘便秘’），建议自己再安装个淘宝团队支持的cnpm来替代npm（cnpm服务器在国内），命令：<code>npm install -g cnpm --registry=https://registry.npm.taobao.org</code></p>
 </li>
 </ul>
 <h3 id="搭建本地hexo静态博客"><a href="#搭建本地hexo静态博客" class="headerlink" title="搭建本地hexo静态博客"></a>搭建本地hexo静态博客</h3><ul>
 <li>在本地磁盘新建文件夹，如：blog–hexo</li>
 <li>进入该文件夹内，打开cmd或运行git，输入并执行：hexo init（生成模板）</li>
 <li>npm install</li>
-<li>运行hexo server 或 hexo s（测试：<a href="http://localhost:4000查看博客是否搭建成功）" target="_blank" rel="noopener">http://localhost:4000查看博客是否搭建成功）</a></li>
+<li>运行hexo server 或 hexo s</li>
+<li>测试：<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a></li>
 </ul>
 <h3 id="关联Github"><a href="#关联Github" class="headerlink" title="关联Github"></a>关联Github</h3><ul>
 <li><p>注册GitHub账号并在GitHub上创建xxx.github.io的项目，xxx为GitHub用户</p>
 </li>
 <li><p>打开本地_config.yml文件建立关联命令</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https:<span class="comment">//github.com/Evermenot/Evermenot.github.io.git</span></span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repository: https:<span class="comment">//github.com/Evermenot/Evermenot.github.io.git</span></span><br><span class="line">  branch: master</span><br><span class="line">注：注意缩进，记得搭建过程中就是因为这个缩进有问题，一直不成功</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>安装部署模块 npm install –save hexo-deployer-git</p>
 </li>
@@ -480,8 +481,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/02/18/测试书摘功能/" rel="next" title="测试书摘功能">
-                <i class="fa fa-chevron-left"></i> 测试书摘功能
+              <a href="/2019/02/18/傅雷家书/" rel="next" title="傅雷夫妇给孩子们的信">
+                <i class="fa fa-chevron-left"></i> 傅雷夫妇给孩子们的信
               </a>
             
           </div>
@@ -563,7 +564,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives/">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
