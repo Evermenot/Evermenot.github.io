@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+<!--
+<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
+<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                location.href = 'http://lecode.ltd'
+            }
+        }
+    })();
+</script>
+-->
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                location.href = 'http://lecode.ltd'
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="面试,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="HTML 和 CSS 知识点总结1.  CSS中link和@import的区别12345671. Link属于html标签，而@import是CSS中提供的2. 在页面加载的时候，link会同时被加载，而@import引用的CSS会在页面加载完成后才会加载引用的CSS3. @import只有在ie5以上才可以被识别，而link是html标签，不存在浏览器兼容性问题4. Link引入样式的权重大于@">
+<meta name="keywords" content="面试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面试题收集">
+<meta property="og:url" content="http://yoursite.com/2018/08/26/面试题收集/index.html">
+<meta property="og:site_name" content="Le&#39;s Blog">
+<meta property="og:description" content="HTML 和 CSS 知识点总结1.  CSS中link和@import的区别12345671. Link属于html标签，而@import是CSS中提供的2. 在页面加载的时候，link会同时被加载，而@import引用的CSS会在页面加载完成后才会加载引用的CSS3. @import只有在ie5以上才可以被识别，而link是html标签，不存在浏览器兼容性问题4. Link引入样式的权重大于@">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-02-22T10:15:34.832Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面试题收集">
+<meta name="twitter:description" content="HTML 和 CSS 知识点总结1.  CSS中link和@import的区别12345671. Link属于html标签，而@import是CSS中提供的2. 在页面加载的时候，link会同时被加载，而@import引用的CSS会在页面加载完成后才会加载引用的CSS3. @import只有在ie5以上才可以被识别，而link是html标签，不存在浏览器兼容性问题4. Link引入样式的权重大于@">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/08/26/面试题收集/">
+
+
+
+
+
+  <title>面试题收集 | Le's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Le's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">再拔胡子剁手！Le...</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-excerpt_lien">
+          <a href="/categories/书摘" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+            
+            书摘
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-lab_lien">
+          <a href="/lab" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-flask"></i> <br>
+            
+            实验室
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+<div id="music163player">
+    <!--网易云单曲
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1371207&auto=0&height=66"></iframe>
+    -->
+    <!--歌单
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height=250 src="//cyixlq.gitee.io/iframe/#/netease/486168759/true"></iframe>
+    -->
+    <!-- aplayer插件
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+        <div class="aplayer" data-id="449818741" data-server="netease" data-type="song" data-mode="single"></div>
+    -->
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1371207&auto=0&height=66"></iframe>
+</div>
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/08/26/面试题收集/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Le">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Le's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">面试题收集</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-26T11:34:33+08:00">
+                2018-08-26
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="HTML-和-CSS-知识点总结"><a href="#HTML-和-CSS-知识点总结" class="headerlink" title="HTML 和 CSS 知识点总结"></a>HTML 和 CSS 知识点总结</h3><h4 id="1-CSS中link和-import的区别"><a href="#1-CSS中link和-import的区别" class="headerlink" title="1.  CSS中link和@import的区别"></a>1.  CSS中link和@import的区别</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">1. Link属于html标签，而@import是CSS中提供的</span><br><span class="line"></span><br><span class="line">2. 在页面加载的时候，link会同时被加载，而@import引用的CSS会在页面加载完成后才会加载引用的CSS</span><br><span class="line"></span><br><span class="line">3. @import只有在ie5以上才可以被识别，而link是html标签，不存在浏览器兼容性问题</span><br><span class="line"></span><br><span class="line">4. Link引入样式的权重大于@import的引用（@import是将引用的样式导入到当前的页面中）</span><br></pre></td></tr></table></figure>
+<h4 id="2-盒模型"><a href="#2-盒模型" class="headerlink" title="2. 盒模型"></a>2. 盒模型</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. IE盒模型  宽width = 内容 + 内边距 + 外边距 + 边框</span><br><span class="line">2. W3C盒模型 宽width = 内容</span><br></pre></td></tr></table></figure>
+<h4 id="3-字体"><a href="#3-字体" class="headerlink" title="3. 字体"></a>3. 字体</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1. 综合写法： font: font-style font-weight font-size/line-height font-family;</span><br></pre></td></tr></table></figure>
+<h4 id="4-背景"><a href="#4-背景" class="headerlink" title="4. 背景"></a>4. 背景</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">1. 综合写法： background: background-color background-image background-repeat background-attachment (没有强制书写的顺序)</span><br><span class="line">2. 背景剪切： background-clip ： border | padding | content</span><br></pre></td></tr></table></figure>
+<h4 id="5-盒子阴影"><a href="#5-盒子阴影" class="headerlink" title="5.盒子阴影"></a>5.盒子阴影</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">box-shadow: h-shadow v-shadow blur spread color inset[outset]可选</span><br></pre></td></tr></table></figure>
+<h4 id="6-清除浮动"><a href="#6-清除浮动" class="headerlink" title="6. 清除浮动"></a>6. 清除浮动</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">1. .clearfix:after &#123;</span><br><span class="line">         content: &quot;.&quot;; 有内容了盒子就被撑起高度</span><br><span class="line">         height: 0;</span><br><span class="line">         display: block;</span><br><span class="line">         clear: both;</span><br><span class="line">         visibility: hidden;</span><br><span class="line">     &#125;</span><br><span class="line">     .clearfix &#123;</span><br><span class="line">         *zoom: 1;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line">2.   浮动元素末尾添加&lt;div style=”clear:both”&gt;&lt;/div&gt;或者br标签亦可</span><br></pre></td></tr></table></figure>
+<h4 id="7-H5-CSS3新增"><a href="#7-H5-CSS3新增" class="headerlink" title="7. H5 \ CSS3新增"></a>7. H5 \ CSS3新增</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">1. &lt;audio&gt;、&lt;video&gt;媒体标签元素</span><br><span class="line">	&lt;audio controls&gt; 		// 支持的格式包括 MP3、Wav 和 Ogg</span><br><span class="line">      &lt;source src=&quot;jamshed.mp3&quot; type=&quot;audio/mpeg&quot;&gt; </span><br><span class="line">       Your browser does&apos;nt support audio embedding feature. </span><br><span class="line">    &lt;/audio&gt;</span><br><span class="line">    注： video元素同上  // 支持的格式包括：MP4、WebM 和 Ogg</span><br><span class="line"></span><br><span class="line">2. canvas 绘画元素</span><br><span class="line">3. article、footer、header、nav、section语义化标签 	html5shim框架可以解决H5标签兼容问题</span><br><span class="line">4. calendar、date、time、email、url、search 表单控件</span><br><span class="line"></span><br><span class="line">5. localStorage 本地离线存储对象, sessionStorage 页面会话存储对象</span><br><span class="line">	注：为了能访问到同一个localStorage对象，页面必须来自同一个域名（子域名无效），使用同一种协议，在同一个端口上。</span><br><span class="line">6. webworker, websockt, Geolocation 新增技术</span><br><span class="line"></span><br><span class="line">7. CSS3实现圆角，阴影，对文字加特效，增加了更多的CSS选择器  多背景 rgba</span><br></pre></td></tr></table></figure>
+<h3 id="DOM-和-BOM-知识点总结"><a href="#DOM-和-BOM-知识点总结" class="headerlink" title="DOM 和 BOM 知识点总结"></a>DOM 和 BOM 知识点总结</h3><h4 id="1-事件绑定和普通事件区别"><a href="#1-事件绑定和普通事件区别" class="headerlink" title="1.  事件绑定和普通事件区别"></a>1.  事件绑定和普通事件区别</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 普通事件绑定只执行一次，如：</span><br><span class="line">	普通添加事件的方法：</span><br><span class="line">    <span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"hello"</span>);</span><br><span class="line">    btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="number">2</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    执行上面的代码只会alert <span class="number">2</span> </span><br><span class="line"> <span class="number">2.</span> 事件绑定方式添加事件：</span><br><span class="line">    <span class="keyword">var</span> btn = <span class="built_in">document</span>.getElementById(<span class="string">"hello"</span>);</span><br><span class="line">    btn.addEventListener(<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="number">1</span>);</span><br><span class="line">    &#125;,<span class="literal">false</span>);</span><br><span class="line">    btn.addEventListener(<span class="string">"click"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        alert(<span class="number">2</span>);</span><br><span class="line">    &#125;,<span class="literal">false</span>);</span><br><span class="line">    执行上面的代码会先alert <span class="number">1</span> 再 alert <span class="number">2</span></span><br><span class="line"> 总结：普通添加事件的方法不支持添加多个事件，最下面的事件会覆盖上面的事件绑定，（addEventListener）方式添加事件可以添加多个。</span><br><span class="line">    addEventListener不兼容低版本IE</span><br><span class="line">    普通事件无法取消</span><br><span class="line">    addEventLisntener还支持事件冒泡+事件捕获</span><br></pre></td></tr></table></figure>
+<h4 id="2-阻止事件冒泡和默认事件"><a href="#2-阻止事件冒泡和默认事件" class="headerlink" title="2. 阻止事件冒泡和默认事件"></a>2. 阻止事件冒泡和默认事件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cancelBubble()只支持IE,return false,stopPropagation()</span><br></pre></td></tr></table></figure>
+<h4 id="3-window-onload和document-ready的区别"><a href="#3-window-onload和document-ready的区别" class="headerlink" title="3. window.onload和document.ready的区别"></a>3. window.onload和document.ready的区别</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> <span class="built_in">window</span>.onload 是在dom文档树加载完和所有文件加载完之后执行的一个函数</span><br><span class="line"><span class="number">2.</span> Document.ready原生种没有这个方法，jquery中有 $(<span class="built_in">document</span>).ready(<span class="function"><span class="keyword">function</span>),在<span class="title">dom</span>文档树加载完之后执行一个函数（注意，这里面的文档树加载完不代表全部文件加载完）</span></span><br><span class="line"><span class="function">3. <span class="title">$</span>(<span class="params">document</span>).<span class="title">ready</span>要比<span class="title">window</span>.<span class="title">onload</span>先执行</span></span><br><span class="line"><span class="function">4. <span class="title">window</span>.<span class="title">onload</span>只能出来一次，<span class="title">$</span>(<span class="params">document</span>).<span class="title">ready</span>可以出现多次</span></span><br></pre></td></tr></table></figure>
+<h3 id="Js-es-知识点总结"><a href="#Js-es-知识点总结" class="headerlink" title="Js(es) 知识点总结"></a>Js(es) 知识点总结</h3><h4 id="1-判断变量是否为数组数据类型"><a href="#1-判断变量是否为数组数据类型" class="headerlink" title="1. 判断变量是否为数组数据类型"></a>1. 判断变量是否为数组数据类型</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> obj <span class="keyword">instanceof</span> <span class="built_in">Array</span> 在IE某些版本中不支持</span><br><span class="line"><span class="number">2.</span> Es5新增 <span class="built_in">Array</span>.isArray()，兼容写法：</span><br><span class="line">	<span class="keyword">if</span>(<span class="keyword">typeof</span> <span class="built_in">Array</span>.isArray===<span class="string">"undefined"</span>)&#123;</span><br><span class="line">      	<span class="built_in">Array</span>.isArray = <span class="function"><span class="keyword">function</span>(<span class="params">arg</span>)</span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">Object</span>.prototype.toString.call(arg)===<span class="string">"[object Array]"</span></span><br><span class="line">        &#125;;  </span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h4 id="2-创建函数的几种方式"><a href="#2-创建函数的几种方式" class="headerlink" title="2. 创建函数的几种方式"></a>2. 创建函数的几种方式</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> 函数声明式</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">func1</span>(<span class="params">arg1, arg2</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> arg1 + arg2</span><br><span class="line">	&#125;</span><br><span class="line"><span class="number">2.</span> 函数表达式 / 匿名式 </span><br><span class="line">	<span class="keyword">var</span> func2 = <span class="function"><span class="keyword">function</span>(<span class="params">arg1, arg2</span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> arg1 + arg2</span><br><span class="line">	&#125;</span><br><span class="line"><span class="number">3.</span> 函数对象方式（不推荐）</span><br><span class="line">	<span class="keyword">var</span> func3 = <span class="keyword">new</span> <span class="built_in">Function</span>(arg1, arg2, <span class="string">"return arg1 + arg2"</span>)</span><br></pre></td></tr></table></figure>
+<h4 id="3-JSONP的原理"><a href="#3-JSONP的原理" class="headerlink" title="3. JSONP的原理"></a>3. JSONP的原理</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">简述：现在本地定义一个接收数据的函数，当本地请求服务器上的js文件，服务器返回的js文件中的代码是对本地函数的调用，参数是服务器想要返回的数据</span><br><span class="line">&lt;html xmlns=<span class="string">"http://www.w3.org/1999/xhtml"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;&lt;/title&gt;</span><br><span class="line">    &lt;script type=<span class="string">"text/javascript"</span>&gt;</span><br><span class="line">    <span class="comment">// 得到航班信息查询结果后的回调函数</span></span><br><span class="line">    <span class="keyword">var</span> flightHandler = <span class="function"><span class="keyword">function</span>(<span class="params">data</span>)</span>&#123;</span><br><span class="line">        alert(<span class="string">'你查询的航班结果是：票价 '</span> + data.price + <span class="string">' 元，'</span> + <span class="string">'余票 '</span> + data.tickets + <span class="string">' 张。'</span>);</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="comment">// 提供jsonp服务的url地址（不管是什么类型的地址，最终生成的返回值都是一段javascript代码）</span></span><br><span class="line">    <span class="keyword">var</span> url = <span class="string">"http://flightQuery.com/jsonp/flightResult.aspx?			code=CA1998&amp;callback=flightHandler"</span>;</span><br><span class="line">    <span class="comment">// 创建script标签，设置其属性</span></span><br><span class="line">    <span class="keyword">var</span> script = <span class="built_in">document</span>.createElement(<span class="string">'script'</span>);</span><br><span class="line">    script.setAttribute(<span class="string">'src'</span>, url);</span><br><span class="line">    <span class="comment">// 把script标签加入head，此时调用开始</span></span><br><span class="line">    <span class="built_in">document</span>.getElementsByTagName(<span class="string">'head'</span>)[<span class="number">0</span>].appendChild(script); </span><br><span class="line">    &lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line"></span><br><span class="line">&lt;<span class="regexp">/body&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>html&gt;</span><br><span class="line">https:<span class="comment">//blog.csdn.net/binggoogle/article/details/50687145</span></span><br></pre></td></tr></table></figure>
+<h4 id="4-JS本地对象、内置对象、宿主对象"><a href="#4-JS本地对象、内置对象、宿主对象" class="headerlink" title="4. JS本地对象、内置对象、宿主对象"></a>4. JS本地对象、内置对象、宿主对象</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1. 本地对象（可实例化对象）</span><br><span class="line">	Array、Object、RegExp、Date等</span><br><span class="line">2. 内置对象（不可实例化对象）</span><br><span class="line">	Gload、Math</span><br><span class="line">3. 宿主对象（浏览器自带对象）</span><br><span class="line">	document、window、navigator、history、location、screen</span><br></pre></td></tr></table></figure>
+<h4 id="5-模块异步加载"><a href="#5-模块异步加载" class="headerlink" title="5.模块异步加载"></a>5.模块异步加载</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">1. 原因：模块的异步加载（防止Dom渲染过慢）</span><br><span class="line"></span><br><span class="line">2. &lt;script src=&quot;js/require.js&quot; defer async=&quot;true&quot; &gt;&lt;/script&gt;</span><br><span class="line">   注： 上面标签里的async属性表明这个文件需要异步加载，避免网页失去响应。IE不支持这个属性，只支持defer，所以把defer也写上。</span><br><span class="line"> </span><br><span class="line">3. &lt;script src=&quot;js/require.js&quot; data-main=&quot;js/main&quot;&gt;&lt;/script&gt;</span><br><span class="line">   注： data-main属性的作用是，指定网页程序的主模块。在上例中，就是js目录下面的main.js，这个文件会第一个被require.js加载。由于require.js默认的文件后缀名是js，所以可以把main.js简写成main。</span><br><span class="line"></span><br><span class="line">相关文章： http://www.ruanyifeng.com/blog/2015/05/require.html 阮老师博客</span><br></pre></td></tr></table></figure>
+<h4 id="6-es5和es6导入导出"><a href="#6-es5和es6导入导出" class="headerlink" title="6.es5和es6导入导出"></a>6.es5和es6导入导出</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">es5的引入也就是导入使用的是require(),es6中使用import...from...来实现导入</span><br><span class="line">es5的导出使用的是module.exports(),es6中使用export default</span><br><span class="line"></span><br><span class="line">上面的导入导出功能为成对出现，不能混用</span><br></pre></td></tr></table></figure>
+<h3 id="前端优化"><a href="#前端优化" class="headerlink" title="前端优化"></a>前端优化</h3><h4 id="1-减少页面加载时间"><a href="#1-减少页面加载时间" class="headerlink" title="1. 减少页面加载时间"></a>1. 减少页面加载时间</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1、压缩css、js文件</span><br><span class="line">2、合并js、css文件</span><br><span class="line">3、外部js、css文件放在最底下</span><br><span class="line">4、减少dom操作，尽可能用变量替代不必要的dom操作</span><br><span class="line">5. 减少http请求</span><br></pre></td></tr></table></figure>
+<h4 id="2-web性能调试优化（达哥）"><a href="#2-web性能调试优化（达哥）" class="headerlink" title="2.web性能调试优化（达哥）"></a>2.web性能调试优化（达哥）</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">/* 前端优化经验  可以了解下 </span><br><span class="line">   1. performance.timing     查看页面耗时</span><br><span class="line">   2. h5获取电池电量Api       (没记住、前端可以获取用户手机电量针对性的做出一些优化)</span><br><span class="line">   3. 多普乐测速      可以获取DNS解析时间、用户带宽</span><br><span class="line">   4. link标签预解析DNS		&lt;link rel=&quot;dns-prefetch&quot;&gt;</span><br><span class="line">   5. 域名收敛    将域名都收敛到服务器域名下</span><br><span class="line">   6. 页面加载速度工具：Google pagespeed  (会给出页面要优化的点)</span><br><span class="line">   7. 远程调试工具：web inspector remote</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/面试/" rel="tag"># 面试</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/28/VSCode使用/" rel="next" title="VSCode使用">
+                <i class="fa fa-chevron-left"></i> VSCode使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/14/你知不知道什么是当当-当当当/" rel="prev" title="你知不知道什么是当当...当当当？">
+                你知不知道什么是当当...当当当？ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Le">
+          <p class="site-author-name" itemprop="name">Le</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML-和-CSS-知识点总结"><span class="nav-number">1.</span> <span class="nav-text">HTML 和 CSS 知识点总结</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-CSS中link和-import的区别"><span class="nav-number">1.1.</span> <span class="nav-text">1.  CSS中link和@import的区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-盒模型"><span class="nav-number">1.2.</span> <span class="nav-text">2. 盒模型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-字体"><span class="nav-number">1.3.</span> <span class="nav-text">3. 字体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-背景"><span class="nav-number">1.4.</span> <span class="nav-text">4. 背景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-盒子阴影"><span class="nav-number">1.5.</span> <span class="nav-text">5.盒子阴影</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-清除浮动"><span class="nav-number">1.6.</span> <span class="nav-text">6. 清除浮动</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-H5-CSS3新增"><span class="nav-number">1.7.</span> <span class="nav-text">7. H5 \ CSS3新增</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM-和-BOM-知识点总结"><span class="nav-number">2.</span> <span class="nav-text">DOM 和 BOM 知识点总结</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-事件绑定和普通事件区别"><span class="nav-number">2.1.</span> <span class="nav-text">1.  事件绑定和普通事件区别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-阻止事件冒泡和默认事件"><span class="nav-number">2.2.</span> <span class="nav-text">2. 阻止事件冒泡和默认事件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-window-onload和document-ready的区别"><span class="nav-number">2.3.</span> <span class="nav-text">3. window.onload和document.ready的区别</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Js-es-知识点总结"><span class="nav-number">3.</span> <span class="nav-text">Js(es) 知识点总结</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-判断变量是否为数组数据类型"><span class="nav-number">3.1.</span> <span class="nav-text">1. 判断变量是否为数组数据类型</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-创建函数的几种方式"><span class="nav-number">3.2.</span> <span class="nav-text">2. 创建函数的几种方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-JSONP的原理"><span class="nav-number">3.3.</span> <span class="nav-text">3. JSONP的原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-JS本地对象、内置对象、宿主对象"><span class="nav-number">3.4.</span> <span class="nav-text">4. JS本地对象、内置对象、宿主对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-模块异步加载"><span class="nav-number">3.5.</span> <span class="nav-text">5.模块异步加载</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6-es5和es6导入导出"><span class="nav-number">3.6.</span> <span class="nav-text">6.es5和es6导入导出</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#前端优化"><span class="nav-number">4.</span> <span class="nav-text">前端优化</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-减少页面加载时间"><span class="nav-number">4.1.</span> <span class="nav-text">1. 减少页面加载时间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-web性能调试优化（达哥）"><span class="nav-number">4.2.</span> <span class="nav-text">2.web性能调试优化（达哥）</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Le</span>
+</div>
+<!--
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Gemini
+  </a>
+</div>
+
+-->
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+  <canvas id="canvas"></canvas>
+<script>
+    function init(win, doc) {
+        const maxW = win.innerWidth;
+        const maxH = win.innerHeight;
+        const maxSize = 5;
+        const minSize = 1;
+        let isMoving = false;
+        let timer = null;
+
+        let canvas = doc.getElementById('canvas');
+        canvas.width = maxW;
+        canvas.height = maxH;
+        let ctx = canvas.getContext('2d');
+        ctx.clearRect(0, 0, maxW, maxH);
+        let stars = [];      // 存放作为背景使用的星星
+        let move_stars = []; // 存放鼠标移动时绘制的星星
+
+        function CanvasStar(num) {
+            this.num = num;
+        };
+
+        CanvasStar.prototype = {
+            render() {
+                for (let i = 0; i < this.num; i++) {
+                    let alpha = Math.random() + 0.1;
+                    stars[i] = new Star(i, getOneRandom(maxW), getOneRandom(maxH), getOneRandom(maxSize, minSize), true, alpha);
+                }
+                animate();
+            }
+        };
+
+        function Star(id, x, y, r, isCache, dot_alpha) {
+            this.id = id;
+            this.x = x;
+            this.y = y;
+            this.r = r;
+            this.dot_alpha = dot_alpha;
+            this.show = .5;    // 作用：控制 鼠标绘制点的隐藏
+            this.direct = getOneRandom(180) + 180;
+            this.isCache = isCache;
+            this.cacheCanvas = doc.createElement('canvas');
+            this.ctx_cache = this.cacheCanvas.getContext('2d');
+            if(isCache) {
+                this.cache();
+            }
+        };
+
+        Star.prototype = {
+
+            draw() {
+                // 绘制一个Star
+                if(!this.isCache) {
+                    let alpha = Math.random() + 0.1;
+                    ctx.save();
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
+                    ctx.closePath();
+                    
+                    ctx.shadowColor = '#fff';
+                    ctx.shadowBlur = 2 * this.r;
+                    ctx.fillStyle = `rgba(255, 255, 255, ${ this.dot_alpha })`;
+                    ctx.fill();
+                    ctx.restore();
+                }else {
+                    ctx.drawImage(this.cacheCanvas, this.x - 3 * this.r, this.y - 3 * this.r)
+                }
+            },
+
+            move() {
+                this.y -= 0.25;
+                if(this.y < -10) {
+                    this.y = maxH + 10;
+                }
+                this.draw();
+            },
+
+            // 使鼠标绘制的点抖动起来
+            shake(arr) {
+                this.show -= 0.01;
+                if(this.show < 0) {
+                    return;
+                }
+                let speed = .5;
+                this.x += Math.cos(this.direct * Math.PI / 180) * speed;
+                this.y += Math.sin(this.direct * Math.PI / 180) * speed;
+                this.draw();
+                this.link();
+            },
+
+            link() {
+                if(!this.id) return;
+                let len = move_stars.length;
+                // 关键思想：取当前id，之前的4个点，每绘制一次就向前取4个点，以此类推
+                // 而不是move_stars最后的四个点，否则的话只有最后几个点会被连接起来
+                let arr = move_stars.slice(this.id - 3, this.id);
+                let endIdx = arr.length - 1;
+
+                ctx.save();
+                for(let i = endIdx; i >= 0; i--) {
+                    if(i == endIdx && !!arr[endIdx]) {
+                        ctx.moveTo(arr[endIdx].x, arr[endIdx].y);
+                        ctx.beginPath();
+                        ctx.lineTo(this.x, this.y);
+                    }
+                    if(i != endIdx && !!arr[i] && arr[i].show > 0) ctx.lineTo(arr[i].x, arr[i].y);
+                }
+                ctx.closePath();
+
+                ctx.strokeStyle = 'rgba(255, 255, 255, 0.125)';
+                ctx.stroke();
+                ctx.restore();
+            },
+            cache() {
+                this.cacheCanvas.width = 6 * this.r;
+                this.cacheCanvas.height = 6 * this.r;
+
+                this.ctx_cache.save();
+                this.ctx_cache.beginPath();
+                this.ctx_cache.arc(this.r * 3, this.r * 3, this.r, 0, 2 * Math.PI, false);
+                this.ctx_cache.closePath();
+
+                this.ctx_cache.shadowColor = '#fff';
+                this.ctx_cache.shadowBlur = 2 * this.r;
+                this.ctx_cache.fillStyle = `rgba(255, 255, 255, ${this.dot_alpha})`;
+                this.ctx_cache.fill();
+                this.ctx_cache.restore();
+            }
+        };
+
+        // 动画
+        function animate() {
+            ctx.clearRect(0, 0, maxW, maxH);
+            let len = stars.length;
+            for(let i = 0; i < len; i++) {
+                stars[i].move();
+            }
+
+            let len2 = move_stars.length;
+            if(isMoving) {
+                for(let i = 0; i < len2; i++) {
+                    if(move_stars[i]) move_stars[i].shake(move_stars);
+                }
+            }else {
+                move_stars = []
+            }
+            requestAnimationFrame(animate);
+        };
+
+        // 获取区间内的随机数
+        function getOneRandom(max, min = 0) {
+            return Math.floor(Math.random() * (max - min) + min);
+        };
+
+        // 获取正负号
+        function getSign() {
+            return Math.random() > .5 ? -1 : 1;
+        };
+
+        // 鼠标移动事件
+        doc.addEventListener('mousemove', function(e) {
+            let x = e.clientX, y = e.clientY;
+            // 控制绘制密度 以及点之间的距离    两个重要的点
+            // 密度是控制绘制的数量     dis_x = Math.abs(x - pre_star.x);
+            // 距离是在已绘制的点基础上、控制点的间距
+
+            // 控制绘制密度 和 控制点之间的距离  不是一个功能哦（需要实际操作去体会， 文字很难表述~.~）
+            // 没有控制距离的话 绘制的图形，太规则了，不够分散    x = x + getSign() * getOneRandom(50)
+
+            let len = move_stars.length;
+            let dis_x, dis_y;
+            if(!len) {
+                move_stars.push( new Star(len, x, y, getOneRandom(maxSize, 3), true, 1) );
+            }
+
+            if(move_stars[len - 1]) {
+                // 当前的星还没有push到move_stars里，所以上个星是move_stars[len - 1]
+                let pre_star = move_stars[len - 1];
+                if(pre_star) {
+                    dis_x = Math.abs(x - pre_star.x);
+                    dis_y = Math.abs(y - pre_star.y);
+                }
+                x = x + getSign() * getOneRandom(50);
+                y = y + getSign() * getOneRandom(50);
+                if(dis_x > 5 && dis_y > 5) move_stars.push( new Star(len, x, y, getOneRandom(maxSize, minSize), true, 1) );
+            }
+
+            isMoving = true;
+            clearInterval(timer);   // 清除上一次的定时器（此时还没触发）
+            timer = setInterval(function() {
+                isMoving = false;
+                clearInterval(timer);    // 鼠标停止再清除下定时器
+            }, 500)
+
+        }, false);
+
+        window.CanvasStar = CanvasStar;
+    };
+</script>
+<script>
+    init(window, document)
+    let canvasStar = new CanvasStar(200);
+    canvasStar.render();
+    // window.addEventListener('resize', function(e) {
+    //     init(window, document)
+    //     canvasStar.render();
+    // }, false)
+</script>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/assets/shizuku.model.json"},"display":{"superSample":2,"width":75,"height":150,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
