@@ -1808,7 +1808,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffb0ff;
+  background: #9c1fdb;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3013,14 +3013,13 @@ pre .javascript .function {
 ::-webkit-scrollbar-thumb:hover {
   background: rgba(255,118,0,0.8);
 }
-@media (max-width: 767px) {
-  .header {
-    width: auto;
-    margin-bottom: 10px;
-  }
-}
 #music163player {
   height: 88px;
+}
+@media (max-width: 991px) {
+  .main {
+    padding-top: 10px;
+  }
 }
 .header {
   background: transparent;

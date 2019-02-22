@@ -127,7 +127,7 @@
 <meta property="og:site_name" content="Le&#39;s Blog">
 <meta property="og:description" content="一.Apache服务器软件安装即配置  第一步：创建文件夹WAMP(Windows、Apache、MySQL、PHP缩写)  第二步：安装Apache的运行环境VC++、而且php也需要C++的运行环境  第三步：将解压好的Apache免安装文件拷贝到WAMP文件夹下   (我的是免安装版64位的)  第四步：找到Apache文件夹下的conf/http.conf文件 123456&amp;gt;   /">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-20T02:08:22.813Z">
+<meta property="og:updated_time" content="2019-02-22T06:14:17.426Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows系统下的Apache配置并支持PHP">
 <meta name="twitter:description" content="一.Apache服务器软件安装即配置  第一步：创建文件夹WAMP(Windows、Apache、MySQL、PHP缩写)  第二步：安装Apache的运行环境VC++、而且php也需要C++的运行环境  第三步：将解压好的Apache免安装文件拷贝到WAMP文件夹下   (我的是免安装版64位的)  第四步：找到Apache文件夹下的conf/http.conf文件 123456&amp;gt;   /">
@@ -183,7 +183,7 @@
 
 </head>
 
-<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
 
   
   
@@ -193,7 +193,7 @@
   <div class="container sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
-    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
   <div class="site-meta ">
     
@@ -338,20 +338,20 @@
   
   
 
-  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
   
   
   
   <div class="post-block">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/08/Windows系统下WAMP配置/">
 
-    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Le">
-      <meta itemprop="description" content="">
+      <meta itemprop="description" content>
       <meta itemprop="image" content="/images/avatar.png">
     </span>
 
-    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
       <meta itemprop="name" content="Le's Blog">
     </span>
 
@@ -394,7 +394,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/技术/" itemprop="url" rel="index">
                     <span itemprop="name">技术</span>
                   </a>
@@ -490,7 +490,7 @@
 <li><p>第一步：将解压好的MySQL免安装文件拷贝到WAMP文件下</p>
 </li>
 <li><p>第二步：安装服务</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&gt;   <span class="comment">// 命令行切换到bin目录下</span></span><br><span class="line">&gt;   <span class="comment">// 初始化数据所需要的文件以及获取一个临时访问密码</span></span><br><span class="line">&gt;   <span class="number">1.</span> mysqld --initialize --user=mysql --<span class="built_in">console</span>   </span><br><span class="line">&gt;   <span class="comment">// 生成一个data文件夹 临时密码记得拷贝下来  不然还得重来</span></span><br><span class="line">&gt;</span><br><span class="line">&gt;   <span class="comment">// 安装为服务</span></span><br><span class="line">&gt;   <span class="number">2.</span> mysqld --install MySQL   （非强制名称）</span><br><span class="line">&gt;   <span class="comment">// 进入MySQL (使用刚刚备份的临时密码登录)</span></span><br><span class="line">&gt;   <span class="number">3.</span> mysql -u root -p</span><br><span class="line">&gt;   <span class="comment">// 设置数据库密码</span></span><br><span class="line">&gt;   <span class="number">4.</span> set password <span class="keyword">for</span> root@localhost = password(<span class="string">'root'</span>);</span><br><span class="line">&gt;</span><br><span class="line">&gt;   <span class="comment">// 退出验证密码</span></span><br><span class="line">&gt;   <span class="number">5.</span> exit 重复步骤<span class="number">3</span></span><br><span class="line">&gt;</span><br><span class="line">&gt;   注：数据库操作命令记得加上分号啊啊啊<span class="string">';'</span></span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&gt;   <span class="comment">// 命令行切换到bin目录下</span></span><br><span class="line">&gt;   <span class="comment">// 初始化数据所需要的文件以及获取一个临时访问密码</span></span><br><span class="line">&gt;   <span class="number">1.</span> mysqld --initialize --user=mysql --<span class="built_in">console</span>   </span><br><span class="line">&gt;   <span class="comment">// 生成一个data文件夹 临时密码记得拷贝下来  不然还得重来</span></span><br><span class="line">&gt;</span><br><span class="line">&gt;   <span class="comment">// 安装为服务</span></span><br><span class="line">&gt;   <span class="number">2.</span> mysqld --install MySQL   （非强制名称）</span><br><span class="line">&gt;   <span class="comment">// 进入MySQL (使用刚刚备份的临时密码登录)</span></span><br><span class="line">&gt;   <span class="number">3.</span> mysql -u root -p</span><br><span class="line">&gt;   <span class="comment">// 设置数据库密码</span></span><br><span class="line">&gt;   <span class="number">4.</span> <span class="keyword">set</span> password for root@localhost = password('root');</span><br><span class="line">&gt;</span><br><span class="line">&gt;   // 退出验证密码</span><br><span class="line">&gt;   5. exit 重复步骤3</span><br><span class="line">&gt;</span><br><span class="line">&gt;   注：数据库操作命令记得加上分号啊啊啊';'</span><br><span class="line">&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 </blockquote>
@@ -630,7 +630,7 @@
       
 
       <section class="site-overview sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Le">
           <p class="site-author-name" itemprop="name">Le</p>
            
@@ -642,7 +642,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-count">9</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -664,7 +664,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-count">11</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
