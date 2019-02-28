@@ -119,18 +119,20 @@
 
 
 
-<meta name="description" content="前言​    在日常工作中，时常使用JS数组中的方法来处理后台接口传回来的数据，作为一个前端菜鸡，对于这些方法虽然有些了解，但有些并没有去尝试使用（常常使用某一两种方法处理数据，很单一甚至笨拙），同时对于它们之间的细微差别也没有多少了解，或匆匆了解后，没有整理并记录下来，最后只混了个面熟~.~…而这就是本篇博客要解决的痛点！ ​    除了整理记录外，最终的目的还是为了提高开发效率，在合适的场景使">
+<meta name="description" content="前言​    在日常工作中，时常使用JS数组中的方法来处理后台接口传回来的数据，作为一枚前端菜鸡，对于这些方法虽然有些了解，但有些并没有去尝试使用（常常使用某一两种方法处理数据，很单一甚至笨拙），同时对于它们之间的细微差别也没有多少了解，或匆匆了解后，没有整理并记录下来，最后只混了个面熟~.~…而这就是本篇博客要解决的痛点！ ​    除了整理记录外，最终的目的还是为了提高开发效率，在合适的场景使">
 <meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS常用数组方法">
-<meta property="og:url" content="http://lecode.ltd/2019/02/22/JS常用数组方法/index.html">
+<meta property="og:title" content="JS数组方法总结">
+<meta property="og:url" content="http://lecode.ltd/2019/02/22/JS数组方法总结/index.html">
 <meta property="og:site_name" content="Le&#39;s Blog">
-<meta property="og:description" content="前言​    在日常工作中，时常使用JS数组中的方法来处理后台接口传回来的数据，作为一个前端菜鸡，对于这些方法虽然有些了解，但有些并没有去尝试使用（常常使用某一两种方法处理数据，很单一甚至笨拙），同时对于它们之间的细微差别也没有多少了解，或匆匆了解后，没有整理并记录下来，最后只混了个面熟~.~…而这就是本篇博客要解决的痛点！ ​    除了整理记录外，最终的目的还是为了提高开发效率，在合适的场景使">
+<meta property="og:description" content="前言​    在日常工作中，时常使用JS数组中的方法来处理后台接口传回来的数据，作为一枚前端菜鸡，对于这些方法虽然有些了解，但有些并没有去尝试使用（常常使用某一两种方法处理数据，很单一甚至笨拙），同时对于它们之间的细微差别也没有多少了解，或匆匆了解后，没有整理并记录下来，最后只混了个面熟~.~…而这就是本篇博客要解决的痛点！ ​    除了整理记录外，最终的目的还是为了提高开发效率，在合适的场景使">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-27T09:49:18.334Z">
+<meta property="og:image" content="http://lecode.ltd/images/array/array.png">
+<meta property="og:updated_time" content="2019-02-28T07:32:23.333Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="JS常用数组方法">
-<meta name="twitter:description" content="前言​    在日常工作中，时常使用JS数组中的方法来处理后台接口传回来的数据，作为一个前端菜鸡，对于这些方法虽然有些了解，但有些并没有去尝试使用（常常使用某一两种方法处理数据，很单一甚至笨拙），同时对于它们之间的细微差别也没有多少了解，或匆匆了解后，没有整理并记录下来，最后只混了个面熟~.~…而这就是本篇博客要解决的痛点！ ​    除了整理记录外，最终的目的还是为了提高开发效率，在合适的场景使">
+<meta name="twitter:title" content="JS数组方法总结">
+<meta name="twitter:description" content="前言​    在日常工作中，时常使用JS数组中的方法来处理后台接口传回来的数据，作为一枚前端菜鸡，对于这些方法虽然有些了解，但有些并没有去尝试使用（常常使用某一两种方法处理数据，很单一甚至笨拙），同时对于它们之间的细微差别也没有多少了解，或匆匆了解后，没有整理并记录下来，最后只混了个面熟~.~…而这就是本篇博客要解决的痛点！ ​    除了整理记录外，最终的目的还是为了提高开发效率，在合适的场景使">
+<meta name="twitter:image" content="http://lecode.ltd/images/array/array.png">
 
 
 
@@ -159,13 +161,13 @@
 
 
 
-  <link rel="canonical" href="http://lecode.ltd/2019/02/22/JS常用数组方法/">
+  <link rel="canonical" href="http://lecode.ltd/2019/02/22/JS数组方法总结/">
 
 
 
 
 
-  <title>JS常用数组方法 | Le's Blog</title>
+  <title>JS数组方法总结 | Le's Blog</title>
   
 
 
@@ -343,7 +345,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://lecode.ltd/2019/02/22/JS常用数组方法/">
+    <link itemprop="mainEntityOfPage" href="http://lecode.ltd/2019/02/22/JS数组方法总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Le">
@@ -360,7 +362,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">JS常用数组方法</h1>
+          <h1 class="post-title" itemprop="name headline">JS数组方法总结</h1>
         
 
         <div class="post-meta">
@@ -443,9 +445,11 @@
       
 
       
-        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>​    在日常工作中，时常使用JS数组中的方法来处理后台接口传回来的数据，作为一个前端菜鸡，对于这些方法虽然有些了解，但有些并没有去尝试使用<code>（常常使用某一两种方法处理数据，很单一甚至笨拙）</code>，同时对于它们之间的细微差别也没有多少了解，或匆匆了解后，没有整理并记录下来，最后只混了个面熟~.~…而这就是本篇博客要解决的痛点！</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>​    在日常工作中，时常使用JS数组中的方法来处理后台接口传回来的数据，作为一枚前端菜鸡，对于这些方法虽然有些了解，但有些并没有去尝试使用<code>（常常使用某一两种方法处理数据，很单一甚至笨拙）</code>，同时对于它们之间的细微差别也没有多少了解，或匆匆了解后，没有整理并记录下来，最后只混了个面熟~.~…而这就是本篇博客要解决的痛点！</p>
 <p>​    除了整理记录外，最终的目的还是为了提高开发效率，在合适的场景使用合适的方法~</p>
 <p>​    <code>注：发现一些不一样的东西，感觉还挺新奇有趣的~~~em...拥抱变化</code></p>
+<p>知乎上看见的一张图片（挺赞的~）</p>
+<p><img src="/images/array/array.png" alt="img"></p>
 <h3 id="sort"><a href="#sort" class="headerlink" title="sort( )"></a>sort( )</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>作用：对数组的元素进行排序</span><br><span class="line"><span class="number">2.</span>语法：arrayObject.sort(sortby)     参数可选,且必须为函数</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span>实例：</span><br><span class="line">     实例<span class="number">1</span>：不传参情况，该方法默认将数组元素转换成字符串，按照字符编码顺序进行排序</span><br><span class="line">     实例<span class="number">2</span>：传入参数</span><br><span class="line">            <span class="keyword">var</span> arr = <span class="keyword">new</span> <span class="built_in">Array</span>(<span class="number">5</span>,<span class="number">2</span>,<span class="number">4</span>,<span class="number">1</span>,<span class="number">3</span>);</span><br><span class="line">            <span class="function"><span class="keyword">function</span> <span class="title">sortbyArgs</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">              <span class="keyword">return</span> a - b;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">var</span> result = arr.sort(sortbyArgs);</span><br><span class="line">            <span class="built_in">console</span>.log(result)    <span class="comment">// 结果： 1 2 3 4 5  (默认从小到大排序)</span></span><br><span class="line">            </span><br><span class="line">      注：如果将返回值改为 b - a  将按照从大到小排序  (结合下面可理解原因)</span><br><span class="line">      </span><br><span class="line"><span class="number">4.</span>原理: 参数 a 和 b 在调用时相当于取出数组的前两个值, sort方法根据传入的参数函数返回值的          </span><br><span class="line">         正负或者<span class="number">0</span>,来判断如何排序类似于冒泡排序.</span><br><span class="line">         默认a - b &lt; <span class="number">0</span> 时,a和b不交换位置(即a还在b前);</span><br><span class="line">         a - b &gt; <span class="number">0</span> 时,a和b交换位置(a换到b后);</span><br></pre></td></tr></table></figure>
 <h3 id="concat"><a href="#concat" class="headerlink" title="concat( )"></a>concat( )</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>作用：连接两个或更多的数组，并返回新数组。</span><br><span class="line"><span class="number">2.</span>语法：arrayObject.concat(arrayX,arrayX,...,arrayX)    arrayX必需,可为任意多个</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span>实例：</span><br><span class="line">	<span class="keyword">let</span> aa = [[[<span class="number">10</span>,<span class="number">11</span>,<span class="number">12</span>],<span class="number">5</span>,<span class="number">6</span>],<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>], bb = [<span class="number">7</span>,<span class="number">8</span>,<span class="number">9</span>];</span><br><span class="line">	<span class="keyword">let</span> cc = aa.concat(bb) <span class="comment">// [[[10,11,12],5,6],1,2,3,7,8,9]</span></span><br><span class="line">    cc[<span class="number">0</span>][<span class="number">1</span>] = <span class="number">55</span> <span class="comment">// aa: [[[10,55,12],5,6],1,2,3]</span></span><br><span class="line">注：concat会将对象引用复制到新数组中，如果引用的对象被修改，则新数组和原始数组都会被更改</span><br><span class="line">换句话说：对于新数组的任何操作（仅当元素不是对象引用时）都不会对原始数组产生影响，反之亦然。</span><br></pre></td></tr></table></figure>
 <h3 id="indexOf-和-includes"><a href="#indexOf-和-includes" class="headerlink" title="indexOf 和 includes"></a>indexOf 和 includes</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>indexOf</span><br><span class="line">	语法：array.indexOf(val, startIndex)</span><br><span class="line">	优点：返回元素的下标（首次出现的位置），不存在返回<span class="number">-1</span></span><br><span class="line">	缺点：无法判断是否有<span class="literal">NaN</span>元素</span><br><span class="line"></span><br><span class="line"><span class="number">2.</span>includes <span class="comment">// es6新增</span></span><br><span class="line">	语法：array.includes(val, startIndex) <span class="comment">// 返回Boolean值</span></span><br><span class="line">	优点：可判断<span class="literal">NaN</span>元素</span><br><span class="line">	缺点：a.无法获取元素的下标;</span><br><span class="line">		 b.空值会被解析为<span class="literal">undefined</span></span><br><span class="line">            ss = [ , <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">            ss.includes(<span class="literal">undefined</span>)<span class="comment">// true</span></span><br><span class="line">效率：includes &gt; indexOf</span><br></pre></td></tr></table></figure>
@@ -453,8 +457,9 @@
 <h3 id="findIndex"><a href="#findIndex" class="headerlink" title="findIndex( )"></a>findIndex( )</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 和find类似</span></span><br><span class="line">作用：返回满足条件的第一个元素的索引，否则返回<span class="number">-1</span></span><br><span class="line">注：可判断<span class="literal">NaN</span>元素，感觉是对indexOf的补充</span><br></pre></td></tr></table></figure>
 <h3 id="entries"><a href="#entries" class="headerlink" title="entries( )"></a>entries( )</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// es6新增（实用性不大了解即可）</span></span><br><span class="line"><span class="number">1.</span>作用：返回一个新的<span class="built_in">Array</span> Iterator对象，该对象包含数组中每个索引的键值对。</span><br><span class="line"><span class="number">2.</span>语法：arr.entries()</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span>实例：</span><br><span class="line">	<span class="keyword">var</span> arr = [<span class="string">"a"</span>, <span class="string">"b"</span>, <span class="string">"c"</span>];</span><br><span class="line">	<span class="keyword">var</span> iterator = arr.entries();</span><br><span class="line">	<span class="built_in">console</span>.log(iterator.next());</span><br><span class="line">注：<span class="built_in">Array</span> Iterator对象原型上有一个next方法，可用于遍历迭代器取得原数组的[key,value]。</span><br><span class="line">个人看法：感觉数组的entries方法，没有对象的<span class="built_in">Object</span>.entries()实用，比如：使用接口参数params对象拼接表格按钮的下载链接（entries() 结合 <span class="keyword">for</span>...of 使用）</span><br></pre></td></tr></table></figure>
 <h3 id="every"><a href="#every" class="headerlink" title="every( )"></a>every( )</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 满足所以才为真</span></span><br><span class="line"><span class="number">1.</span>作用：测试数组的所有元素是否都通过callback函数的测试，返回<span class="built_in">Boolean</span>值。</span><br><span class="line"><span class="number">2.</span>语法：arr.every(callback[, thisArg])</span><br><span class="line">	callback：用来测试每个元素的函数；</span><br><span class="line">	thisArg：执行callback时使用的 <span class="keyword">this</span> 值。</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span>实例：</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">isBelow</span>(<span class="params">curVal</span>) </span>&#123;</span><br><span class="line">      	<span class="built_in">console</span>.log(curVal) <span class="comment">// 1 30 29</span></span><br><span class="line">        <span class="comment">//未被赋值的元素将不会执行callback函数。</span></span><br><span class="line">  		<span class="keyword">return</span> curVal &lt; <span class="number">40</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">30</span>, , <span class="number">29</span>]; <span class="comment">// true </span></span><br><span class="line">	<span class="built_in">console</span>.log(arr.every(isBelow));</span><br><span class="line">注：应用场景：判断数组元素的区间、判断元素是否都为某一类型等</span><br><span class="line">	callback 被调用时传入三个参数：元素值curVal，元素的索引index，原数组arr。</span><br></pre></td></tr></table></figure>
-<h3 id="some"><a href="#some" class="headerlink" title="some( )"></a>some( )</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 满足一个即为真</span></span><br><span class="line"><span class="number">1.</span>作用：测试是否至少有一个元素通过callback函数的测试，返回<span class="built_in">Boolean</span>值。</span><br><span class="line"><span class="number">2.</span>语法：arr.some(callback[, thisArg])</span><br><span class="line">	callback：用来测试每个元素的函数；</span><br><span class="line">	thisArg：执行callback时使用的 <span class="keyword">this</span> 值。</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span>实例：</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">isAbove</span>(<span class="params">curVal</span>) </span>&#123;</span><br><span class="line">      	<span class="built_in">console</span>.log(curVal) <span class="comment">// 1 30 29</span></span><br><span class="line">        <span class="comment">//未被赋值的元素将不会执行callback函数。</span></span><br><span class="line">  		<span class="keyword">return</span> curVal &gt; <span class="number">40</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">30</span>, , <span class="number">49</span>]; <span class="comment">// true </span></span><br><span class="line">	<span class="built_in">console</span>.log(arr.every(isAbove));</span><br><span class="line">注：应用场景：判断数组元素的区间、判断元素是否存在某一类型等</span><br><span class="line">	callback 被调用时传入三个参数：元素值curVal，元素的索引index，原数组arr。</span><br></pre></td></tr></table></figure>
-<h3 id="filter"><a href="#filter" class="headerlink" title="filter( )"></a>filter( )</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>作用：返回一个新数组, 其包含通过所提供函数实现的测试的所有元素。</span><br><span class="line"><span class="number">2.</span>语法：arr.filter(callback(curVal[, index[, arr]])[, thisArg])</span><br><span class="line">	callback：用来测试每个元素的函数；</span><br><span class="line">	thisArg：执行callback时使用的 <span class="keyword">this</span> 值。</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span>实例：</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">isBig</span>(<span class="params">curValcurVal</span>) </span>&#123;</span><br><span class="line">  		<span class="keyword">return</span> curVal &gt;= <span class="number">10</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">var</span> filtered = [<span class="number">12</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">130</span>, <span class="number">44</span>].filter(isBig);</span><br><span class="line">	<span class="comment">// filtered is [12, 130, 44]</span></span><br><span class="line">注：filter方法使用场景超多，脑补</span><br></pre></td></tr></table></figure>
+<h3 id="some"><a href="#some" class="headerlink" title="some( )"></a>some( )</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 满足一个即为真</span></span><br><span class="line"><span class="number">1.</span>作用：测试是否至少有一个元素通过callback函数的测试，返回<span class="built_in">Boolean</span>值。</span><br><span class="line"><span class="number">2.</span>语法：arr.some(callback[, thisArg])</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span>实例：</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">isAbove</span>(<span class="params">curVal</span>) </span>&#123;</span><br><span class="line">      	<span class="built_in">console</span>.log(curVal) <span class="comment">// 1 30 29</span></span><br><span class="line">        <span class="comment">//未被赋值的元素将不会执行callback函数。</span></span><br><span class="line">  		<span class="keyword">return</span> curVal &gt; <span class="number">40</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">var</span> arr = [<span class="number">1</span>, <span class="number">30</span>, , <span class="number">49</span>]; <span class="comment">// true </span></span><br><span class="line">	<span class="built_in">console</span>.log(arr.every(isAbove));</span><br><span class="line">注：应用场景：判断数组元素的区间、判断元素是否存在某一类型等</span><br><span class="line">	callback 被调用时传入三个参数：元素值curVal，元素的索引index，原数组arr。</span><br></pre></td></tr></table></figure>
+<h3 id="filter"><a href="#filter" class="headerlink" title="filter( )"></a>filter( )</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>作用：返回一个新数组, 其包含通过所提供函数实现的测试的所有元素。</span><br><span class="line"><span class="number">2.</span>语法：arr.filter(callback[, thisArg])</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span>实例：</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">isBig</span>(<span class="params">curValcurVal</span>) </span>&#123;</span><br><span class="line">  		<span class="keyword">return</span> curVal &gt;= <span class="number">10</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">var</span> filtered = [<span class="number">12</span>, <span class="number">5</span>, <span class="number">8</span>, <span class="number">130</span>, <span class="number">44</span>].filter(isBig);</span><br><span class="line">	<span class="comment">// filtered is [12, 130, 44]</span></span><br><span class="line">注：filter方法使用场景超多，脑补</span><br></pre></td></tr></table></figure>
+<h3 id="map"><a href="#map" class="headerlink" title="map( )"></a>map( )</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span>作用：返回一个新数组，数组中的元素为原始数组元素调用函数处理后的值。</span><br><span class="line"><span class="number">2.</span>语法：array.map(callback[, thisArg])</span><br><span class="line">	callback：用来测试每个元素的函数；</span><br><span class="line">	thisArg：执行callback时使用的 <span class="keyword">this</span> 值。</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span>实例：</span><br><span class="line">	<span class="keyword">let</span> r = data.map(<span class="function"><span class="params">item</span> =&gt;</span> &#123;</span><br><span class="line">    	<span class="keyword">return</span> &#123;</span><br><span class="line">        	title: item.name,</span><br><span class="line">        	sex: item.sex === <span class="number">1</span>? <span class="string">'男'</span>:item.sex === <span class="number">0</span>?<span class="string">'女'</span>:<span class="string">'保密'</span>,</span><br><span class="line">        	age: item.age,</span><br><span class="line">        	avatar: item.img</span><br><span class="line">    	&#125;</span><br><span class="line">	&#125;)</span><br><span class="line">注：工作中经常使用到map方法，来对数据进行二次处理（处理完当前元素记得再<span class="keyword">return</span>出去，例如：对象）</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -623,7 +628,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sort"><span class="nav-number">2.</span> <span class="nav-text">sort( )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#concat"><span class="nav-number">3.</span> <span class="nav-text">concat( )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#indexOf-和-includes"><span class="nav-number">4.</span> <span class="nav-text">indexOf 和 includes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#find"><span class="nav-number">5.</span> <span class="nav-text">find( )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#findIndex"><span class="nav-number">6.</span> <span class="nav-text">findIndex( )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#entries"><span class="nav-number">7.</span> <span class="nav-text">entries( )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#every"><span class="nav-number">8.</span> <span class="nav-text">every( )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#some"><span class="nav-number">9.</span> <span class="nav-text">some( )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filter"><span class="nav-number">10.</span> <span class="nav-text">filter( )</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sort"><span class="nav-number">2.</span> <span class="nav-text">sort( )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#concat"><span class="nav-number">3.</span> <span class="nav-text">concat( )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#indexOf-和-includes"><span class="nav-number">4.</span> <span class="nav-text">indexOf 和 includes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#find"><span class="nav-number">5.</span> <span class="nav-text">find( )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#findIndex"><span class="nav-number">6.</span> <span class="nav-text">findIndex( )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#entries"><span class="nav-number">7.</span> <span class="nav-text">entries( )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#every"><span class="nav-number">8.</span> <span class="nav-text">every( )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#some"><span class="nav-number">9.</span> <span class="nav-text">some( )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filter"><span class="nav-number">10.</span> <span class="nav-text">filter( )</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#map"><span class="nav-number">11.</span> <span class="nav-text">map( )</span></a></li></ol></div>
             
 
           </div>
@@ -825,18 +830,18 @@
   <canvas id="canvas"></canvas>
 <script>
     function init(win, doc) {
-        const maxW = win.innerWidth;
-        const maxH = win.innerHeight;
+        let maxW = win.innerWidth;
+        let maxH = win.innerHeight;
         const maxSize = 5;
         const minSize = 1;
         let isMoving = false;
         let timer = null;
+        let animateID = null
 
         let canvas = doc.getElementById('canvas');
         canvas.width = maxW;
         canvas.height = maxH;
         let ctx = canvas.getContext('2d');
-        ctx.clearRect(0, 0, maxW, maxH);
         let stars = [];      // 存放作为背景使用的星星
         let move_stars = []; // 存放鼠标移动时绘制的星星
 
@@ -871,7 +876,6 @@
         };
 
         Star.prototype = {
-
             draw() {
                 // 绘制一个Star
                 if(!this.isCache) {
@@ -887,7 +891,7 @@
                     ctx.fill();
                     ctx.restore();
                 }else {
-                    ctx.drawImage(this.cacheCanvas, this.x - 3 * this.r, this.y - 3 * this.r)
+                    ctx.drawImage(this.cacheCanvas, this.x - 3 * this.r, this.y - 3 * this.r);
                 }
             },
 
@@ -935,6 +939,7 @@
                 ctx.stroke();
                 ctx.restore();
             },
+
             cache() {
                 this.cacheCanvas.width = 6 * this.r;
                 this.cacheCanvas.height = 6 * this.r;
@@ -955,6 +960,7 @@
         // 动画
         function animate() {
             ctx.clearRect(0, 0, maxW, maxH);
+            cancelAnimationFrame(animateID);
             let len = stars.length;
             for(let i = 0; i < len; i++) {
                 stars[i].move();
@@ -968,7 +974,7 @@
             }else {
                 move_stars = []
             }
-            requestAnimationFrame(animate);
+            animateID = requestAnimationFrame(animate);
         };
 
         // 获取区间内的随机数
@@ -985,7 +991,7 @@
         doc.addEventListener('mousemove', function(e) {
             let x = e.clientX, y = e.clientY;
             // 控制绘制密度 以及点之间的距离    两个重要的点
-            // 密度是控制绘制的数量     dis_x = Math.abs(x - pre_star.x);
+            // 密度是控制绘制的数量    dis_x = Math.abs(x - pre_star.x);
             // 距离是在已绘制的点基础上、控制点的间距
 
             // 控制绘制密度 和 控制点之间的距离  不是一个功能哦（需要实际操作去体会， 文字很难表述~.~）
@@ -1018,17 +1024,26 @@
 
         }, false);
 
-        window.CanvasStar = CanvasStar;
+        win.CanvasStar = CanvasStar;
     };
 </script>
 <script>
     init(window, document)
     let canvasStar = new CanvasStar(200);
     canvasStar.render();
-    // window.addEventListener('resize', function(e) {
-    //     init(window, document)
-    //     canvasStar.render();
-    // }, false)
+    window.addEventListener('resize', function(e) {
+        // let max_W = window.innerWidth;
+        // let max_H = window.innerHeight;
+        // let canvas = document.getElementById('canvas');
+        // canvas.width = max_W;
+        // canvas.height = max_H;
+        // let ctx = canvas.getContext('2d');
+        // ctx.clearRect(0, 0, max_W, max_H);
+
+        init(window, document)
+        let canvasStar2 = new CanvasStar(200);
+        canvasStar2.render();
+    }, false)
 </script>
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/assets/shizuku.model.json"},"display":{"superSample":2,"width":75,"height":150,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

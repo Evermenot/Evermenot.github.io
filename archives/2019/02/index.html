@@ -361,9 +361,9 @@
 
       <h2 class="post-title">
         
-            <a class="post-title-link" href="/2019/02/22/JS常用数组方法/" itemprop="url">
+            <a class="post-title-link" href="/2019/02/22/JS数组方法总结/" itemprop="url">
               
-                <span itemprop="name">JS常用数组方法</span>
+                <span itemprop="name">JS数组方法总结</span>
               
             </a>
         
@@ -779,18 +779,18 @@
   <canvas id="canvas"></canvas>
 <script>
     function init(win, doc) {
-        const maxW = win.innerWidth;
-        const maxH = win.innerHeight;
+        let maxW = win.innerWidth;
+        let maxH = win.innerHeight;
         const maxSize = 5;
         const minSize = 1;
         let isMoving = false;
         let timer = null;
+        let animateID = null
 
         let canvas = doc.getElementById('canvas');
         canvas.width = maxW;
         canvas.height = maxH;
         let ctx = canvas.getContext('2d');
-        ctx.clearRect(0, 0, maxW, maxH);
         let stars = [];      // 存放作为背景使用的星星
         let move_stars = []; // 存放鼠标移动时绘制的星星
 
@@ -825,7 +825,6 @@
         };
 
         Star.prototype = {
-
             draw() {
                 // 绘制一个Star
                 if(!this.isCache) {
@@ -841,7 +840,7 @@
                     ctx.fill();
                     ctx.restore();
                 }else {
-                    ctx.drawImage(this.cacheCanvas, this.x - 3 * this.r, this.y - 3 * this.r)
+                    ctx.drawImage(this.cacheCanvas, this.x - 3 * this.r, this.y - 3 * this.r);
                 }
             },
 
@@ -889,6 +888,7 @@
                 ctx.stroke();
                 ctx.restore();
             },
+
             cache() {
                 this.cacheCanvas.width = 6 * this.r;
                 this.cacheCanvas.height = 6 * this.r;
@@ -909,6 +909,7 @@
         // 动画
         function animate() {
             ctx.clearRect(0, 0, maxW, maxH);
+            cancelAnimationFrame(animateID);
             let len = stars.length;
             for(let i = 0; i < len; i++) {
                 stars[i].move();
@@ -922,7 +923,7 @@
             }else {
                 move_stars = []
             }
-            requestAnimationFrame(animate);
+            animateID = requestAnimationFrame(animate);
         };
 
         // 获取区间内的随机数
@@ -939,7 +940,7 @@
         doc.addEventListener('mousemove', function(e) {
             let x = e.clientX, y = e.clientY;
             // 控制绘制密度 以及点之间的距离    两个重要的点
-            // 密度是控制绘制的数量     dis_x = Math.abs(x - pre_star.x);
+            // 密度是控制绘制的数量    dis_x = Math.abs(x - pre_star.x);
             // 距离是在已绘制的点基础上、控制点的间距
 
             // 控制绘制密度 和 控制点之间的距离  不是一个功能哦（需要实际操作去体会， 文字很难表述~.~）
@@ -972,17 +973,26 @@
 
         }, false);
 
-        window.CanvasStar = CanvasStar;
+        win.CanvasStar = CanvasStar;
     };
 </script>
 <script>
     init(window, document)
     let canvasStar = new CanvasStar(200);
     canvasStar.render();
-    // window.addEventListener('resize', function(e) {
-    //     init(window, document)
-    //     canvasStar.render();
-    // }, false)
+    window.addEventListener('resize', function(e) {
+        // let max_W = window.innerWidth;
+        // let max_H = window.innerHeight;
+        // let canvas = document.getElementById('canvas');
+        // canvas.width = max_W;
+        // canvas.height = max_H;
+        // let ctx = canvas.getContext('2d');
+        // ctx.clearRect(0, 0, max_W, max_H);
+
+        init(window, document)
+        let canvasStar2 = new CanvasStar(200);
+        canvasStar2.render();
+    }, false)
 </script>
 <script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/assets/shizuku.model.json"},"display":{"superSample":2,"width":75,"height":150,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
