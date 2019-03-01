@@ -412,7 +412,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -423,7 +423,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -434,7 +434,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -855,14 +855,9 @@
     let canvasStar = new CanvasStar(200);
     canvasStar.render();
     window.addEventListener('resize', function(e) {
-        // let max_W = window.innerWidth;
-        // let max_H = window.innerHeight;
-        // let canvas = document.getElementById('canvas');
-        // canvas.width = max_W;
-        // canvas.height = max_H;
-        // let ctx = canvas.getContext('2d');
-        // ctx.clearRect(0, 0, max_W, max_H);
-
+        for(let k in canvasStar) {
+            delete canvasStar[k]
+        }
         init(window, document)
         let canvasStar2 = new CanvasStar(200);
         canvasStar2.render();

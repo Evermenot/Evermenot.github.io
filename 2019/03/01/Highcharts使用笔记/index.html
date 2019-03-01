@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+<!--
+<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
+<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                location.href = 'http://lecode.ltd'
+            }
+        }
+    })();
+</script>
+-->
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                location.href = 'http://lecode.ltd'
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="highcharts,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/lecode.png?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="前言​    本篇博客是个人日常工作中使用highcharts的笔记总结，纯粹是为了在之后工作中如果再次使用到时能快速上手提高开发效率（不适用于他人）。 注：下面功能的大致思路都是改变图例的配置数据，最后通过highcharts提供的update内置函数来更新并重新渲染图例数据 添加全选、反选功能123456789101112131415161718192021222324252627282930">
+<meta name="keywords" content="highcharts">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Highcharts使用笔记">
+<meta property="og:url" content="http://lecode.ltd/2019/03/01/Highcharts使用笔记/index.html">
+<meta property="og:site_name" content="Le&#39;s Blog">
+<meta property="og:description" content="前言​    本篇博客是个人日常工作中使用highcharts的笔记总结，纯粹是为了在之后工作中如果再次使用到时能快速上手提高开发效率（不适用于他人）。 注：下面功能的大致思路都是改变图例的配置数据，最后通过highcharts提供的update内置函数来更新并重新渲染图例数据 添加全选、反选功能123456789101112131415161718192021222324252627282930">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2019-03-01T05:43:56.836Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Highcharts使用笔记">
+<meta name="twitter:description" content="前言​    本篇博客是个人日常工作中使用highcharts的笔记总结，纯粹是为了在之后工作中如果再次使用到时能快速上手提高开发效率（不适用于他人）。 注：下面功能的大致思路都是改变图例的配置数据，最后通过highcharts提供的update内置函数来更新并重新渲染图例数据 添加全选、反选功能123456789101112131415161718192021222324252627282930">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://lecode.ltd/2019/03/01/Highcharts使用笔记/">
+
+
+
+
+
+  <title>Highcharts使用笔记 | Le's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Le's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">再拔胡子剁手！Le...</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-excerpt_lien">
+          <a href="/categories/书摘" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+            
+            书摘
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-lab_lien">
+          <a href="/lab" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-flask"></i> <br>
+            
+            实验室
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+<div id="music163player">
+    <!--网易云单曲
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1371207&auto=0&height=66"></iframe>
+    -->
+    <!--歌单
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height=250 src="//cyixlq.gitee.io/iframe/#/netease/486168759/true"></iframe>
+    -->
+    <!-- aplayer插件
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+        <div class="aplayer" data-id="449818741" data-server="netease" data-type="song" data-mode="single"></div>
+    -->
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1371207&auto=0&height=66"></iframe>
+</div>
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://lecode.ltd/2019/03/01/Highcharts使用笔记/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Le">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Le's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Highcharts使用笔记</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-01T10:38:44+08:00">
+                2019-03-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/插件/" itemprop="url" rel="index">
+                    <span itemprop="name">插件</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>​    本篇博客是个人日常工作中使用highcharts的笔记总结，纯粹是为了在之后工作中如果再次使用到时能快速上手提高开发效率（不适用于他人）。</p>
+<p><code>注：下面功能的大致思路都是改变图例的配置数据，最后通过highcharts提供的update内置函数来更新并重新渲染图例数据</code></p>
+<h3 id="添加全选、反选功能"><a href="#添加全选、反选功能" class="headerlink" title="添加全选、反选功能"></a>添加全选、反选功能</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">events: &#123;</span><br><span class="line">    legendItemClick(event) &#123;</span><br><span class="line">        <span class="keyword">let</span> series = <span class="keyword">this</span>.chart.series</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.name == <span class="string">'【反选】'</span>) &#123;</span><br><span class="line">            series.forEach(<span class="function">(<span class="params">item, i</span>) =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">if</span>(i !== series.length<span class="number">-1</span>) &#123;</span><br><span class="line">                    <span class="keyword">if</span>(!!series[i].visible) &#123;</span><br><span class="line">                        series[i].update(&#123;</span><br><span class="line">                            selected: <span class="literal">false</span>,</span><br><span class="line">                            visible: <span class="literal">false</span></span><br><span class="line">                        &#125;, <span class="literal">false</span>);</span><br><span class="line">                    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                        series[i].update(&#123;</span><br><span class="line">                            selected: <span class="literal">true</span>,</span><br><span class="line">                            visible: <span class="literal">true</span></span><br><span class="line">                        &#125;, <span class="literal">false</span>);</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.name == <span class="string">'【全选】'</span>) &#123;</span><br><span class="line">            series.forEach(<span class="function">(<span class="params">item, i</span>) =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">if</span>(!series[i].visible) &#123;</span><br><span class="line">                        series[i].update(&#123;</span><br><span class="line">                        selected: <span class="literal">true</span>,</span><br><span class="line">                        visible: <span class="literal">true</span></span><br><span class="line">                    &#125;, <span class="literal">false</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="tooltip数据排序"><a href="#tooltip数据排序" class="headerlink" title="tooltip数据排序"></a>tooltip数据排序</h3><p>需求场景：数据较多时，tooltip中显示的数据没有规律很不明朗，数据分析师看着会很费劲，so产品小姐姐就提出了对tooltip数据进行排序的需求</p>
+<p><code>记得当时做这个排序费了半天劲＞﹏＜，没有思路无从下手</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">tooltip: &#123;</span><br><span class="line">    shared: <span class="literal">true</span>,</span><br><span class="line">    xDateFormat: <span class="keyword">this</span>.category, </span><br><span class="line">    pointFormatter: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 该tip数据的排序关键点是 判断当前的第一个图例和最后一个图例</span></span><br><span class="line">        <span class="keyword">let</span> series = <span class="keyword">this</span>.series.chart.series</span><br><span class="line">        <span class="keyword">let</span> nameArr = []</span><br><span class="line">        series.forEach(<span class="function"><span class="params">val</span> =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(val.visible &amp;&amp; val.yData[<span class="keyword">this</span>.index] !== <span class="literal">null</span> &amp;&amp; val.name !== <span class="string">'【全选】'</span> &amp;&amp; val.name !== <span class="string">'【反选】'</span>) &#123;</span><br><span class="line">                nameArr.push(val.name)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="comment">// console.log(nameArr)</span></span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.series.name === nameArr[<span class="number">0</span>]) &#123;</span><br><span class="line">            tipData = []</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">let</span> valStr = <span class="keyword">this</span>.options.y + picData.yUnit</span><br><span class="line">        tipData.push(&#123;<span class="attr">cate</span>: [<span class="keyword">this</span>.series.name, valStr], <span class="attr">color</span>: <span class="keyword">this</span>.series.color&#125;)</span><br><span class="line">        <span class="keyword">if</span>(<span class="keyword">this</span>.series.name === nameArr[nameArr.length - <span class="number">1</span>]) &#123;</span><br><span class="line">            <span class="keyword">let</span> tipHtml = <span class="string">''</span>, temp = <span class="string">''</span></span><br><span class="line">            <span class="keyword">for</span>(<span class="keyword">let</span> m = <span class="number">0</span>; m &lt; tipData.length; m++) &#123;</span><br><span class="line">                <span class="keyword">for</span>(<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; tipData.length - m - <span class="number">1</span>; j++) &#123;</span><br><span class="line">                    <span class="keyword">if</span>( <span class="built_in">Number</span>(tipData[j].cate[<span class="number">1</span>]) &lt; <span class="built_in">Number</span>(tipData[j + <span class="number">1</span>].cate[<span class="number">1</span>]) ) &#123;</span><br><span class="line">                        temp = tipData[j];</span><br><span class="line">                        tipData[j] = tipData[j + <span class="number">1</span>];</span><br><span class="line">                        tipData[j + <span class="number">1</span>] = temp;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            tipData.forEach(<span class="function">(<span class="params">val, i</span>) =&gt;</span> &#123;</span><br><span class="line">                tipHtml += <span class="string">`</span></span><br><span class="line"><span class="string">                        &lt;span style="color: <span class="subst">$&#123;val.color&#125;</span>"&gt;●&lt;/span&gt;</span></span><br><span class="line"><span class="string">                        &lt;span style="color: <span class="subst">$&#123;val.color&#125;</span>"&gt;<span class="subst">$&#123;val.cate[<span class="number">0</span>]&#125;</span> : &lt;/span&gt;</span></span><br><span class="line"><span class="string">                        &lt;b&gt; <span class="subst">$&#123;val.cate[<span class="number">1</span>]&#125;</span> &lt;/b&gt;</span></span><br><span class="line"><span class="string">                        &lt;br/&gt;</span></span><br><span class="line"><span class="string">                    `</span></span><br><span class="line">            &#125;)</span><br><span class="line">            <span class="keyword">return</span> tipHtml</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h3 id="坐标轴简单配置"><a href="#坐标轴简单配置" class="headerlink" title="坐标轴简单配置"></a>坐标轴简单配置</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// picData实际的图表配置（形参）</span></span><br><span class="line">xAxis: &#123;</span><br><span class="line">    categories: picData.xAxis,</span><br><span class="line">    title: &#123;</span><br><span class="line">        enabled: <span class="literal">false</span></span><br><span class="line">    &#125;,</span><br><span class="line">    labels: &#123;</span><br><span class="line">        formatter: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.value + picData.picUnit;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// tickInterval: 10,</span></span><br><span class="line">    <span class="comment">// tickPixelInterval: 3,</span></span><br><span class="line">&#125;,</span><br><span class="line"><span class="comment">// y轴配置与x轴类似</span></span><br></pre></td></tr></table></figure>
+<h3 id="x轴坐标显示（密度）自适应"><a href="#x轴坐标显示（密度）自适应" class="headerlink" title="x轴坐标显示（密度）自适应"></a>x轴坐标显示（密度）自适应</h3><p>需求场景：以折线为例，当x轴坐标的数组长度较大时，但其中某条线的数据坐标较少时（x轴坐标密集），而数据分析师在单独看这条线时为了更直观，所以需要使坐标点更分散点，就需要降低x轴坐标的密度（反之数据多时则需要加大密度）。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = [<span class="literal">true</span>, <span class="literal">true</span>, <span class="literal">true</span>] <span class="comment">// 在函数（renderChart）作用域的最上层</span></span><br><span class="line">events: &#123;</span><br><span class="line">    legendItemClick(event) &#123;</span><br><span class="line">        <span class="keyword">this</span>.xAxis.tickInterval = <span class="number">20</span></span><br><span class="line">        <span class="comment">// console.log(this)</span></span><br><span class="line">        <span class="keyword">let</span> series = <span class="keyword">this</span>.chart.series</span><br><span class="line">        <span class="keyword">let</span> name = <span class="keyword">this</span>.name</span><br><span class="line">        series.forEach(<span class="function">(<span class="params">val, i</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="keyword">if</span>(val.name == name) &#123;</span><br><span class="line">                <span class="keyword">if</span>(val.visible === <span class="literal">true</span>) &#123;</span><br><span class="line">                    arr[i] = <span class="literal">false</span></span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span>(val.visible === <span class="literal">false</span>) &#123;</span><br><span class="line">                    arr[i] = <span class="literal">true</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">        <span class="keyword">if</span>(arr[<span class="number">0</span>] &amp;&amp; !arr[<span class="number">1</span>] &amp;&amp; !arr[<span class="number">2</span>] ) &#123;</span><br><span class="line">            <span class="keyword">let</span> len = series[<span class="number">0</span>].xData.length</span><br><span class="line">            <span class="keyword">this</span>.xAxis.update(&#123;</span><br><span class="line">                tickInterval: len &gt; <span class="number">10</span> ? <span class="number">2</span> : <span class="number">1</span></span><br><span class="line">            &#125;, <span class="literal">true</span>)</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            <span class="keyword">this</span>.xAxis.update(&#123;</span><br><span class="line">                tickInterval: picData.xAxis.length &gt;= <span class="number">200</span> ? <span class="built_in">parseInt</span>(picData.xAxis.length * <span class="number">0.1</span>) : <span class="number">5</span></span><br><span class="line">            &#125;, <span class="literal">true</span>)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h3 id="图例常用配色"><a href="#图例常用配色" class="headerlink" title="图例常用配色"></a>图例常用配色</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 纯粹个人喜欢</span></span><br><span class="line">colors: [</span><br><span class="line">    <span class="string">'#7CB5EC'</span>, <span class="string">'#2B908F'</span>, <span class="string">'#90ED7D'</span>, <span class="string">'#F15C80'</span>, <span class="string">'#8085E9'</span>, <span class="string">'#2F7ED8'</span>, <span class="string">'#91E8E1'</span>, <span class="string">'#E4D354'</span>, </span><br><span class="line">    <span class="string">'#F7A35C'</span>, <span class="string">'#9966cc'</span>, <span class="string">'#836FFF'</span>, <span class="string">'#6B8E23'</span>, <span class="string">'#7CCD7C'</span>, <span class="string">'#68228B'</span>, <span class="string">'#EE7621'</span>, <span class="string">'#A2CD5A'</span>,</span><br><span class="line">    <span class="string">'#00B2EE'</span>, <span class="string">'#008B00'</span>, <span class="string">'#483D8B'</span>, <span class="string">'#00CDCD'</span>, <span class="string">'#008B8B'</span>, <span class="string">'#548B54'</span>, <span class="string">'#66CDAA'</span>, <span class="string">'#6B8E23'</span>,</span><br><span class="line">    <span class="string">'#1C86EE'</span>, <span class="string">'#7D26CD'</span>, <span class="string">'#5F9EA0'</span>, <span class="string">'#8B636C'</span>, <span class="string">'#228B22'</span>, <span class="string">'#2E8B57'</span>, <span class="string">'#698B22'</span>, <span class="string">'#43CD80'</span>,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h3 id="折线图完整配置"><a href="#折线图完整配置" class="headerlink" title="折线图完整配置"></a>折线图完整配置</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 少林功夫好&amp;复制粘贴大法好ヾ(≧▽≦*)o</span></span><br><span class="line">renderChart(dom, picData) &#123;</span><br><span class="line">    <span class="keyword">let</span> chartJson =  &#123;</span><br><span class="line">            chart: &#123;</span><br><span class="line">                type: picData.type,</span><br><span class="line">                zoomType: <span class="string">'xy'</span></span><br><span class="line">            &#125;,</span><br><span class="line">            title: &#123;</span><br><span class="line">                text: picData.title,</span><br><span class="line">                style: &#123;</span><br><span class="line">                    fontSize: <span class="string">'14px'</span>,</span><br><span class="line">                    fontWeight: <span class="string">'700'</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            xAxis: &#123;</span><br><span class="line">                categories: picData.xAxis,</span><br><span class="line">                title: &#123;</span><br><span class="line">                    enabled: <span class="literal">false</span></span><br><span class="line">                &#125;,</span><br><span class="line">            &#125;,</span><br><span class="line">            yAxis: &#123;</span><br><span class="line">                min: <span class="number">0</span>,</span><br><span class="line">                title: &#123;</span><br><span class="line">                    enabled: <span class="literal">false</span>,</span><br><span class="line">                    <span class="comment">// text: '曝光量'</span></span><br><span class="line">                &#125;,</span><br><span class="line">                labels: &#123;</span><br><span class="line">                    formatter: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="keyword">this</span>.value + picData.yUnit;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;,</span><br><span class="line">            &#125;,</span><br><span class="line">            exporting: &#123;</span><br><span class="line">                enabled: <span class="literal">true</span>,</span><br><span class="line">                width: <span class="number">690</span>,</span><br><span class="line">                height: <span class="number">460</span>,</span><br><span class="line">            &#125;,</span><br><span class="line">            tooltip: &#123;</span><br><span class="line">                shared: <span class="literal">true</span>,</span><br><span class="line">                xDateFormat: <span class="keyword">this</span>.category, </span><br><span class="line">                pointFormatter: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="string">`</span></span><br><span class="line"><span class="string">                        &lt;span style="color: <span class="subst">$&#123;<span class="keyword">this</span>.series.color&#125;</span>"&gt;●&lt;/span&gt;</span></span><br><span class="line"><span class="string">                        &lt;span style="color: <span class="subst">$&#123;<span class="keyword">this</span>.series.color&#125;</span>"&gt;<span class="subst">$&#123;<span class="keyword">this</span>.series.name&#125;</span> : &lt;/span&gt;</span></span><br><span class="line"><span class="string">                        &lt;b&gt; <span class="subst">$&#123;<span class="keyword">this</span>.options.y + picData.yUnit&#125;</span> &lt;/b&gt;</span></span><br><span class="line"><span class="string">                        &lt;br/&gt;</span></span><br><span class="line"><span class="string">                    `</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,</span><br><span class="line">            plotOptions: &#123;</span><br><span class="line">                spline: &#123;</span><br><span class="line">                    dataLabels: &#123;</span><br><span class="line">                        enabled: <span class="literal">false</span>,</span><br><span class="line">                        verticalAlign: <span class="string">'top'</span>,</span><br><span class="line">                        y: <span class="number">-24</span>  <span class="comment">// 数值上下偏移</span></span><br><span class="line">                    &#125;,</span><br><span class="line">                    events: &#123;</span><br><span class="line">                        legendItemClick(event) &#123;</span><br><span class="line">                            <span class="keyword">let</span> series = <span class="keyword">this</span>.chart.series</span><br><span class="line">                            <span class="keyword">if</span>(<span class="keyword">this</span>.name == <span class="string">'【反选】'</span>) &#123;</span><br><span class="line">                                series.forEach(<span class="function">(<span class="params">item, i</span>) =&gt;</span> &#123;</span><br><span class="line">                                    <span class="keyword">if</span>(i !== series.length<span class="number">-1</span>) &#123;</span><br><span class="line">                                        <span class="keyword">if</span>(!!series[i].visible) &#123;</span><br><span class="line">                                            series[i].update(&#123;</span><br><span class="line">                                                selected: <span class="literal">false</span>,</span><br><span class="line">                                                visible: <span class="literal">false</span></span><br><span class="line">                                            &#125;, <span class="literal">false</span>);</span><br><span class="line">                                        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                                            series[i].update(&#123;</span><br><span class="line">                                                selected: <span class="literal">true</span>,</span><br><span class="line">                                                visible: <span class="literal">true</span></span><br><span class="line">                                            &#125;, <span class="literal">false</span>);</span><br><span class="line">                                        &#125;</span><br><span class="line">                                    &#125;</span><br><span class="line">                                &#125;)</span><br><span class="line">                            &#125;</span><br><span class="line">                            <span class="keyword">if</span>(<span class="keyword">this</span>.name == <span class="string">'【全选】'</span>) &#123;</span><br><span class="line">                                series.forEach(<span class="function">(<span class="params">item, i</span>) =&gt;</span> &#123;</span><br><span class="line">                                    <span class="keyword">if</span>(!series[i].visible) &#123;</span><br><span class="line">                                            series[i].update(&#123;</span><br><span class="line">                                            selected: <span class="literal">true</span>,</span><br><span class="line">                                            visible: <span class="literal">true</span></span><br><span class="line">                                        &#125;, <span class="literal">false</span>);</span><br><span class="line">                                    &#125;</span><br><span class="line">                                &#125;)</span><br><span class="line">                            &#125;</span><br><span class="line">                        &#125;,</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;,</span><br><span class="line">            &#125;,</span><br><span class="line">            series: picData.seriesArr,</span><br><span class="line">            credits: &#123;</span><br><span class="line">                enabled: <span class="literal">false</span></span><br><span class="line">            &#125;,</span><br><span class="line">            colors: [</span><br><span class="line">                <span class="string">'#7CB5EC'</span>, <span class="string">'#2B908F'</span>, <span class="string">'#90ED7D'</span>, <span class="string">'#F15C80'</span>, <span class="string">'#8085E9'</span> <span class="string">'#E4D354'</span>, </span><br><span class="line">                <span class="string">'#F7A35C'</span>, <span class="string">'#9966cc'</span>, <span class="string">'#836FFF'</span>, <span class="string">'#6B8E23'</span>, <span class="string">'#EE7621'</span>, <span class="string">'#A2CD5A'</span>,</span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> Highcharts.chart(dom, chartJson);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/highcharts/" rel="tag"># highcharts</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/02/22/JS数组方法总结/" rel="next" title="JS数组方法总结">
+                <i class="fa fa-chevron-left"></i> JS数组方法总结
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Le">
+          <p class="site-author-name" itemprop="name">Le</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">13</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">8</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">15</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加全选、反选功能"><span class="nav-number">2.</span> <span class="nav-text">添加全选、反选功能</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tooltip数据排序"><span class="nav-number">3.</span> <span class="nav-text">tooltip数据排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#坐标轴简单配置"><span class="nav-number">4.</span> <span class="nav-text">坐标轴简单配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#x轴坐标显示（密度）自适应"><span class="nav-number">5.</span> <span class="nav-text">x轴坐标显示（密度）自适应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图例常用配色"><span class="nav-number">6.</span> <span class="nav-text">图例常用配色</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#折线图完整配置"><span class="nav-number">7.</span> <span class="nav-text">折线图完整配置</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Le</span>
+</div>
+<!--
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Gemini
+  </a>
+</div>
+
+-->
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  <canvas id="canvas"></canvas>
+<script>
+    function init(win, doc) {
+        let maxW = win.innerWidth;
+        let maxH = win.innerHeight;
+        const maxSize = 5;
+        const minSize = 1;
+        let isMoving = false;
+        let timer = null;
+        let animateID = null
+
+        let canvas = doc.getElementById('canvas');
+        canvas.width = maxW;
+        canvas.height = maxH;
+        let ctx = canvas.getContext('2d');
+        let stars = [];      // 存放作为背景使用的星星
+        let move_stars = []; // 存放鼠标移动时绘制的星星
+
+        function CanvasStar(num) {
+            this.num = num;
+        };
+
+        CanvasStar.prototype = {
+            render() {
+                for (let i = 0; i < this.num; i++) {
+                    let alpha = Math.random() + 0.1;
+                    stars[i] = new Star(i, getOneRandom(maxW), getOneRandom(maxH), getOneRandom(maxSize, minSize), true, alpha);
+                }
+                animate();
+            }
+        };
+
+        function Star(id, x, y, r, isCache, dot_alpha) {
+            this.id = id;
+            this.x = x;
+            this.y = y;
+            this.r = r;
+            this.dot_alpha = dot_alpha;
+            this.show = .5;    // 作用：控制 鼠标绘制点的隐藏
+            this.direct = getOneRandom(180) + 180;
+            this.isCache = isCache;
+            this.cacheCanvas = doc.createElement('canvas');
+            this.ctx_cache = this.cacheCanvas.getContext('2d');
+            if(isCache) {
+                this.cache();
+            }
+        };
+
+        Star.prototype = {
+            draw() {
+                // 绘制一个Star
+                if(!this.isCache) {
+                    let alpha = Math.random() + 0.1;
+                    ctx.save();
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
+                    ctx.closePath();
+                    
+                    ctx.shadowColor = '#fff';
+                    ctx.shadowBlur = 2 * this.r;
+                    ctx.fillStyle = `rgba(255, 255, 255, ${ this.dot_alpha })`;
+                    ctx.fill();
+                    ctx.restore();
+                }else {
+                    ctx.drawImage(this.cacheCanvas, this.x - 3 * this.r, this.y - 3 * this.r);
+                }
+            },
+
+            move() {
+                this.y -= 0.25;
+                if(this.y < -10) {
+                    this.y = maxH + 10;
+                }
+                this.draw();
+            },
+
+            // 使鼠标绘制的点抖动起来
+            shake(arr) {
+                this.show -= 0.01;
+                if(this.show < 0) {
+                    return;
+                }
+                let speed = .5;
+                this.x += Math.cos(this.direct * Math.PI / 180) * speed;
+                this.y += Math.sin(this.direct * Math.PI / 180) * speed;
+                this.draw();
+                this.link();
+            },
+
+            link() {
+                if(!this.id) return;
+                let len = move_stars.length;
+                // 关键思想：取当前id，之前的4个点，每绘制一次就向前取4个点，以此类推
+                // 而不是move_stars最后的四个点，否则的话只有最后几个点会被连接起来
+                let arr = move_stars.slice(this.id - 3, this.id);
+                let endIdx = arr.length - 1;
+
+                ctx.save();
+                for(let i = endIdx; i >= 0; i--) {
+                    if(i == endIdx && !!arr[endIdx]) {
+                        ctx.moveTo(arr[endIdx].x, arr[endIdx].y);
+                        ctx.beginPath();
+                        ctx.lineTo(this.x, this.y);
+                    }
+                    if(i != endIdx && !!arr[i] && arr[i].show > 0) ctx.lineTo(arr[i].x, arr[i].y);
+                }
+                ctx.closePath();
+
+                ctx.strokeStyle = 'rgba(255, 255, 255, 0.125)';
+                ctx.stroke();
+                ctx.restore();
+            },
+
+            cache() {
+                this.cacheCanvas.width = 6 * this.r;
+                this.cacheCanvas.height = 6 * this.r;
+
+                this.ctx_cache.save();
+                this.ctx_cache.beginPath();
+                this.ctx_cache.arc(this.r * 3, this.r * 3, this.r, 0, 2 * Math.PI, false);
+                this.ctx_cache.closePath();
+
+                this.ctx_cache.shadowColor = '#fff';
+                this.ctx_cache.shadowBlur = 2 * this.r;
+                this.ctx_cache.fillStyle = `rgba(255, 255, 255, ${this.dot_alpha})`;
+                this.ctx_cache.fill();
+                this.ctx_cache.restore();
+            }
+        };
+
+        // 动画
+        function animate() {
+            ctx.clearRect(0, 0, maxW, maxH);
+            cancelAnimationFrame(animateID);
+            let len = stars.length;
+            for(let i = 0; i < len; i++) {
+                stars[i].move();
+            }
+
+            let len2 = move_stars.length;
+            if(isMoving) {
+                for(let i = 0; i < len2; i++) {
+                    if(move_stars[i]) move_stars[i].shake(move_stars);
+                }
+            }else {
+                move_stars = []
+            }
+            animateID = requestAnimationFrame(animate);
+        };
+
+        // 获取区间内的随机数
+        function getOneRandom(max, min = 0) {
+            return Math.floor(Math.random() * (max - min) + min);
+        };
+
+        // 获取正负号
+        function getSign() {
+            return Math.random() > .5 ? -1 : 1;
+        };
+
+        // 鼠标移动事件
+        doc.addEventListener('mousemove', function(e) {
+            let x = e.clientX, y = e.clientY;
+            // 控制绘制密度 以及点之间的距离    两个重要的点
+            // 密度是控制绘制的数量    dis_x = Math.abs(x - pre_star.x);
+            // 距离是在已绘制的点基础上、控制点的间距
+
+            // 控制绘制密度 和 控制点之间的距离  不是一个功能哦（需要实际操作去体会， 文字很难表述~.~）
+            // 没有控制距离的话 绘制的图形，太规则了，不够分散    x = x + getSign() * getOneRandom(50)
+
+            let len = move_stars.length;
+            let dis_x, dis_y;
+            if(!len) {
+                move_stars.push( new Star(len, x, y, getOneRandom(maxSize, 3), true, 1) );
+            }
+
+            if(move_stars[len - 1]) {
+                // 当前的星还没有push到move_stars里，所以上个星是move_stars[len - 1]
+                let pre_star = move_stars[len - 1];
+                if(pre_star) {
+                    dis_x = Math.abs(x - pre_star.x);
+                    dis_y = Math.abs(y - pre_star.y);
+                }
+                x = x + getSign() * getOneRandom(50);
+                y = y + getSign() * getOneRandom(50);
+                if(dis_x > 5 && dis_y > 5) move_stars.push( new Star(len, x, y, getOneRandom(maxSize, minSize), true, 1) );
+            }
+
+            isMoving = true;
+            clearInterval(timer);   // 清除上一次的定时器（此时还没触发）
+            timer = setInterval(function() {
+                isMoving = false;
+                clearInterval(timer);    // 鼠标停止再清除下定时器
+            }, 500)
+
+        }, false);
+
+        win.CanvasStar = CanvasStar;
+    };
+</script>
+<script>
+    init(window, document)
+    let canvasStar = new CanvasStar(200);
+    canvasStar.render();
+    window.addEventListener('resize', function(e) {
+        for(let k in canvasStar) {
+            delete canvasStar[k]
+        }
+        init(window, document)
+        let canvasStar2 = new CanvasStar(200);
+        canvasStar2.render();
+    }, false)
+</script>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/assets/shizuku.model.json"},"display":{"superSample":2,"width":75,"height":150,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

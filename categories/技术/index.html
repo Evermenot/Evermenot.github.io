@@ -343,6 +343,32 @@
 
       <h2 class="post-title">
         
+            <a class="post-title-link" href="/2019/03/01/Highcharts使用笔记/" itemprop="url">
+              
+                <span itemprop="name">Highcharts使用笔记</span>
+              
+            </a>
+        
+      </h2>
+
+      <div class="post-meta">
+        <time class="post-time" itemprop="dateCreated" datetime="2019-03-01T10:38:44+08:00" content="2019-03-01">
+          03-01
+        </time>
+      </div>
+
+    </header>
+  </article>
+
+
+      
+        
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <h2 class="post-title">
+        
             <a class="post-title-link" href="/2019/02/22/JS数组方法总结/" itemprop="url">
               
                 <span itemprop="name">JS数组方法总结</span>
@@ -570,32 +596,6 @@
 
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/08/rename命令批量修改文件名/" itemprop="url">
-              
-                <span itemprop="name">rename命令批量修改文件名</span>
-              
-            </a>
-        
-      </h2>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-01-08T14:13:27+08:00" content="2018-01-08">
-          01-08
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
     </div>
 
   </div>
@@ -604,6 +604,10 @@
   
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/categories/技术/page/2/">2</a><a class="extend next" rel="next" href="/categories/技术/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
 
@@ -646,7 +650,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -657,7 +661,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">7</span>
+                <span class="site-state-item-count">8</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -668,7 +672,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">14</span>
+                <span class="site-state-item-count">15</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -1089,14 +1093,9 @@
     let canvasStar = new CanvasStar(200);
     canvasStar.render();
     window.addEventListener('resize', function(e) {
-        // let max_W = window.innerWidth;
-        // let max_H = window.innerHeight;
-        // let canvas = document.getElementById('canvas');
-        // canvas.width = max_W;
-        // canvas.height = max_H;
-        // let ctx = canvas.getContext('2d');
-        // ctx.clearRect(0, 0, max_W, max_H);
-
+        for(let k in canvasStar) {
+            delete canvasStar[k]
+        }
         init(window, document)
         let canvasStar2 = new CanvasStar(200);
         canvasStar2.render();
