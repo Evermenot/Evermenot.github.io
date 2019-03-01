@@ -103,7 +103,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="vscode,">
+  <meta name="keywords" content="element-ui,vue,">
 
 
 
@@ -119,18 +119,20 @@
 
 
 
-<meta name="description" content="VSCode使用">
-<meta name="keywords" content="vscode">
+<meta name="description" content="前言​    在做技术栈为vue + ElementUI的项目（多为后台管理平台）时，经常涉及到数据表格的开发，当然ElementUI中的表格组件已经封装的非常完美，但是在使用el-table时常常还是需要每一列每一列的手动配置，很机械很不想做ne要呕吐🤮＞﹏＜，最后为了解决这一痛点，所以对表格组件进行了二次封装，尽量达到所有列的可配置化。 表格组件代码123456789101112131415">
+<meta name="keywords" content="element-ui,vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VSCode使用">
-<meta property="og:url" content="http://lecode.ltd/2018/03/28/VSCode使用/index.html">
+<meta property="og:title" content="ElementUI表格组件二次封装">
+<meta property="og:url" content="http://lecode.ltd/2019/03/01/ElementUI表格组件二次封装/index.html">
 <meta property="og:site_name" content="Le&#39;s Blog">
-<meta property="og:description" content="VSCode使用">
+<meta property="og:description" content="前言​    在做技术栈为vue + ElementUI的项目（多为后台管理平台）时，经常涉及到数据表格的开发，当然ElementUI中的表格组件已经封装的非常完美，但是在使用el-table时常常还是需要每一列每一列的手动配置，很机械很不想做ne要呕吐🤮＞﹏＜，最后为了解决这一痛点，所以对表格组件进行了二次封装，尽量达到所有列的可配置化。 表格组件代码123456789101112131415">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-26T06:18:04.186Z">
+<meta property="og:image" content="http://lecode.ltd/images/elementui/elementui.png">
+<meta property="og:updated_time" content="2019-03-01T07:05:10.957Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VSCode使用">
-<meta name="twitter:description" content="VSCode使用">
+<meta name="twitter:title" content="ElementUI表格组件二次封装">
+<meta name="twitter:description" content="前言​    在做技术栈为vue + ElementUI的项目（多为后台管理平台）时，经常涉及到数据表格的开发，当然ElementUI中的表格组件已经封装的非常完美，但是在使用el-table时常常还是需要每一列每一列的手动配置，很机械很不想做ne要呕吐🤮＞﹏＜，最后为了解决这一痛点，所以对表格组件进行了二次封装，尽量达到所有列的可配置化。 表格组件代码123456789101112131415">
+<meta name="twitter:image" content="http://lecode.ltd/images/elementui/elementui.png">
 
 
 
@@ -159,13 +161,13 @@
 
 
 
-  <link rel="canonical" href="http://lecode.ltd/2018/03/28/VSCode使用/">
+  <link rel="canonical" href="http://lecode.ltd/2019/03/01/ElementUI表格组件二次封装/">
 
 
 
 
 
-  <title>VSCode使用 | Le's Blog</title>
+  <title>ElementUI表格组件二次封装 | Le's Blog</title>
   
 
 
@@ -343,7 +345,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://lecode.ltd/2018/03/28/VSCode使用/">
+    <link itemprop="mainEntityOfPage" href="http://lecode.ltd/2019/03/01/ElementUI表格组件二次封装/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Le">
@@ -360,7 +362,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">VSCode使用</h1>
+          <h1 class="post-title" itemprop="name headline">ElementUI表格组件二次封装</h1>
         
 
         <div class="post-meta">
@@ -372,8 +374,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-28T17:34:33+08:00">
-                2018-03-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-01T14:11:03+08:00">
+                2019-03-01
               </time>
             
 
@@ -406,8 +408,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术/工具/" itemprop="url" rel="index">
-                    <span itemprop="name">工具</span>
+                  <a href="/categories/技术/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
                   </a>
                 </span>
 
@@ -429,10 +431,6 @@
           
 
           
-              <div class="post-description">
-                  VSCode使用
-              </div>
-          
 
         </div>
       </header>
@@ -447,10 +445,11 @@
       
 
       
-        <h3 id="一-常用快捷键"><a href="#一-常用快捷键" class="headerlink" title="一.常用快捷键"></a>一.常用快捷键</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">1. 格式化代码                               Alt + Shift + F</span></span><br><span class="line"><span class="comment">2. 打开或关闭资源管理器                      Ctrl + B</span></span><br><span class="line"><span class="comment">3. 打开浏览器                               Ctrl + F1</span></span><br><span class="line"><span class="comment">4. 代码折叠(组合键)                         Ctrl + K   Ctrl + 0 </span></span><br><span class="line"><span class="comment">5. 多选                                    Alt + 左键</span></span><br><span class="line"><span class="comment">6. 查找                                    Ctrl + F</span></span><br><span class="line"><span class="comment">7. 替换                                    Ctrl + H</span></span><br><span class="line"><span class="comment">8. 返回上步                                 Ctrl + Z</span></span><br><span class="line"><span class="comment">9. 撤销操作</span></span><br></pre></td></tr></table></figure>
-<h3 id="二-常用自定义设置"><a href="#二-常用自定义设置" class="headerlink" title="二.常用自定义设置"></a>二.常用自定义设置</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br></pre></td></tr></table></figure>
-<h3 id="三-常用插件部分"><a href="#三-常用插件部分" class="headerlink" title="三.常用插件部分"></a>三.常用插件部分</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">1. Auto Rename Tag                   自动化重命名标签功能</span></span><br><span class="line"><span class="comment">2. Path Intellisense                 路径提示功能</span></span><br><span class="line"><span class="comment">3. View In Browser                   在浏览器中打开页面功能</span></span><br><span class="line"><span class="comment">4. vscode-icons                      加上图标区分对应文件功能</span></span><br><span class="line"><span class="comment">5. Live Server                       以服务的形式打开文件功能</span></span><br></pre></td></tr></table></figure>
-<h3 id="四-使用VSCode-编译Sass"><a href="#四-使用VSCode-编译Sass" class="headerlink" title="四.使用VSCode 编译Sass"></a>四.使用VSCode 编译Sass</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">1. 安装Sass的编译依赖环境Ruby     (Ruby只提供运行环境,不了解也没关系)</span></span><br><span class="line"><span class="comment">	注：安装Ruby时要勾选 Add Ruby executables to your PATHRuby(目的是将Ruby添加到系统变量)官网下载链接https://rubyinstaller.org/downloads/  </span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">2. Rudy安装完成，在命令行输入'gem sass'来安装sass</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">3. 在VSCode中安装sass插件 'easysass'</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">4. 添加配置(VSCode用户配置)</span></span><br><span class="line"><span class="comment">    "easysass.compileAfterSave": true,</span></span><br><span class="line"><span class="comment">    "easysass.excludeRegex": "",</span></span><br><span class="line"><span class="comment">    // 定义scss文件生产的css文件格式.</span></span><br><span class="line"><span class="comment">    "easysass.formats": [</span></span><br><span class="line"><span class="comment">        &#123;</span></span><br><span class="line"><span class="comment">            "format": "expanded",</span></span><br><span class="line"><span class="comment">            "extension": ".css"</span></span><br><span class="line"><span class="comment">        &#125;</span></span><br><span class="line"><span class="comment">    // 输出的目录 默认和源文件相同</span></span><br><span class="line"><span class="comment">    "easysass.targetDir": ""</span></span><br><span class="line"><span class="comment">       </span></span><br><span class="line"><span class="comment"> 注：我没有进行这一步(我用npm全局安装了Sass，或许是Ruby中带的？？？)  还有还有我在想如果不装Ruby直接npm全局安装Sass，然后在vscode里安装'easysass'插件再配置sass,最后生成.css文件是不是也可以？？？</span></span><br></pre></td></tr></table></figure>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>​    在做技术栈为vue + ElementUI的项目（多为后台管理平台）时，经常涉及到数据表格的开发，当然ElementUI中的表格组件已经封装的非常完美，但是在使用el-table时常常还是需要每一列每一列的手动配置，很机械很不想做ne要呕吐🤮＞﹏＜，最后为了解决这一痛点，所以对表格组件进行了二次封装，尽量达到所有列的可配置化。</p>
+<h3 id="表格组件"><a href="#表格组件" class="headerlink" title="表格组件"></a>表格组件</h3><h4 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">    &lt;div&gt;</span><br><span class="line">        &lt;slot name=<span class="string">"link"</span>&gt;&lt;/slot&gt;</span><br><span class="line">        &lt;el-table :data=<span class="string">"tData"</span> size=<span class="string">"small"</span> border&gt;</span><br><span class="line">            &lt;template v-<span class="keyword">for</span>=<span class="string">"(val, idx) in tCols"</span>&gt;</span><br><span class="line">                &lt;!-- 序号列 --&gt;</span><br><span class="line">                &lt;el-table-column v-<span class="keyword">if</span>=<span class="string">"val.type"</span> :key=<span class="string">"idx"</span> :type=<span class="string">"val.type"</span> :label=<span class="string">"val.label"</span> :fixed=<span class="string">"val.fixed"</span> align=<span class="string">"center"</span>&gt;&lt;/el-table-column&gt;</span><br><span class="line"></span><br><span class="line">                &lt;!-- 自定义列插槽 --&gt;</span><br><span class="line">                &lt;slot v-else-if="val.slot" :name="val.slot"&gt;&lt;/slot&gt;</span><br><span class="line"></span><br><span class="line">                &lt;el-table-column v-else :key="idx" :label="val.label" :fixed="val.fixed" :width="val.width" align="center"&gt;</span><br><span class="line">                    &lt;template slot-scope="scope"&gt;</span><br><span class="line">                        &lt;!-- 链接 --&gt;</span><br><span class="line">                        &lt;a :class="alignFnc(val.align)" v-if="val.href" :href="val.href(scope.row)" target="_blank" style="color:#409EFF"&gt;&#123;&#123;scope.row[val.prop]&#125;&#125;&lt;/a&gt;</span><br><span class="line"></span><br><span class="line">                        &lt;!-- 数组 --&gt;</span><br><span class="line">                        &lt;el-tooltip v-else-if="Array.isArray(scope.row[val.prop])" class="item" effect="dark" placement="top"&gt;</span><br><span class="line">                            &lt;div slot="content"&gt;</span><br><span class="line">                                &lt;p style="margin-bottom: 4px" v-for="(item, index) in scope.row[val.prop]" :key="index"&gt;&#123;&#123; item &#125;&#125;&lt;/p&gt;</span><br><span class="line">                            &lt;/div&gt;</span><br><span class="line">                            &lt;span class="tip-sty"&gt;&#123;&#123; scope.row[val.prop].length &#125;&#125;&lt;/span&gt;</span><br><span class="line">                        &lt;/el-tooltip&gt;</span><br><span class="line"></span><br><span class="line">                        &lt;span :class="alignFnc(val.align)" v-else &gt; &#123;&#123; scope.row[val.prop] | filterVal&#125;&#125; &lt;/span&gt;</span><br><span class="line">                    &lt;/template&gt;</span><br><span class="line">                &lt;/el-table-column&gt;</span><br><span class="line">            &lt;/template&gt;</span><br><span class="line">        &lt;/el-table&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">// 表格组件</span></span><br><span class="line">    <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">        props: &#123;</span><br><span class="line">            tData: <span class="built_in">Array</span>,</span><br><span class="line">            tCols: <span class="built_in">Array</span></span><br><span class="line">        &#125;,</span><br><span class="line">        data() &#123;</span><br><span class="line">            <span class="keyword">return</span> &#123;&#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        methods: &#123;</span><br><span class="line">            alignFnc(align) &#123;</span><br><span class="line">                <span class="keyword">let</span> className = <span class="string">''</span></span><br><span class="line">                <span class="keyword">switch</span>(align) &#123;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">'left'</span>: className = <span class="string">'left-sty'</span>; <span class="keyword">break</span>;</span><br><span class="line">                    <span class="keyword">case</span> <span class="string">'right'</span>: className = <span class="string">'right-sty'</span>; <span class="keyword">break</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">return</span> className;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        filters: &#123;</span><br><span class="line">            filterVal(val) &#123;</span><br><span class="line">                <span class="keyword">if</span>(val === <span class="literal">null</span> || val === <span class="string">''</span> || val === <span class="literal">undefined</span>) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="string">'-'</span></span><br><span class="line">                &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="keyword">return</span> val</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">&lt;style scoped lang="less"&gt;</span></span><br><span class="line"><span class="regexp">.tip-sty &#123;</span></span><br><span class="line"><span class="regexp">    cursor: pointer;</span></span><br><span class="line"><span class="regexp">    color:#409EFF;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">.left-sty &#123;</span></span><br><span class="line"><span class="regexp">    display: inline-block;</span></span><br><span class="line"><span class="regexp">    text-align: left;</span></span><br><span class="line"><span class="regexp">    width: 100%;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">.right-sty &#123;</span></span><br><span class="line"><span class="regexp">    display: inline-block;</span></span><br><span class="line"><span class="regexp">    text-align: right;</span></span><br><span class="line"><span class="regexp">    width: 100%;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">.qASty &#123;</span></span><br><span class="line"><span class="regexp">    color: #409eff;</span></span><br><span class="line"><span class="regexp">    cursor: pointer;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">&lt;/</span>style&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;table-com v-loading=<span class="string">"tloading"</span> :tData=<span class="string">'tData'</span> :tCols=<span class="string">'tCols'</span>&gt;</span><br><span class="line">    &lt;template slot=<span class="string">"media_name"</span>&gt;</span><br><span class="line">        &lt;el-table-column label=<span class="string">"媒体名称"</span> fixed align=<span class="string">"center"</span>&gt;</span><br><span class="line">            &lt;template slot-scope=<span class="string">"scope"</span>&gt;</span><br><span class="line">                &lt;a <span class="class"><span class="keyword">class</span></span>=<span class="string">"left-sty"</span> :href=<span class="string">"'http://kuaibao.qq.com/s/MEDIANEWSLIST?chlid='+scope.row.media_id"</span> target=<span class="string">"_blank"</span> style=<span class="string">"color:#409EFF"</span>&gt;&#123;&#123; scope.row.media_name &#125;&#125;&lt;<span class="regexp">/a&gt;</span></span><br><span class="line"><span class="regexp">            &lt;/</span>template&gt;</span><br><span class="line">        &lt;<span class="regexp">/el-table-column&gt;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>template&gt;</span><br><span class="line">&lt;<span class="regexp">/table-com&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.tCols = [</span><br><span class="line">    &#123;<span class="attr">label</span>: <span class="string">'序号'</span>, <span class="attr">type</span>: <span class="string">'index'</span>, <span class="attr">fixed</span>: <span class="literal">true</span>&#125;,</span><br><span class="line"></span><br><span class="line">    &#123;<span class="attr">label</span>: <span class="string">'媒体名称'</span>, <span class="attr">prop</span>: <span class="string">'media_name'</span>, <span class="attr">slot</span>: <span class="string">'media_name'</span>, <span class="attr">fixed</span>: <span class="literal">true</span>&#125;,</span><br><span class="line">    </span><br><span class="line">    &#123;<span class="attr">label</span>: <span class="string">'媒体ID'</span>, <span class="attr">prop</span>: <span class="string">'media_id'</span>, <span class="attr">fixed</span>: <span class="literal">true</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">label</span>: <span class="string">'原始媒体分'</span>, <span class="attr">prop</span>: <span class="string">'init_media_level'</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">label</span>: <span class="string">'主低质类型'</span>, <span class="attr">prop</span>: <span class="string">'low_type'</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">label</span>: <span class="string">'总低质文章数'</span>, <span class="attr">prop</span>: <span class="string">'low_news_num'</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">label</span>: <span class="string">'总文章数'</span>, <span class="attr">prop</span>: <span class="string">'total_news_num'</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">label</span>: <span class="string">'入库时间'</span>, <span class="attr">prop</span>: <span class="string">'create_time'</span>&#125;,</span><br><span class="line">    &#123;<span class="attr">label</span>: <span class="string">'状态修改时间'</span>, <span class="attr">prop</span>: <span class="string">'update_time'</span>&#125;,</span><br><span class="line">]</span><br></pre></td></tr></table></figure>
+<h4 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h4><p><img src="/images/elementui/elementui.png" alt="img"></p>
 
       
     </div>
@@ -468,7 +467,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/vscode/" rel="tag"># vscode</a>
+            <a href="/tags/element-ui/" rel="tag"># element-ui</a>
+          
+            <a href="/tags/vue/" rel="tag"># vue</a>
           
         </div>
       
@@ -481,8 +482,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/27/DOS命令创建文件/" rel="next" title="DOS命令创建文件">
-                <i class="fa fa-chevron-left"></i> DOS命令创建文件
+              <a href="/2019/03/01/Highcharts使用笔记/" rel="next" title="Highcharts使用笔记">
+                <i class="fa fa-chevron-left"></i> Highcharts使用笔记
               </a>
             
           </div>
@@ -490,10 +491,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/08/26/面试题收集/" rel="prev" title="面试题收集">
-                面试题收集 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -623,7 +620,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-常用快捷键"><span class="nav-number">1.</span> <span class="nav-text">一.常用快捷键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-常用自定义设置"><span class="nav-number">2.</span> <span class="nav-text">二.常用自定义设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三-常用插件部分"><span class="nav-number">3.</span> <span class="nav-text">三.常用插件部分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四-使用VSCode-编译Sass"><span class="nav-number">4.</span> <span class="nav-text">四.使用VSCode 编译Sass</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#表格组件"><span class="nav-number">2.</span> <span class="nav-text">表格组件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#代码"><span class="nav-number">2.1.</span> <span class="nav-text">代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用"><span class="nav-number">2.2.</span> <span class="nav-text">使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置"><span class="nav-number">2.3.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#效果"><span class="nav-number">2.4.</span> <span class="nav-text">效果</span></a></li></ol></li></ol></div>
             
 
           </div>
