@@ -103,7 +103,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="git,">
+  <meta name="keywords" content="element-ui,vue,">
 
 
 
@@ -119,18 +119,20 @@
 
 
 
-<meta name="description" content="相关文章 1.关联远程仓库git remote add origin [远端仓库地址]    如：git remote add origin  http://kb-webide 2.创建分支 1234// 创建本地分支1. &apos;git branch -b [分支名]&apos;    // 创建分支并停留在当前分支2. &apos;git checkout -b [分支名]&apos;  // 创建分支并切换到该分支，区别于上面">
-<meta name="keywords" content="git">
+<meta name="description" content="前言​    原博客地址 ​    在使用element-ui 的表格式涉及到了单元格合并问题，实际工作中数据多是从后台获取的，很显然数据不是一成不变的，所以就要根据数据的变化动态的合并单元格，动态动态动态，我TM不会啊~。~，尝试合并一直出现这样那样的问题，不会还这么多借口~~渣渣~~ ​    去问了下度娘，发现类似问题不是很多，这特么不正常啊，果然是我太渣o(╥﹏╥)o ，但总算找到两个总结">
+<meta name="keywords" content="element-ui,vue">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git使用">
-<meta property="og:url" content="http://lecode.ltd/2018/03/07/git使用/index.html">
+<meta property="og:title" content="ElementUI单元格合并及高亮显示问题">
+<meta property="og:url" content="http://lecode.ltd/2018/05/21/ElementUI单元格合并及高亮显示问题/index.html">
 <meta property="og:site_name" content="Le&#39;s Blog">
-<meta property="og:description" content="相关文章 1.关联远程仓库git remote add origin [远端仓库地址]    如：git remote add origin  http://kb-webide 2.创建分支 1234// 创建本地分支1. &apos;git branch -b [分支名]&apos;    // 创建分支并停留在当前分支2. &apos;git checkout -b [分支名]&apos;  // 创建分支并切换到该分支，区别于上面">
+<meta property="og:description" content="前言​    原博客地址 ​    在使用element-ui 的表格式涉及到了单元格合并问题，实际工作中数据多是从后台获取的，很显然数据不是一成不变的，所以就要根据数据的变化动态的合并单元格，动态动态动态，我TM不会啊~。~，尝试合并一直出现这样那样的问题，不会还这么多借口~~渣渣~~ ​    去问了下度娘，发现类似问题不是很多，这特么不正常啊，果然是我太渣o(╥﹏╥)o ，但总算找到两个总结">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-22T06:14:17.426Z">
+<meta property="og:image" content="http://lecode.ltd/images/elementui/span.png">
+<meta property="og:updated_time" content="2019-03-01T08:31:26.942Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git使用">
-<meta name="twitter:description" content="相关文章 1.关联远程仓库git remote add origin [远端仓库地址]    如：git remote add origin  http://kb-webide 2.创建分支 1234// 创建本地分支1. &apos;git branch -b [分支名]&apos;    // 创建分支并停留在当前分支2. &apos;git checkout -b [分支名]&apos;  // 创建分支并切换到该分支，区别于上面">
+<meta name="twitter:title" content="ElementUI单元格合并及高亮显示问题">
+<meta name="twitter:description" content="前言​    原博客地址 ​    在使用element-ui 的表格式涉及到了单元格合并问题，实际工作中数据多是从后台获取的，很显然数据不是一成不变的，所以就要根据数据的变化动态的合并单元格，动态动态动态，我TM不会啊~。~，尝试合并一直出现这样那样的问题，不会还这么多借口~~渣渣~~ ​    去问了下度娘，发现类似问题不是很多，这特么不正常啊，果然是我太渣o(╥﹏╥)o ，但总算找到两个总结">
+<meta name="twitter:image" content="http://lecode.ltd/images/elementui/span.png">
 
 
 
@@ -159,13 +161,13 @@
 
 
 
-  <link rel="canonical" href="http://lecode.ltd/2018/03/07/git使用/">
+  <link rel="canonical" href="http://lecode.ltd/2018/05/21/ElementUI单元格合并及高亮显示问题/">
 
 
 
 
 
-  <title>git使用 | Le's Blog</title>
+  <title>ElementUI单元格合并及高亮显示问题 | Le's Blog</title>
   
 
 
@@ -343,7 +345,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://lecode.ltd/2018/03/07/git使用/">
+    <link itemprop="mainEntityOfPage" href="http://lecode.ltd/2018/05/21/ElementUI单元格合并及高亮显示问题/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Le">
@@ -360,7 +362,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">git使用</h1>
+          <h1 class="post-title" itemprop="name headline">ElementUI单元格合并及高亮显示问题</h1>
         
 
         <div class="post-meta">
@@ -372,8 +374,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T09:14:05+08:00">
-                2018-03-07
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-21T15:21:06+08:00">
+                2018-05-21
               </time>
             
 
@@ -406,8 +408,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术/工具/" itemprop="url" rel="index">
-                    <span itemprop="name">工具</span>
+                  <a href="/categories/技术/vue/" itemprop="url" rel="index">
+                    <span itemprop="name">vue</span>
                   </a>
                 </span>
 
@@ -443,18 +445,31 @@
       
 
       
-        <p><a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html" target="_blank" rel="noopener">相关文章</a></p>
-<p>1.关联远程仓库<code>git remote add origin [远端仓库地址]</code>    如：git remote add origin  <a href="http://kb-webide" target="_blank" rel="noopener">http://kb-webide</a></p>
-<p>2.创建分支</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建本地分支</span></span><br><span class="line"><span class="number">1.</span> <span class="string">'git branch -b [分支名]'</span>    <span class="comment">// 创建分支并停留在当前分支</span></span><br><span class="line"><span class="number">2.</span> <span class="string">'git checkout -b [分支名]'</span>  <span class="comment">// 创建分支并切换到该分支，区别于上面的命令</span></span><br><span class="line"><span class="number">3.</span> <span class="string">'git push origin [分支名]'</span>  <span class="comment">// 将本地分支提交到远程仓库   即在远程仓库创建分支</span></span><br></pre></td></tr></table></figure>
-<p>3.查看分支</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 列出分支名</span></span><br><span class="line"><span class="number">1.</span> git branch				 <span class="comment">// 列出本地分支</span></span><br><span class="line"><span class="number">2.</span> git branch -r			 <span class="comment">// 列出远程分支</span></span><br><span class="line"><span class="number">3.</span> git branch -a			 <span class="comment">// 列出本地和远程分支</span></span><br></pre></td></tr></table></figure>
-<p>4.切换分支</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 切换到其他分支</span></span><br><span class="line"><span class="number">1.</span> git checkout [分支名]	   <span class="comment">// 切换到指定分支</span></span><br><span class="line"><span class="number">2.</span> git checkout -			 <span class="comment">// 切换到上个分支</span></span><br></pre></td></tr></table></figure>
-<p>5.恢复暂存区文件到工作区 <code>git checkout .</code>   等于是撤销操作           </p>
-<p>6.删除分支<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> git branch -d [分支名]		            <span class="comment">// 删除本地分支</span></span><br><span class="line"><span class="number">2.</span> git push origin --<span class="keyword">delete</span> [分支名]		<span class="comment">// 删除远程分支</span></span><br><span class="line"><span class="number">3.</span> git branch -dr [remote/branch]</span><br></pre></td></tr></table></figure></p>
-<p>7.删除github文件夹</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> git rm -r --cached [文件夹名]            <span class="comment">// --cached不会删除本地的对应文件</span></span><br><span class="line"><span class="number">2.</span> git commit -m <span class="string">"delete files"</span>			   <span class="comment">// 提交删除操作</span></span><br><span class="line"><span class="number">3.</span> git push origin [分支名]</span><br></pre></td></tr></table></figure>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>​    <a href="https://www.cnblogs.com/Evermenot/p/9057744.html" target="_blank" rel="noopener">原博客地址</a></p>
+<p>​    在使用element-ui 的表格式涉及到了单元格合并问题，实际工作中数据多是从后台获取的，很显然数据不是一成不变的，所以就要根据数据的变化动态的合并单元格，动态动态动态，我TM不会啊~。~，尝试合并一直出现这样那样的问题，不会还这么多借口~~渣渣~~</p>
+<p>​    去问了下度娘，发现类似问题不是很多，这特么不正常啊，果然是我太渣o(╥﹏╥)o ，但总算找到两个总结记录下吧，万一忘了~~~~    好了，切入正题：</p>
+<h3 id="效果（一图胜百言）"><a href="#效果（一图胜百言）" class="headerlink" title="效果（一图胜百言）"></a>效果（一图胜百言）</h3><p><img src="/images/elementui/span.png" alt="img"></p>
+<h3 id="单元格合并"><a href="#单元格合并" class="headerlink" title="单元格合并"></a>单元格合并</h3><h4 id="场景："><a href="#场景：" class="headerlink" title="场景："></a><strong>场景：</strong></h4><p>​    例如一个时间段下对应多行数据，这就不免就涉及到了单元格合并</p>
+<h4 id="大致思路："><a href="#大致思路：" class="headerlink" title="大致思路："></a><strong>大致思路：</strong></h4><ol>
+<li>以版本段为例（每个版本下有多条数据），为每一个版本下的 每一行 数据中都添加上对应的版本数据（版本字段）</li>
+<li>设定一个数组来存放要合并的格数，同时还要设定一个变量来记录，当版本变化时数据的索引</li>
+<li>遍历表格数据</li>
+</ol>
+<h4 id="UI层"><a href="#UI层" class="headerlink" title="UI层"></a>UI层</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// span-method绑定的为合并单元格的方法</span></span><br><span class="line">&lt;el-table :data=<span class="string">"coreTable"</span> :span-method=<span class="string">"retenSpan"</span>&gt;&lt;/el-table&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="逻辑层"><a href="#逻辑层" class="headerlink" title="逻辑层"></a>逻辑层</h4><h5 id="处理数据（重点）"><a href="#处理数据（重点）" class="headerlink" title="处理数据（重点）"></a>处理数据（重点）</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 设定一个数组来存放要连续合并的格数，同时还要设定一个变量来记录，当时间段不同时数据的索引</span></span><br><span class="line"><span class="keyword">let</span> spanArr = [], contactDot = <span class="number">0</span>,</span><br><span class="line">retenTable.forEach(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(index === <span class="number">0</span>)&#123;</span><br><span class="line">        spanArr.push(<span class="number">1</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(item.version === retenTable[index - <span class="number">1</span>].version)&#123;</span><br><span class="line">            spanArr[contactDot] += <span class="number">1</span>;</span><br><span class="line">            spanArr.push(<span class="number">0</span>);</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            spanArr.push(<span class="number">1</span>);</span><br><span class="line">            contactDot = index;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">this</span>.spanArr = spanArr;</span><br></pre></td></tr></table></figure>
+<h5 id="合并"><a href="#合并" class="headerlink" title="合并"></a>合并</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 单元格合并</span></span><br><span class="line">retenSpan(&#123; row, column, rowIndex, columnIndex &#125;) &#123;</span><br><span class="line">    <span class="keyword">if</span>(columnIndex === <span class="number">0</span>)&#123;</span><br><span class="line">        <span class="keyword">const</span> _row = <span class="keyword">this</span>.spanArr[rowIndex]</span><br><span class="line">        <span class="keyword">const</span> _col = _row &gt; <span class="number">0</span> ? <span class="number">1</span> : <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">return</span> &#123;</span><br><span class="line">            rowspan: _row,</span><br><span class="line">            colspan: _col</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+<h3 id="高亮显示"><a href="#高亮显示" class="headerlink" title="高亮显示"></a>高亮显示</h3><h4 id="场景：-1"><a href="#场景：-1" class="headerlink" title="场景："></a>场景：</h4><p>合并完单元格后，假定此时某个版本对应的多行数据，鼠标放上其中的某一行时，只是该行高亮显示，而不是高亮显示所有合并行（所以要解决下）</p>
+<h4 id="UI层-1"><a href="#UI层-1" class="headerlink" title="UI层"></a>UI层</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 绑定element-ui里的鼠标进入和离开单元格的方法</span></span><br><span class="line">&lt;el-table  </span><br><span class="line">    :data=<span class="string">"coreTable"</span> </span><br><span class="line">    :span-method=<span class="string">"retenSpan"</span> </span><br><span class="line">    :row-<span class="class"><span class="keyword">class</span>-<span class="title">name</span></span>=<span class="string">"tableRowClassName"</span></span><br><span class="line">    @cell-mouse-leave=<span class="string">"cellMouseLeave"</span> @cell-mouse-enter=<span class="string">"cellMouseEnter"</span>&gt;</span><br><span class="line">&lt;<span class="regexp">/el-table&gt;</span></span><br></pre></td></tr></table></figure>
+<h4 id="逻辑层-1"><a href="#逻辑层-1" class="headerlink" title="逻辑层"></a>逻辑层</h4><h5 id="处理数据（重点）-1"><a href="#处理数据（重点）-1" class="headerlink" title="处理数据（重点）"></a>处理数据（重点）</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//  遍历表格数据，为每一条数据添加一个index属性用来标识每行数据，最后输出结果格式为 sameRowArr = [[0, 1, 2, 3], [4, 5, 6], [7, 8, 9],......]</span></span><br><span class="line"><span class="comment">//　sameRowArr中的每一项代表，在一个条件下的数据（如同一个版本等），代码中的sIdx是用来控制数组的下标，版本变化时sIdx +1</span></span><br><span class="line"><span class="keyword">let</span> sameRowArr = [], sIdx = <span class="number">0</span>;</span><br><span class="line">retenTable.forEach(<span class="function">(<span class="params">item, index</span>) =&gt;</span> &#123;</span><br><span class="line">    item.index = index</span><br><span class="line">    <span class="keyword">if</span>(index === <span class="number">0</span>)&#123;</span><br><span class="line">        sameRowArr.push([index])</span><br><span class="line">    &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(item.version === retenTable[index - <span class="number">1</span>].version)&#123;</span><br><span class="line">            sameRowArr[sIdx].push(index)</span><br><span class="line">        &#125;<span class="keyword">else</span> &#123;</span><br><span class="line">            sIdx = sIdx + <span class="number">1</span>;</span><br><span class="line">            sameRowArr.push([index])</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;)</span><br><span class="line"><span class="keyword">this</span>.sameRowArr = sameRowArr;</span><br></pre></td></tr></table></figure>
+<h5 id="添加类名"><a href="#添加类名" class="headerlink" title="添加类名"></a>添加类名</h5><p>鼠标移上及移除即可实现动态添加及移除类名，从而实现合并行高亮效果</p>
+<p>大致思路：</p>
+<ul>
+<li>鼠标移入，在cellMouseEnter中，遍历sameRowArr，使用事先存好的索引，判断鼠标移入行的索引是属于sameRowArr中的哪一子项</li>
+<li>将sameRowArr的子数组赋值给一个全局数组curRowArr</li>
+<li>在tableRowClassName方法中，循环curRowArr数组</li>
+<li>行号与子数组中存的行数相同，为该行添加同个类名</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// row_class为定义好的css样式类名</span></span><br><span class="line">tableRowClassName(&#123;row, rowIndex&#125;)&#123;</span><br><span class="line">    <span class="comment">// 同一行</span></span><br><span class="line">    <span class="keyword">let</span> temArr = <span class="keyword">this</span>.curRowArr</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; temArr.length; i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(rowIndex == temArr[i]) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'row_class'</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;,</span><br><span class="line">cellMouseEnter(row, column, cell, event) &#123;</span><br><span class="line">    <span class="keyword">this</span>.sameRowArr.forEach(<span class="function">(<span class="params">arr, i</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">if</span>(arr.indexOf(row.index) != <span class="number">-1</span>)&#123;</span><br><span class="line">            <span class="keyword">this</span>.curRowArr = arr</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;,</span><br><span class="line">cellMouseLeave(row, column, cell, event) &#123;</span><br><span class="line">    <span class="keyword">this</span>.curRowArr = []</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -472,7 +487,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/git/" rel="tag"># git</a>
+            <a href="/tags/element-ui/" rel="tag"># element-ui</a>
+          
+            <a href="/tags/vue/" rel="tag"># vue</a>
           
         </div>
       
@@ -485,8 +502,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/06/webpack的基本使用/" rel="next" title="webpack的基本使用">
-                <i class="fa fa-chevron-left"></i> webpack的基本使用
+              <a href="/2018/03/28/VSCode使用/" rel="next" title="VSCode使用">
+                <i class="fa fa-chevron-left"></i> VSCode使用
               </a>
             
           </div>
@@ -495,8 +512,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/08/Windows系统下WAMP配置/" rel="prev" title="Windows系统下的Apache配置并支持PHP">
-                Windows系统下的Apache配置并支持PHP <i class="fa fa-chevron-right"></i>
+              <a href="/2018/08/26/面试题收集/" rel="prev" title="面试题收集">
+                面试题收集 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -549,8 +566,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Le">
           <p class="site-author-name" itemprop="name">Le</p>
@@ -608,6 +634,22 @@
         
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果（一图胜百言）"><span class="nav-number">2.</span> <span class="nav-text">效果（一图胜百言）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#单元格合并"><span class="nav-number">3.</span> <span class="nav-text">单元格合并</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#场景："><span class="nav-number">3.1.</span> <span class="nav-text">场景：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#大致思路："><span class="nav-number">3.2.</span> <span class="nav-text">大致思路：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UI层"><span class="nav-number">3.3.</span> <span class="nav-text">UI层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#逻辑层"><span class="nav-number">3.4.</span> <span class="nav-text">逻辑层</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#处理数据（重点）"><span class="nav-number">3.4.1.</span> <span class="nav-text">处理数据（重点）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#合并"><span class="nav-number">3.4.2.</span> <span class="nav-text">合并</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#高亮显示"><span class="nav-number">4.</span> <span class="nav-text">高亮显示</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#场景：-1"><span class="nav-number">4.1.</span> <span class="nav-text">场景：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#UI层-1"><span class="nav-number">4.2.</span> <span class="nav-text">UI层</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#逻辑层-1"><span class="nav-number">4.3.</span> <span class="nav-text">逻辑层</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#处理数据（重点）-1"><span class="nav-number">4.3.1.</span> <span class="nav-text">处理数据（重点）</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#添加类名"><span class="nav-number">4.3.2.</span> <span class="nav-text">添加类名</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
