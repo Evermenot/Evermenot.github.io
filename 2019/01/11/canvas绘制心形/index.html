@@ -103,7 +103,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="vscode,">
+  <meta name="keywords" content="折腾,canvas,">
 
 
 
@@ -119,18 +119,20 @@
 
 
 
-<meta name="description" content="VSCode使用">
-<meta name="keywords" content="vscode">
+<meta name="description" content="前言 期望效果： 在鼠标点击位置绘制图形–心形  错误做法：（引以为戒…） 使用canvas API中的translate，分别以鼠标点击位置的offsetX、offsetY为画布坐标的水平和竖直方向的偏移量，绘制图形，但实际效果和预期完全不太一样（大哭~~~）  错误原因： translate是以上个坐标原点为基础，进行平移             （原谅我的无知~~~）  解决错误： 在开始绘">
+<meta name="keywords" content="折腾,canvas">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VSCode使用">
-<meta property="og:url" content="http://lecode.ltd/2018/03/28/VSCode使用/index.html">
+<meta property="og:title" content="canvas绘制心形">
+<meta property="og:url" content="http://lecode.ltd/2019/01/11/canvas绘制心形/index.html">
 <meta property="og:site_name" content="Le&#39;s Blog">
-<meta property="og:description" content="VSCode使用">
+<meta property="og:description" content="前言 期望效果： 在鼠标点击位置绘制图形–心形  错误做法：（引以为戒…） 使用canvas API中的translate，分别以鼠标点击位置的offsetX、offsetY为画布坐标的水平和竖直方向的偏移量，绘制图形，但实际效果和预期完全不太一样（大哭~~~）  错误原因： translate是以上个坐标原点为基础，进行平移             （原谅我的无知~~~）  解决错误： 在开始绘">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-01T09:40:24.413Z">
+<meta property="og:image" content="http://lecode.ltd/images/canvas/heart.png">
+<meta property="og:updated_time" content="2019-03-01T08:58:55.113Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VSCode使用">
-<meta name="twitter:description" content="VSCode使用">
+<meta name="twitter:title" content="canvas绘制心形">
+<meta name="twitter:description" content="前言 期望效果： 在鼠标点击位置绘制图形–心形  错误做法：（引以为戒…） 使用canvas API中的translate，分别以鼠标点击位置的offsetX、offsetY为画布坐标的水平和竖直方向的偏移量，绘制图形，但实际效果和预期完全不太一样（大哭~~~）  错误原因： translate是以上个坐标原点为基础，进行平移             （原谅我的无知~~~）  解决错误： 在开始绘">
+<meta name="twitter:image" content="http://lecode.ltd/images/canvas/heart.png">
 
 
 
@@ -159,13 +161,13 @@
 
 
 
-  <link rel="canonical" href="http://lecode.ltd/2018/03/28/VSCode使用/">
+  <link rel="canonical" href="http://lecode.ltd/2019/01/11/canvas绘制心形/">
 
 
 
 
 
-  <title>VSCode使用 | Le's Blog</title>
+  <title>canvas绘制心形 | Le's Blog</title>
   
 
 
@@ -343,7 +345,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://lecode.ltd/2018/03/28/VSCode使用/">
+    <link itemprop="mainEntityOfPage" href="http://lecode.ltd/2019/01/11/canvas绘制心形/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Le">
@@ -360,7 +362,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">VSCode使用</h1>
+          <h1 class="post-title" itemprop="name headline">canvas绘制心形</h1>
         
 
         <div class="post-meta">
@@ -372,8 +374,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-28T17:34:33+08:00">
-                2018-03-28
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-11T14:11:03+08:00">
+                2019-01-11
               </time>
             
 
@@ -406,8 +408,8 @@
                 
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/技术/工具/" itemprop="url" rel="index">
-                    <span itemprop="name">工具</span>
+                  <a href="/categories/技术/canvas/" itemprop="url" rel="index">
+                    <span itemprop="name">canvas</span>
                   </a>
                 </span>
 
@@ -429,10 +431,6 @@
           
 
           
-              <div class="post-description">
-                  VSCode使用
-              </div>
-          
 
         </div>
       </header>
@@ -447,10 +445,28 @@
       
 
       
-        <h3 id="一-常用快捷键"><a href="#一-常用快捷键" class="headerlink" title="一.常用快捷键"></a>一.常用快捷键</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">1. 格式化代码                               Alt + Shift + F</span></span><br><span class="line"><span class="comment">2. 打开或关闭资源管理器                      Ctrl + B</span></span><br><span class="line"><span class="comment">3. 打开浏览器                               Ctrl + F1</span></span><br><span class="line"><span class="comment">4. 代码折叠(组合键)                         Ctrl + K   Ctrl + 0 </span></span><br><span class="line"><span class="comment">5. 多选                                    Alt + 左键</span></span><br><span class="line"><span class="comment">6. 查找                                    Ctrl + F</span></span><br><span class="line"><span class="comment">7. 替换                                    Ctrl + H</span></span><br><span class="line"><span class="comment">8. 返回上步                                 Ctrl + Z</span></span><br><span class="line"><span class="comment">9. 撤销操作</span></span><br></pre></td></tr></table></figure>
-<h3 id="二-常用自定义设置"><a href="#二-常用自定义设置" class="headerlink" title="二.常用自定义设置"></a>二.常用自定义设置</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">// changeStart</span><br><span class="line">"editor.fontSize": 18,</span><br><span class="line">// "editor.fontFamily": "'Courier New'",</span><br><span class="line">"editor.renderWhitespace": "all",</span><br><span class="line">"editor.rulers": [</span><br><span class="line">    80,</span><br><span class="line">    <span class="number">120</span></span><br><span class="line">],</span><br><span class="line">"editor.cursorBlinking": "expand",</span><br><span class="line">"workbench.iconTheme": "vscode-icons",</span><br><span class="line">"editor.wordWrap": "off",</span><br><span class="line">"files.exclude": &#123;</span><br><span class="line">    "**/.git": true,</span><br><span class="line">    "**/.svn": true,</span><br><span class="line">    "**/.hg": true,</span><br><span class="line">    "**/CVS": true,</span><br><span class="line">    "**/.DS_Store": true,</span><br><span class="line">    "**/node_modules": true</span><br><span class="line">&#125;,</span><br><span class="line">// changeEnd</span><br></pre></td></tr></table></figure>
-<h3 id="三-常用插件部分"><a href="#三-常用插件部分" class="headerlink" title="三.常用插件部分"></a>三.常用插件部分</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">1. Auto Rename Tag                   自动化重命名标签功能</span></span><br><span class="line"><span class="comment">2. Path Intellisense                 路径提示功能</span></span><br><span class="line"><span class="comment">3. View In Browser                   在浏览器中打开页面功能</span></span><br><span class="line"><span class="comment">4. vscode-icons                      加上图标区分对应文件功能</span></span><br><span class="line"><span class="comment">5. Live Server                       以服务的形式打开文件功能</span></span><br></pre></td></tr></table></figure>
-<h3 id="四-使用VSCode-编译Sass"><a href="#四-使用VSCode-编译Sass" class="headerlink" title="四.使用VSCode 编译Sass"></a>四.使用VSCode 编译Sass</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">1. 安装Sass的编译依赖环境Ruby     (Ruby只提供运行环境,不了解也没关系)</span></span><br><span class="line"><span class="comment">	注：安装Ruby时要勾选 Add Ruby executables to your PATHRuby(目的是将Ruby添加到系统变量)官网下载链接https://rubyinstaller.org/downloads/  </span></span><br><span class="line"><span class="comment">	</span></span><br><span class="line"><span class="comment">2. Rudy安装完成，在命令行输入'gem sass'来安装sass</span></span><br><span class="line"><span class="comment">    </span></span><br><span class="line"><span class="comment">3. 在VSCode中安装sass插件 'easysass'</span></span><br><span class="line"><span class="comment"></span></span><br><span class="line"><span class="comment">4. 添加配置(VSCode用户配置)</span></span><br><span class="line"><span class="comment">    "easysass.compileAfterSave": true,</span></span><br><span class="line"><span class="comment">    "easysass.excludeRegex": "",</span></span><br><span class="line"><span class="comment">    // 定义scss文件生产的css文件格式.</span></span><br><span class="line"><span class="comment">    "easysass.formats": [</span></span><br><span class="line"><span class="comment">        &#123;</span></span><br><span class="line"><span class="comment">            "format": "expanded",</span></span><br><span class="line"><span class="comment">            "extension": ".css"</span></span><br><span class="line"><span class="comment">        &#125;</span></span><br><span class="line"><span class="comment">    // 输出的目录 默认和源文件相同</span></span><br><span class="line"><span class="comment">    "easysass.targetDir": ""</span></span><br><span class="line"><span class="comment">       </span></span><br><span class="line"><span class="comment"> 注：我没有进行这一步(我用npm全局安装了Sass，或许是Ruby中带的？？？)  还有还有我在想如果不装Ruby直接npm全局安装Sass，然后在vscode里安装'easysass'插件再配置sass,最后生成.css文件是不是也可以？？？</span></span><br></pre></td></tr></table></figure>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><ul>
+<li><p><strong>期望效果：</strong></p>
+<p>在鼠标点击位置绘制图形–心形</p>
+</li>
+<li><p><strong>错误做法：</strong>（引以为戒…）</p>
+<p>使用canvas API中的translate，分别以鼠标点击位置的offsetX、offsetY为画布坐标的水平和竖直方向的偏移量，绘制图形，但实际效果和预期完全不太一样（大哭~~~）</p>
+</li>
+<li><p><strong>错误原因：</strong></p>
+<p>translate是以上个坐标原点为基础，进行平移             （原谅我的无知~~~）</p>
+</li>
+<li><p><strong>解决错误：</strong></p>
+<p>在开始绘制前，将当前状态使用save()保存下来，并在每一次绘制结束之后，使用restore()将状态重置，以免影响下次点击（理论上用鼠标点击位置减去画布上次的原点位置应该也可以，但是比较繁琐）</p>
+</li>
+<li><p><strong>最后吐槽下：</strong></p>
+<p>有很多文章在介绍相同效果的绘制，但是真的有自测过吗。。。</p>
+</li>
+</ul>
+<p>记得去年自己还有用canvas画过挺炫酷的饼状图来着，( ⊙ o ⊙ )果然作为一枚渣渣还得脚踏实地的板砖啊~~</p>
+<p><a href="https://jsfiddle.net/Evermenot/y3mz8opn/" target="_blank" rel="noopener">效果演示</a></p>
+<p><strong>极坐标方程：</strong></p>
+<p><img src="/images/canvas/heart.png" alt="img"></p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>heart--equation<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        * &#123;</span></span><br><span class="line"><span class="undefined">            margin: 0;</span></span><br><span class="line"><span class="undefined">            padding: 0;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">　　　 <span class="comment">&lt;!-- 默认宽高300*150 --&gt;</span></span><br><span class="line">　　　 <span class="comment">&lt;!-- style方式设置canvas宽高会在默认宽高的基础上进行拉伸，导致变形 --&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">canvas</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    (<span class="function"><span class="keyword">function</span>(<span class="params">win</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> Heart = <span class="function"><span class="keyword">function</span>(<span class="params">ctx, x, y, size</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.ctx = ctx;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.x= x;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.y = y;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.size = size;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.vertices = getVector();</span></span><br><span class="line"><span class="undefined">            </span></span><br><span class="line"><span class="javascript">            <span class="function"><span class="keyword">function</span> <span class="title">getVector</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">let</span> vertices = [];</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">                <span class="comment">// console.log(this == win) //true　</span></span></span><br><span class="line"><span class="javascript">                <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">50</span>; i++) &#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">let</span> step = i/<span class="number">50</span> * (<span class="built_in">Math</span>.PI * <span class="number">2</span>);</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">let</span> vector = &#123;</span></span><br><span class="line"><span class="javascript">                        x : size * (<span class="number">16</span> * <span class="built_in">Math</span>.pow(<span class="built_in">Math</span>.sin(step), <span class="number">3</span>)),</span></span><br><span class="line"><span class="javascript">                        y : size * (<span class="number">13</span> * <span class="built_in">Math</span>.cos(step) - <span class="number">5</span> * <span class="built_in">Math</span>.cos(<span class="number">2</span> * step) - <span class="number">2</span> * <span class="built_in">Math</span>.cos(<span class="number">3</span> * step) - <span class="built_in">Math</span>.cos(<span class="number">4</span> * step))</span></span><br><span class="line"><span class="undefined">                    &#125;</span></span><br><span class="line"><span class="undefined">                    vertices.push(vector);</span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">                <span class="keyword">return</span> vertices;</span></span><br><span class="line"><span class="undefined">            &#125;;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        Heart.prototype.draw = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.ctx.save();</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.ctx.beginPath();</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.ctx.translate(<span class="keyword">this</span>.x, <span class="keyword">this</span>.y);</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.ctx.rotate(<span class="built_in">Math</span>.PI);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">            <span class="keyword">let</span> vertices = <span class="keyword">this</span>.vertices</span></span><br><span class="line"><span class="javascript">            <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; vertices.length; i++) &#123;</span></span><br><span class="line"><span class="javascript">               <span class="keyword">let</span> vector = vertices[i];</span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>.ctx.lineTo(vector.x, vector.y);</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">            <span class="comment">// this.ctx.fillStyle = 'hotpink';</span></span></span><br><span class="line"><span class="javascript">            <span class="comment">// this.ctx.fill();</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.ctx.strokeStyle = <span class="string">"hotpink"</span>;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.ctx.stroke();</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.ctx.closePath();</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.ctx.restore();</span></span><br><span class="line"><span class="undefined">        &#125;;</span></span><br><span class="line"><span class="undefined">        win.Heart = Heart;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    &#125;)(<span class="built_in">window</span>)</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">let</span> canvas = <span class="built_in">document</span>.querySelector(<span class="string">'canvas'</span>);</span></span><br><span class="line"><span class="javascript">    canvas.width = <span class="built_in">window</span>.innerWidth;</span></span><br><span class="line"><span class="javascript">    canvas.height = <span class="built_in">window</span>.innerHeight;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="keyword">let</span> ctx = canvas.getContext(<span class="string">'2d'</span>);</span></span><br><span class="line"><span class="javascript">    canvas.onclick = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> size = <span class="number">6</span>;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> x = e.offsetX;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> y = e.offsetY;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> heart = <span class="keyword">new</span> Heart(ctx, x, y, size);</span></span><br><span class="line"><span class="undefined">        heart.draw();</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -468,7 +484,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/vscode/" rel="tag"># vscode</a>
+            <a href="/tags/折腾/" rel="tag"># 折腾</a>
+          
+            <a href="/tags/canvas/" rel="tag"># canvas</a>
           
         </div>
       
@@ -481,8 +499,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/27/DOS命令创建文件/" rel="next" title="DOS命令创建文件">
-                <i class="fa fa-chevron-left"></i> DOS命令创建文件
+              <a href="/2018/08/26/面试题收集/" rel="next" title="面试题收集">
+                <i class="fa fa-chevron-left"></i> 面试题收集
               </a>
             
           </div>
@@ -491,8 +509,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/21/ElementUI单元格合并及高亮显示问题/" rel="prev" title="ElementUI单元格合并及高亮显示问题">
-                ElementUI单元格合并及高亮显示问题 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/01/19/canvas绘制星空/" rel="prev" title="canvas绘制星空">
+                canvas绘制星空 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -623,7 +641,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#一-常用快捷键"><span class="nav-number">1.</span> <span class="nav-text">一.常用快捷键</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二-常用自定义设置"><span class="nav-number">2.</span> <span class="nav-text">二.常用自定义设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#三-常用插件部分"><span class="nav-number">3.</span> <span class="nav-text">三.常用插件部分</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#四-使用VSCode-编译Sass"><span class="nav-number">4.</span> <span class="nav-text">四.使用VSCode 编译Sass</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">2.</span> <span class="nav-text">代码</span></a></li></ol></div>
             
 
           </div>

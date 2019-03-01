@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next gemini use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+<!--
+<script src="https://cdn.jsdelivr.net/npm/jquery/dist/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome/css/font-awesome.min.css"/>
+<script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                location.href = 'http://lecode.ltd'
+            }
+        }
+    })();
+</script>
+-->
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                location.href = 'http://lecode.ltd'
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
+
+
+  <meta name="keywords" content="折腾,canvas,">
+
+
+
+
+
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/images/lecode.png?v=5.1.2">
+
+
+
+
+
+
+<meta name="description" content="前言​    没事的时候在看些canvas方面的文章，并写了一两个小demo。。下面的代码就是其中之一。感兴趣的先去看小姐姐的原文吧，从canvas基础讲起且非常详细，真的很不错o.o　小姐姐好像是饿了么的大神来着。。。仰望~~尊重原创 ；如果在你只想要看代码，个人感觉自己写的要比小姐姐的原码要清晰简洁点（最下面）。** 效果图说那麽多废话干嘛。。。有图就别哔哔哔  总结：（写在前面吧）  在使用">
+<meta name="keywords" content="折腾,canvas">
+<meta property="og:type" content="article">
+<meta property="og:title" content="canvas绘制星空">
+<meta property="og:url" content="http://lecode.ltd/2019/01/19/canvas绘制星空/index.html">
+<meta property="og:site_name" content="Le&#39;s Blog">
+<meta property="og:description" content="前言​    没事的时候在看些canvas方面的文章，并写了一两个小demo。。下面的代码就是其中之一。感兴趣的先去看小姐姐的原文吧，从canvas基础讲起且非常详细，真的很不错o.o　小姐姐好像是饿了么的大神来着。。。仰望~~尊重原创 ；如果在你只想要看代码，个人感觉自己写的要比小姐姐的原码要清晰简洁点（最下面）。** 效果图说那麽多废话干嘛。。。有图就别哔哔哔  总结：（写在前面吧）  在使用">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://lecode.ltd/images/canvas/sky.png">
+<meta property="og:updated_time" content="2019-03-01T09:29:44.083Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="canvas绘制星空">
+<meta name="twitter:description" content="前言​    没事的时候在看些canvas方面的文章，并写了一两个小demo。。下面的代码就是其中之一。感兴趣的先去看小姐姐的原文吧，从canvas基础讲起且非常详细，真的很不错o.o　小姐姐好像是饿了么的大神来着。。。仰望~~尊重原创 ；如果在你只想要看代码，个人感觉自己写的要比小姐姐的原码要清晰简洁点（最下面）。** 效果图说那麽多废话干嘛。。。有图就别哔哔哔  总结：（写在前面吧）  在使用">
+<meta name="twitter:image" content="http://lecode.ltd/images/canvas/sky.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Gemini',
+    sidebar: {"position":"left","display":"post","offset":12,"offset_float":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: true,
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://lecode.ltd/2019/01/19/canvas绘制星空/">
+
+
+
+
+
+  <title>canvas绘制星空 | Le's Blog</title>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail ">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Le's Blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">再拔胡子剁手！Le...</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-excerpt_lien">
+          <a href="/categories/书摘" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+            
+            书摘
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-lab_lien">
+          <a href="/lab" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-flask"></i> <br>
+            
+            实验室
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+<div id="music163player">
+    <!--网易云单曲
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1371207&auto=0&height=66"></iframe>
+    -->
+    <!--歌单
+        <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="100%" height=250 src="//cyixlq.gitee.io/iframe/#/netease/486168759/true"></iframe>
+    -->
+    <!-- aplayer插件
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.css">
+        <script src="https://cdn.jsdelivr.net/npm/meting@1.1.0/dist/Meting.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/aplayer@1.7.0/dist/APlayer.min.js"></script>
+        <div class="aplayer" data-id="449818741" data-server="netease" data-type="song" data-mode="single"></div>
+    -->
+    <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=1371207&auto=0&height=66"></iframe>
+</div>
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://lecode.ltd/2019/01/19/canvas绘制星空/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Le">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Le's Blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">canvas绘制星空</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-19T17:01:17+08:00">
+                2019-01-19
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/canvas/" itemprop="url" rel="index">
+                    <span itemprop="name">canvas</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>​    没事的时候在看些canvas方面的文章，并写了一两个小demo。。下面的代码就是其中之一。感兴趣的先去看小姐姐的原文吧，从canvas基础讲起且非常详细，真的很不错o.o　小姐姐好像是饿了么的大神来着。。。仰望~~<a href="https://juejin.im/post/5986d6e1f265da3e241e8cdb" target="_blank" rel="noopener">尊重原创</a> ；如果在你只想要看代码，个人感觉自己写的要比小姐姐的原码要清晰简洁点（最下面）。<em>**</em></p>
+<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><p>说那麽多废话干嘛。。。有图就别哔哔哔</p>
+<p><img src="/images/canvas/sky.png" alt="img"></p>
+<p><strong>总结：</strong>（写在前面吧）</p>
+<ul>
+<li>在使用缓存Canvas优化Star移动时，我的做法是在cache方法中创建缓存画布绘制完star将画布对象return出来，初衷是为了降低代码的复杂度，将代码模块化；但是好像动画更卡了（应该是和每次都创建画布有关…~~~~(&gt;_&lt;)~~~~），最后还是和原代码一样在全局上创建缓存画布（这样写动画效果很流畅，唉之后再想想如何简化代码写法吧^_^切。。就是偷懒。。哼！）</li>
+</ul>
+<p><strong>一点建议：</strong>（对自己说的）</p>
+<ul>
+<li>在借鉴和学习别人的案例时，最好将整体效果或功能,划分成各个小块功能去逐一实现；对于某一小块功能的实现最好先自己思考如何实现（反正也不是让你一下想好实现全部功能，感觉原作者自己写的时候也不是一蹴而就的吧），功能实现后再和原代码相互印证（不同思想的碰撞bulabula。。。）学习大多数知识时也多是如此吧</li>
+</ul>
+<p><strong>引以为戒：</strong>（批斗大会…）</p>
+<ul>
+<li><p>刚开始敲代码的时候，总是想着如何快速实现全部效果（干巴巴的，麻麻赖赖的，一点都不圆圆润，盘他~~~^_^），没有用自己掌握的canvas基础知识去想如何实现功能，反而在很多地方卡壳了（不是很关键的地方纠结）花费的时间更长了；</p>
+<p>同一个功能的代码，要相信自己思考后所写的，不一定比原代码差哦（独立思考很重要），不要总是纠结为什么和别人的不一样。。。其实原代码里有很多地方变量的对应以及函数的声明是不必要的而且有点杂乱，强迫症不能忍~~（所以相信自己用心写的代码）。</p>
+</li>
+</ul>
+<p><strong>对于工作的反思：</strong>（懒得再写一篇博客了…就放着了，怎样~.~hhhh）</p>
+<ul>
+<li><p>之前一直觉得只要把产品方提的需求做出来就大吉大利今晚吃鸡了，即使是之前没做过的或者不懂的（不要紧，可以搬前辈大神们的嘛…），实际工作中遇到问题多是如此，这样功能或效果同样达到了要求（也仅仅是达到要求），但自己并没有规划如何开发，导致所写的代码真的是不忍直视（很za乱~~），因为多数有点东平西凑的嫌疑，感觉不是自己在驭使代码，更多的是个被驾驭的角色…</p>
+<p>希望自己在以后的板砖中，多花点时间去规划如何去做，戒骄戒躁a le。。。</p>
+</li>
+<li><p>敲代码的时候有个缺点，遇到一些代码写法时，总是想着为什么这样写、凭什么要这样写、有没有其他的写法了bulabula。。。盘他~。~毫无疑问这种刨根问底的学习是很好的优点，但是从遇到疑问到查阅资料解决疑问是需要时间成本的。</p>
+<p>假如说你只是遇到一两个疑问而恰巧通过查阅资料又快速的解决了它，那么很幸运你又get到了新知识，替你高兴。。。但实际搬砖的过程中你会遇到很多的疑问，并且查阅资料也不是这么快可以解决的，而此时你还非要去全部解决掉（一根筋。。。），查啊查…最后花费大量的时间（最气人的是可能疑问并没有解决掉。。呜呜呜…）。</p>
+<p>人的精力是有限的,本来雄赳赳气昂昂的准备搬砖来着,最后却被这样那样的问题所困扰，磨灭了兴致导致不了了之,虽然会有些收获但是这种付出和收获，显然不是最优的方式，所以在搬砖的时候不要过于纠结，还没做出来就想着怎么去优化，哼！。。就是耍流氓（不如先定他个小目标—-一鼓作气把功能盘出来再说）。</p>
+<p>把疑问先找个地方记下来（’ 小本本 ‘ 了解一下。。。哈哈哈），等功能全部实现再回过头来解决掉’小本本’上记得内容，</p>
+<p>最后功德圆满–成功秃顶–步入高级搬砖猿–迎娶心中女神–成为人生赢家。。。</p>
+<p>em。。。大家好!我是’小本本’（手动滑稽~）</p>
+<p>疑问：</p>
+<p>1.clientX、layerX、offsetX、pageX、screenX、x 的区别？。。。</p>
+</li>
+</ul>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, initial-scale=1.0"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"X-UA-Compatible"</span> <span class="attr">content</span>=<span class="string">"ie=edge"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>canvas--again<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        * &#123;</span></span><br><span class="line"><span class="undefined">            margin: 0;</span></span><br><span class="line"><span class="undefined">            padding: 0;</span></span><br><span class="line"><span class="undefined">            overflow: hidden;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        html,body &#123;</span></span><br><span class="line"><span class="undefined">            width: 100%;</span></span><br><span class="line"><span class="undefined">            height: 100%;</span></span><br><span class="line"><span class="undefined">            /* background: linear-gradient(to top, palevioletred 0%, #fff 100%); */</span></span><br><span class="line"><span class="undefined">            background: no-repeat linear-gradient(to bottom, #dcdcdc 0%, #000 100%);</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">canvas</span> <span class="attr">id</span>=<span class="string">"canvas"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">init</span>(<span class="params">win, doc</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> maxW = win.innerWidth;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> maxH = win.innerHeight;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> maxSize = <span class="number">5</span>;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">const</span> minSize = <span class="number">1</span>;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> isMoving = <span class="literal">false</span>;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> timer = <span class="literal">null</span>;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> animateID = <span class="literal">null</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> canvas = doc.getElementById(<span class="string">'canvas'</span>);</span></span><br><span class="line"><span class="undefined">        canvas.width = maxW;</span></span><br><span class="line"><span class="undefined">        canvas.height = maxH;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> ctx = canvas.getContext(<span class="string">'2d'</span>);</span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> stars = [];      <span class="comment">// 存放作为背景使用的星星</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> move_stars = []; <span class="comment">// 存放鼠标移动时绘制的星星</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="function"><span class="keyword">function</span> <span class="title">CanvasStar</span>(<span class="params">num</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.num = num;</span></span><br><span class="line"><span class="undefined">        &#125;;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        CanvasStar.prototype = &#123;</span></span><br><span class="line"><span class="undefined">            render() &#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="keyword">this</span>.num; i++) &#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">let</span> alpha = <span class="built_in">Math</span>.random() + <span class="number">0.1</span>;</span></span><br><span class="line"><span class="javascript">                    stars[i] = <span class="keyword">new</span> Star(i, getOneRandom(maxW), getOneRandom(maxH), getOneRandom(maxSize, minSize), <span class="literal">true</span>, alpha);</span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">                animate();</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="function"><span class="keyword">function</span> <span class="title">Star</span>(<span class="params">id, x, y, r, isCache, dot_alpha</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.id = id;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.x = x;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.y = y;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.r = r;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.dot_alpha = dot_alpha;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.show = <span class="number">.5</span>;    <span class="comment">// 作用：控制 鼠标绘制点的隐藏</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.direct = getOneRandom(<span class="number">180</span>) + <span class="number">180</span>;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.isCache = isCache;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.cacheCanvas = doc.createElement(<span class="string">'canvas'</span>);</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.ctx_cache = <span class="keyword">this</span>.cacheCanvas.getContext(<span class="string">'2d'</span>);</span></span><br><span class="line"><span class="javascript">            <span class="keyword">if</span>(isCache) &#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>.cache();</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        Star.prototype = &#123;</span></span><br><span class="line"><span class="undefined">            draw() &#123;</span></span><br><span class="line"><span class="javascript">                <span class="comment">// 绘制一个Star</span></span></span><br><span class="line"><span class="javascript">                <span class="keyword">if</span>(!<span class="keyword">this</span>.isCache) &#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">let</span> alpha = <span class="built_in">Math</span>.random() + <span class="number">0.1</span>;</span></span><br><span class="line"><span class="undefined">                    ctx.save();</span></span><br><span class="line"><span class="undefined">                    ctx.beginPath();</span></span><br><span class="line"><span class="javascript">                    ctx.arc(<span class="keyword">this</span>.x, <span class="keyword">this</span>.y, <span class="keyword">this</span>.r, <span class="number">0</span>, <span class="number">2</span> * <span class="built_in">Math</span>.PI, <span class="literal">false</span>);</span></span><br><span class="line"><span class="undefined">                    ctx.closePath();</span></span><br><span class="line"><span class="undefined">                    </span></span><br><span class="line"><span class="javascript">                    ctx.shadowColor = <span class="string">'#fff'</span>;</span></span><br><span class="line"><span class="javascript">                    ctx.shadowBlur = <span class="number">2</span> * <span class="keyword">this</span>.r;</span></span><br><span class="line"><span class="javascript">                    ctx.fillStyle = <span class="string">`rgba(255, 255, 255, <span class="subst">$&#123; <span class="keyword">this</span>.dot_alpha &#125;</span>)`</span>;</span></span><br><span class="line"><span class="undefined">                    ctx.fill();</span></span><br><span class="line"><span class="undefined">                    ctx.restore();</span></span><br><span class="line"><span class="javascript">                &#125;<span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="javascript">                    ctx.drawImage(<span class="keyword">this</span>.cacheCanvas, <span class="keyword">this</span>.x - <span class="number">3</span> * <span class="keyword">this</span>.r, <span class="keyword">this</span>.y - <span class="number">3</span> * <span class="keyword">this</span>.r);</span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">            &#125;,</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">            move() &#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>.y -= <span class="number">0.25</span>;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">if</span>(<span class="keyword">this</span>.y &lt; <span class="number">-10</span>) &#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">this</span>.y = maxH + <span class="number">10</span>;</span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>.draw();</span></span><br><span class="line"><span class="undefined">            &#125;,</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">            <span class="comment">// 使鼠标绘制的点抖动起来</span></span></span><br><span class="line"><span class="undefined">            shake(arr) &#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>.show -= <span class="number">0.01</span>;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">if</span>(<span class="keyword">this</span>.show &lt; <span class="number">0</span>) &#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">return</span>;</span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">let</span> speed = <span class="number">.5</span>;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>.x += <span class="built_in">Math</span>.cos(<span class="keyword">this</span>.direct * <span class="built_in">Math</span>.PI / <span class="number">180</span>) * speed;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>.y += <span class="built_in">Math</span>.sin(<span class="keyword">this</span>.direct * <span class="built_in">Math</span>.PI / <span class="number">180</span>) * speed;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>.draw();</span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>.link();</span></span><br><span class="line"><span class="undefined">            &#125;,</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">            link() &#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">if</span>(!<span class="keyword">this</span>.id) <span class="keyword">return</span>;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">let</span> len = move_stars.length;</span></span><br><span class="line"><span class="javascript">                <span class="comment">// 关键思想：取当前id，之前的4个点，每绘制一次就向前取4个点，以此类推</span></span></span><br><span class="line"><span class="javascript">                <span class="comment">// 而不是move_stars最后的四个点，否则的话只有最后几个点会被连接起来</span></span></span><br><span class="line"><span class="javascript">                <span class="keyword">let</span> arr = move_stars.slice(<span class="keyword">this</span>.id - <span class="number">3</span>, <span class="keyword">this</span>.id);</span></span><br><span class="line"><span class="javascript">                <span class="keyword">let</span> endIdx = arr.length - <span class="number">1</span>;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">                ctx.save();</span></span><br><span class="line"><span class="javascript">                <span class="keyword">for</span>(<span class="keyword">let</span> i = endIdx; i &gt;= <span class="number">0</span>; i--) &#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">if</span>(i == endIdx &amp;&amp; !!arr[endIdx]) &#123;</span></span><br><span class="line"><span class="undefined">                        ctx.moveTo(arr[endIdx].x, arr[endIdx].y);</span></span><br><span class="line"><span class="undefined">                        ctx.beginPath();</span></span><br><span class="line"><span class="javascript">                        ctx.lineTo(<span class="keyword">this</span>.x, <span class="keyword">this</span>.y);</span></span><br><span class="line"><span class="undefined">                    &#125;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">if</span>(i != endIdx &amp;&amp; !!arr[i] &amp;&amp; arr[i].show &gt; <span class="number">0</span>) ctx.lineTo(arr[i].x, arr[i].y);</span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">                ctx.closePath();</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">                ctx.strokeStyle = <span class="string">'rgba(255, 255, 255, 0.125)'</span>;</span></span><br><span class="line"><span class="undefined">                ctx.stroke();</span></span><br><span class="line"><span class="undefined">                ctx.restore();</span></span><br><span class="line"><span class="undefined">            &#125;,</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">            cache() &#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>.cacheCanvas.width = <span class="number">6</span> * <span class="keyword">this</span>.r;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>.cacheCanvas.height = <span class="number">6</span> * <span class="keyword">this</span>.r;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>.ctx_cache.save();</span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>.ctx_cache.beginPath();</span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>.ctx_cache.arc(<span class="keyword">this</span>.r * <span class="number">3</span>, <span class="keyword">this</span>.r * <span class="number">3</span>, <span class="keyword">this</span>.r, <span class="number">0</span>, <span class="number">2</span> * <span class="built_in">Math</span>.PI, <span class="literal">false</span>);</span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>.ctx_cache.closePath();</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>.ctx_cache.shadowColor = <span class="string">'#fff'</span>;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>.ctx_cache.shadowBlur = <span class="number">2</span> * <span class="keyword">this</span>.r;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>.ctx_cache.fillStyle = <span class="string">`rgba(255, 255, 255, <span class="subst">$&#123;<span class="keyword">this</span>.dot_alpha&#125;</span>)`</span>;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>.ctx_cache.fill();</span></span><br><span class="line"><span class="javascript">                <span class="keyword">this</span>.ctx_cache.restore();</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">        &#125;;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="comment">// 动画</span></span></span><br><span class="line"><span class="javascript">        <span class="function"><span class="keyword">function</span> <span class="title">animate</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="undefined">            ctx.clearRect(0, 0, maxW, maxH);</span></span><br><span class="line"><span class="undefined">            cancelAnimationFrame(animateID);</span></span><br><span class="line"><span class="javascript">            <span class="keyword">let</span> len = stars.length;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len; i++) &#123;</span></span><br><span class="line"><span class="undefined">                stars[i].move();</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">            <span class="keyword">let</span> len2 = move_stars.length;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">if</span>(isMoving) &#123;</span></span><br><span class="line"><span class="javascript">                <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; len2; i++) &#123;</span></span><br><span class="line"><span class="javascript">                    <span class="keyword">if</span>(move_stars[i]) move_stars[i].shake(move_stars);</span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="javascript">            &#125;<span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="undefined">                move_stars = []</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined">            animateID = requestAnimationFrame(animate);</span></span><br><span class="line"><span class="undefined">        &#125;;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="comment">// 获取区间内的随机数</span></span></span><br><span class="line"><span class="javascript">        <span class="function"><span class="keyword">function</span> <span class="title">getOneRandom</span>(<span class="params">max, min = <span class="number">0</span></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">return</span> <span class="built_in">Math</span>.floor(<span class="built_in">Math</span>.random() * (max - min) + min);</span></span><br><span class="line"><span class="undefined">        &#125;;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="comment">// 获取正负号</span></span></span><br><span class="line"><span class="javascript">        <span class="function"><span class="keyword">function</span> <span class="title">getSign</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">return</span> <span class="built_in">Math</span>.random() &gt; <span class="number">.5</span> ? <span class="number">-1</span> : <span class="number">1</span>;</span></span><br><span class="line"><span class="undefined">        &#125;;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        <span class="comment">// 鼠标移动事件</span></span></span><br><span class="line"><span class="javascript">        doc.addEventListener(<span class="string">'mousemove'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">let</span> x = e.clientX, y = e.clientY;</span></span><br><span class="line"><span class="javascript">            <span class="comment">// 控制绘制密度 以及点之间的距离    两个重要的点</span></span></span><br><span class="line"><span class="javascript">            <span class="comment">// 密度是控制绘制的数量    dis_x = Math.abs(x - pre_star.x);</span></span></span><br><span class="line"><span class="javascript">            <span class="comment">// 距离是在已绘制的点基础上、控制点的间距</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">            <span class="comment">// 控制绘制密度 和 控制点之间的距离  不是一个功能哦（需要实际操作去体会， 文字很难表述~.~）</span></span></span><br><span class="line"><span class="javascript">            <span class="comment">// 没有控制距离的话 绘制的图形，太规则了，不够分散    x = x + getSign() * getOneRandom(50)</span></span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">            <span class="keyword">let</span> len = move_stars.length;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">let</span> dis_x, dis_y;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">if</span>(!len) &#123;</span></span><br><span class="line"><span class="javascript">                move_stars.push( <span class="keyword">new</span> Star(len, x, y, getOneRandom(maxSize, <span class="number">3</span>), <span class="literal">true</span>, <span class="number">1</span>) );</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">            <span class="keyword">if</span>(move_stars[len - <span class="number">1</span>]) &#123;</span></span><br><span class="line"><span class="javascript">                <span class="comment">// 当前的星还没有push到move_stars里，所以上个星是move_stars[len - 1]</span></span></span><br><span class="line"><span class="javascript">                <span class="keyword">let</span> pre_star = move_stars[len - <span class="number">1</span>];</span></span><br><span class="line"><span class="javascript">                <span class="keyword">if</span>(pre_star) &#123;</span></span><br><span class="line"><span class="javascript">                    dis_x = <span class="built_in">Math</span>.abs(x - pre_star.x);</span></span><br><span class="line"><span class="javascript">                    dis_y = <span class="built_in">Math</span>.abs(y - pre_star.y);</span></span><br><span class="line"><span class="undefined">                &#125;</span></span><br><span class="line"><span class="undefined">                x = x + getSign() * getOneRandom(50);</span></span><br><span class="line"><span class="undefined">                y = y + getSign() * getOneRandom(50);</span></span><br><span class="line"><span class="javascript">                <span class="keyword">if</span>(dis_x &gt; <span class="number">5</span> &amp;&amp; dis_y &gt; <span class="number">5</span>) move_stars.push( <span class="keyword">new</span> Star(len, x, y, getOneRandom(maxSize, minSize), <span class="literal">true</span>, <span class="number">1</span>) );</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">            isMoving = <span class="literal">true</span>;</span></span><br><span class="line"><span class="javascript">            clearInterval(timer);   <span class="comment">// 清除上一次的定时器（此时还没触发）</span></span></span><br><span class="line"><span class="javascript">            timer = setInterval(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">                isMoving = <span class="literal">false</span>;</span></span><br><span class="line"><span class="javascript">                clearInterval(timer);    <span class="comment">// 鼠标停止再清除下定时器</span></span></span><br><span class="line"><span class="undefined">            &#125;, 500)</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">        &#125;, <span class="literal">false</span>);</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        win.CanvasStar = CanvasStar;</span></span><br><span class="line"><span class="undefined">    &#125;;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    init(<span class="built_in">window</span>, <span class="built_in">document</span>)</span></span><br><span class="line"><span class="javascript">    <span class="keyword">let</span> canvasStar = <span class="keyword">new</span> CanvasStar(<span class="number">200</span>);</span></span><br><span class="line"><span class="undefined">    canvasStar.render();</span></span><br><span class="line"><span class="javascript">    <span class="built_in">window</span>.addEventListener(<span class="string">'resize'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">for</span>(<span class="keyword">let</span> k <span class="keyword">in</span> canvasStar) &#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">delete</span> canvasStar[k]</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="javascript">        init(<span class="built_in">window</span>, <span class="built_in">document</span>)</span></span><br><span class="line"><span class="javascript">        <span class="keyword">let</span> canvasStar2 = <span class="keyword">new</span> CanvasStar(<span class="number">200</span>);</span></span><br><span class="line"><span class="undefined">        canvasStar2.render();</span></span><br><span class="line"><span class="javascript">    &#125;, <span class="literal">false</span>)</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">/**小本本</span></span><br><span class="line"><span class="undefined"> * 疑问：</span></span><br><span class="line"><span class="undefined"> *   1. clientX、layerX、offsetX、pageX、screenX、x 的区别？</span></span><br><span class="line"><span class="undefined">*/</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/折腾/" rel="tag"># 折腾</a>
+          
+            <a href="/tags/canvas/" rel="tag"># canvas</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/11/canvas绘制心形/" rel="next" title="canvas绘制心形">
+                <i class="fa fa-chevron-left"></i> canvas绘制心形
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/14/你知不知道什么是当当-当当当/" rel="prev" title="你知不知道什么是当当...当当当？">
+                你知不知道什么是当当...当当当？ <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  <div class="comments" id="comments">
+    
+  </div>
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+          <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Le">
+          <p class="site-author-name" itemprop="name">Le</p>
+           
+              <p class="site-description motion-element" itemprop="description"></p>
+          
+        </div>
+        <nav class="site-state motion-element">
+
+          
+            <div class="site-state-item site-state-posts">
+              <a href="/archives">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">日志</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-categories">
+              <a href="/categories/index.html">
+                <span class="site-state-item-count">10</span>
+                <span class="site-state-item-name">分类</span>
+              </a>
+            </div>
+          
+
+          
+            
+            
+            <div class="site-state-item site-state-tags">
+              <a href="/tags/index.html">
+                <span class="site-state-item-count">17</span>
+                <span class="site-state-item-name">标签</span>
+              </a>
+            </div>
+          
+
+        </nav>
+
+        
+
+        <div class="links-of-author motion-element">
+          
+        </div>
+
+        
+        
+
+        
+        
+
+        
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#效果图"><span class="nav-number">2.</span> <span class="nav-text">效果图</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#代码"><span class="nav-number">3.</span> <span class="nav-text">代码</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Le</span>
+</div>
+<!--
+
+<div class="powered-by">
+  由 <a class="theme-link" href="https://hexo.io">Hexo</a> 强力驱动
+</div>
+
+<div class="theme-info">
+  主题 -
+  <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
+    NexT.Gemini
+  </a>
+</div>
+
+-->
+        
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.2"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.2"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.2"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.2"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.2"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  <canvas id="canvas"></canvas>
+<script>
+    function init(win, doc) {
+        let maxW = win.innerWidth;
+        let maxH = win.innerHeight;
+        const maxSize = 5;
+        const minSize = 1;
+        let isMoving = false;
+        let timer = null;
+        let animateID = null
+
+        let canvas = doc.getElementById('canvas');
+        canvas.width = maxW;
+        canvas.height = maxH;
+        let ctx = canvas.getContext('2d');
+        let stars = [];      // 存放作为背景使用的星星
+        let move_stars = []; // 存放鼠标移动时绘制的星星
+
+        function CanvasStar(num) {
+            this.num = num;
+        };
+
+        CanvasStar.prototype = {
+            render() {
+                for (let i = 0; i < this.num; i++) {
+                    let alpha = Math.random() + 0.1;
+                    stars[i] = new Star(i, getOneRandom(maxW), getOneRandom(maxH), getOneRandom(maxSize, minSize), true, alpha);
+                }
+                animate();
+            }
+        };
+
+        function Star(id, x, y, r, isCache, dot_alpha) {
+            this.id = id;
+            this.x = x;
+            this.y = y;
+            this.r = r;
+            this.dot_alpha = dot_alpha;
+            this.show = .5;    // 作用：控制 鼠标绘制点的隐藏
+            this.direct = getOneRandom(180) + 180;
+            this.isCache = isCache;
+            this.cacheCanvas = doc.createElement('canvas');
+            this.ctx_cache = this.cacheCanvas.getContext('2d');
+            if(isCache) {
+                this.cache();
+            }
+        };
+
+        Star.prototype = {
+            draw() {
+                // 绘制一个Star
+                if(!this.isCache) {
+                    let alpha = Math.random() + 0.1;
+                    ctx.save();
+                    ctx.beginPath();
+                    ctx.arc(this.x, this.y, this.r, 0, 2 * Math.PI, false);
+                    ctx.closePath();
+                    
+                    ctx.shadowColor = '#fff';
+                    ctx.shadowBlur = 2 * this.r;
+                    ctx.fillStyle = `rgba(255, 255, 255, ${ this.dot_alpha })`;
+                    ctx.fill();
+                    ctx.restore();
+                }else {
+                    ctx.drawImage(this.cacheCanvas, this.x - 3 * this.r, this.y - 3 * this.r);
+                }
+            },
+
+            move() {
+                this.y -= 0.25;
+                if(this.y < -10) {
+                    this.y = maxH + 10;
+                }
+                this.draw();
+            },
+
+            // 使鼠标绘制的点抖动起来
+            shake(arr) {
+                this.show -= 0.01;
+                if(this.show < 0) {
+                    return;
+                }
+                let speed = .5;
+                this.x += Math.cos(this.direct * Math.PI / 180) * speed;
+                this.y += Math.sin(this.direct * Math.PI / 180) * speed;
+                this.draw();
+                this.link();
+            },
+
+            link() {
+                if(!this.id) return;
+                let len = move_stars.length;
+                // 关键思想：取当前id，之前的4个点，每绘制一次就向前取4个点，以此类推
+                // 而不是move_stars最后的四个点，否则的话只有最后几个点会被连接起来
+                let arr = move_stars.slice(this.id - 3, this.id);
+                let endIdx = arr.length - 1;
+
+                ctx.save();
+                for(let i = endIdx; i >= 0; i--) {
+                    if(i == endIdx && !!arr[endIdx]) {
+                        ctx.moveTo(arr[endIdx].x, arr[endIdx].y);
+                        ctx.beginPath();
+                        ctx.lineTo(this.x, this.y);
+                    }
+                    if(i != endIdx && !!arr[i] && arr[i].show > 0) ctx.lineTo(arr[i].x, arr[i].y);
+                }
+                ctx.closePath();
+
+                ctx.strokeStyle = 'rgba(255, 255, 255, 0.125)';
+                ctx.stroke();
+                ctx.restore();
+            },
+
+            cache() {
+                this.cacheCanvas.width = 6 * this.r;
+                this.cacheCanvas.height = 6 * this.r;
+
+                this.ctx_cache.save();
+                this.ctx_cache.beginPath();
+                this.ctx_cache.arc(this.r * 3, this.r * 3, this.r, 0, 2 * Math.PI, false);
+                this.ctx_cache.closePath();
+
+                this.ctx_cache.shadowColor = '#fff';
+                this.ctx_cache.shadowBlur = 2 * this.r;
+                this.ctx_cache.fillStyle = `rgba(255, 255, 255, ${this.dot_alpha})`;
+                this.ctx_cache.fill();
+                this.ctx_cache.restore();
+            }
+        };
+
+        // 动画
+        function animate() {
+            ctx.clearRect(0, 0, maxW, maxH);
+            cancelAnimationFrame(animateID);
+            let len = stars.length;
+            for(let i = 0; i < len; i++) {
+                stars[i].move();
+            }
+
+            let len2 = move_stars.length;
+            if(isMoving) {
+                for(let i = 0; i < len2; i++) {
+                    if(move_stars[i]) move_stars[i].shake(move_stars);
+                }
+            }else {
+                move_stars = []
+            }
+            animateID = requestAnimationFrame(animate);
+        };
+
+        // 获取区间内的随机数
+        function getOneRandom(max, min = 0) {
+            return Math.floor(Math.random() * (max - min) + min);
+        };
+
+        // 获取正负号
+        function getSign() {
+            return Math.random() > .5 ? -1 : 1;
+        };
+
+        // 鼠标移动事件
+        doc.addEventListener('mousemove', function(e) {
+            let x = e.clientX, y = e.clientY;
+            // 控制绘制密度 以及点之间的距离    两个重要的点
+            // 密度是控制绘制的数量    dis_x = Math.abs(x - pre_star.x);
+            // 距离是在已绘制的点基础上、控制点的间距
+
+            // 控制绘制密度 和 控制点之间的距离  不是一个功能哦（需要实际操作去体会， 文字很难表述~.~）
+            // 没有控制距离的话 绘制的图形，太规则了，不够分散    x = x + getSign() * getOneRandom(50)
+
+            let len = move_stars.length;
+            let dis_x, dis_y;
+            if(!len) {
+                move_stars.push( new Star(len, x, y, getOneRandom(maxSize, 3), true, 1) );
+            }
+
+            if(move_stars[len - 1]) {
+                // 当前的星还没有push到move_stars里，所以上个星是move_stars[len - 1]
+                let pre_star = move_stars[len - 1];
+                if(pre_star) {
+                    dis_x = Math.abs(x - pre_star.x);
+                    dis_y = Math.abs(y - pre_star.y);
+                }
+                x = x + getSign() * getOneRandom(50);
+                y = y + getSign() * getOneRandom(50);
+                if(dis_x > 5 && dis_y > 5) move_stars.push( new Star(len, x, y, getOneRandom(maxSize, minSize), true, 1) );
+            }
+
+            isMoving = true;
+            clearInterval(timer);   // 清除上一次的定时器（此时还没触发）
+            timer = setInterval(function() {
+                isMoving = false;
+                clearInterval(timer);    // 鼠标停止再清除下定时器
+            }, 500)
+
+        }, false);
+
+        win.CanvasStar = CanvasStar;
+    };
+</script>
+<script>
+    init(window, document)
+    let canvasStar = new CanvasStar(200);
+    canvasStar.render();
+    window.addEventListener('resize', function(e) {
+        for(let k in canvasStar) {
+            delete canvasStar[k]
+        }
+        init(window, document)
+        let canvasStar2 = new CanvasStar(200);
+        canvasStar2.render();
+    }, false)
+</script>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"model":{"scale":1,"hHeadPos":0.5,"vHeadPos":0.618,"jsonPath":"/live2dw/assets/assets/shizuku.model.json"},"display":{"superSample":2,"width":75,"height":150,"position":"right","hOffset":0,"vOffset":-20},"mobile":{"show":true,"scale":0.5},"react":{"opacityDefault":0.7,"opacityOnHover":0.2},"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>

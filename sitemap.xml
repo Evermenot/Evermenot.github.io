@@ -2,6 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://lecode.ltd/2018/03/06/webpack%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</loc>
+    
+    <lastmod>2019-03-01T10:10:35.352Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://lecode.ltd/2018/03/28/VSCode%E4%BD%BF%E7%94%A8/</loc>
+    
+    <lastmod>2019-03-01T09:40:24.413Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://lecode.ltd/2019/01/19/canvas%E7%BB%98%E5%88%B6%E6%98%9F%E7%A9%BA/</loc>
+    
+    <lastmod>2019-03-01T09:29:44.083Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://lecode.ltd/2019/01/11/canvas%E7%BB%98%E5%88%B6%E5%BF%83%E5%BD%A2/</loc>
+    
+    <lastmod>2019-03-01T08:58:55.113Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://lecode.ltd/2018/05/21/ElementUI%E5%8D%95%E5%85%83%E6%A0%BC%E5%90%88%E5%B9%B6%E5%8F%8A%E9%AB%98%E4%BA%AE%E6%98%BE%E7%A4%BA%E9%97%AE%E9%A2%98/</loc>
     
     <lastmod>2019-03-01T08:31:26.942Z</lastmod>
@@ -44,13 +72,6 @@
   </url>
   
   <url>
-    <loc>http://lecode.ltd/2018/03/28/VSCode%E4%BD%BF%E7%94%A8/</loc>
-    
-    <lastmod>2019-02-26T06:18:04.186Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://lecode.ltd/2019/02/14/%E4%BD%A0%E7%9F%A5%E4%B8%8D%E7%9F%A5%E9%81%93%E4%BB%80%E4%B9%88%E6%98%AF%E5%BD%93%E5%BD%93-%E5%BD%93%E5%BD%93%E5%BD%93/</loc>
     
     <lastmod>2019-02-26T06:14:30.123Z</lastmod>
@@ -68,13 +89,6 @@
     <loc>http://lecode.ltd/2019/02/19/Hexo%E8%87%AA%E5%AE%9A%E4%B9%89%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/</loc>
     
     <lastmod>2019-02-25T01:36:19.392Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://lecode.ltd/2018/03/06/webpack%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</loc>
-    
-    <lastmod>2019-02-22T10:12:09.855Z</lastmod>
     
   </url>
   
