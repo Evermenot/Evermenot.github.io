@@ -102,7 +102,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="lecode, le's blog">
+  <meta name="keywords" content="axios,">
 
 
 
@@ -118,14 +118,18 @@
 
 
 
+<meta name="description" content="前言一直听说用Axios来发送http请求有很多优点，之前只是随大流简单的使用了下，最近因为项目调整前端这块需求减少，那么闲下来总得找点事干（毕竟旁边坐着老大呢，还有老大的老大~），解惑是个很不错的选择，所以就查找资料写了这篇Axios的调研博客，目的是为了降低下次使用的时间成本。 相关参考文章 看云 vue 2之 axios Jquery ajax, Axios, Fetch区别之我见 定义 A">
+<meta name="keywords" content="axios">
 <meta property="og:type" content="article">
 <meta property="og:title" content="axios使用">
 <meta property="og:url" content="http://lecode.ltd/2019/03/07/axios使用/index.html">
 <meta property="og:site_name" content="Le&#39;s Blog">
+<meta property="og:description" content="前言一直听说用Axios来发送http请求有很多优点，之前只是随大流简单的使用了下，最近因为项目调整前端这块需求减少，那么闲下来总得找点事干（毕竟旁边坐着老大呢，还有老大的老大~），解惑是个很不错的选择，所以就查找资料写了这篇Axios的调研博客，目的是为了降低下次使用的时间成本。 相关参考文章 看云 vue 2之 axios Jquery ajax, Axios, Fetch区别之我见 定义 A">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-07T10:53:50.598Z">
+<meta property="og:updated_time" content="2019-03-11T06:20:10.978Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="axios使用">
+<meta name="twitter:description" content="前言一直听说用Axios来发送http请求有很多优点，之前只是随大流简单的使用了下，最近因为项目调整前端这块需求减少，那么闲下来总得找点事干（毕竟旁边坐着老大呢，还有老大的老大~），解惑是个很不错的选择，所以就查找资料写了这篇Axios的调研博客，目的是为了降低下次使用的时间成本。 相关参考文章 看云 vue 2之 axios Jquery ajax, Axios, Fetch区别之我见 定义 A">
 
 
 
@@ -378,6 +382,39 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/axios/" itemprop="url" rel="index">
+                    <span itemprop="name">axios</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -405,7 +442,41 @@
       
 
       
-        
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>一直听说用Axios来发送http请求有很多优点，之前只是随大流简单的使用了下，最近因为项目调整前端这块需求减少，那么闲下来总得找点事干（毕竟旁边坐着老大呢，还有老大的老大~），解惑是个很不错的选择，所以就查找资料写了这篇Axios的调研博客，目的是为了降低下次使用的时间成本。</p>
+<p><strong>相关参考文章</strong></p>
+<p><a href="https://www.kancloud.cn/yunye/axios/234845" target="_blank" rel="noopener">看云</a></p>
+<p><a href="https://segmentfault.com/a/1190000013071458" target="_blank" rel="noopener">vue 2之 axios</a></p>
+<p><a href="https://segmentfault.com/a/1190000012836882" target="_blank" rel="noopener">Jquery ajax, Axios, Fetch区别之我见</a></p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><ul>
+<li>Axios 是一个基于 promise 的 HTTP 库，可以用在浏览器和 node.js 中。</li>
+<li>本质上也是对原生XHR的封装，但它是Promise的实现版本，符合最新的ES规范</li>
+</ul>
+<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
+<li>支持在node.js中创建 http 请求</li>
+<li>支持 Promise API</li>
+<li>拦截请求和响应</li>
+<li>转换请求数据和响应数据</li>
+<li>取消请求</li>
+<li>自动转换 JSON 数据</li>
+<li>客户端支持防止CSRF</li>
+<li>提供了一些并发请求的接口（重要，方便了很多的操作）</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">支持防止CSRF，就是让每个请求都带一个从cookie中拿到的key, 根据浏览器同源策略，假冒的网站是拿不到cookie中得key的，这样后台就可辨别请求是否是用户在假冒网站上的误导输入，从而采取正确的策略。</span><br><span class="line"></span><br><span class="line">Axios既提供了并发的封装，也没有fetch的各种问题，并且体积也较小</span><br></pre></td></tr></table></figure>
+<h3 id="具体功能"><a href="#具体功能" class="headerlink" title="具体功能"></a>具体功能</h3><h4 id="get请求"><a href="#get请求" class="headerlink" title="get请求"></a>get请求</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span></span><br><span class="line"><span class="comment">//【】代表可选</span></span><br><span class="line">axios.get(url【, params】)</span><br><span class="line">.then(<span class="function"><span class="params">rsp</span> =&gt;</span> &#123;<span class="built_in">console</span>.log(rsp)&#125;)</span><br><span class="line">.catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;<span class="built_in">console</span>.log(error)&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 配置写法：</span></span><br><span class="line">axios(&#123;</span><br><span class="line">  method:<span class="string">'get'</span>,</span><br><span class="line">  url:<span class="string">'http://lecode.ltd'</span>,</span><br><span class="line">  data</span><br><span class="line">&#125;)</span><br><span class="line">.then(<span class="function"><span class="params">rsp</span> =&gt;</span> &#123;<span class="built_in">console</span>.log(rsp)&#125;)</span><br><span class="line">.catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;<span class="built_in">console</span>.log(error)&#125;)</span><br></pre></td></tr></table></figure>
+<h4 id="post请求"><a href="#post请求" class="headerlink" title="post请求"></a>post请求</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">axios.post(url【, qs.stringify(params)】)</span><br><span class="line">.then(<span class="function"><span class="params">rsp</span> =&gt;</span> &#123;<span class="built_in">console</span>.log(rsp)&#125;)</span><br><span class="line">.catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;<span class="built_in">console</span>.log(error)&#125;)</span><br><span class="line"></span><br><span class="line"><span class="comment">// post参数格式：</span></span><br><span class="line">	<span class="number">1.</span> form-data: ?name=iwen&amp;age=<span class="number">10</span></span><br><span class="line">	<span class="number">2.</span> x-www-form-urlencoded: &#123;<span class="attr">name</span>:<span class="string">'iwen'</span>,<span class="attr">age</span>:<span class="number">20</span>&#125;</span><br><span class="line"><span class="comment">// 注： 插件“qs”，可以将请求参数转换为form-data格式。</span></span><br></pre></td></tr></table></figure>
+<h4 id="并发请求"><a href="#并发请求" class="headerlink" title="并发请求"></a>并发请求</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUserAccount</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> axios.get(<span class="string">'/user/12345'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUserPermissions</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> axios.get(<span class="string">'/user/12345/permissions'</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">axios.all([getUserAccount(), getUserPermissions()])</span><br><span class="line">  .then(axios.spread(<span class="function"><span class="keyword">function</span> (<span class="params">acct, perms</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 两个请求现在都执行完成</span></span><br><span class="line">  &#125;));</span><br><span class="line"></span><br><span class="line"><span class="comment">// 并发请求函数</span></span><br><span class="line">axios.all(iterable)</span><br><span class="line">axios.spread(callback)</span><br></pre></td></tr></table></figure>
+<h4 id="请求拦截"><a href="#请求拦截" class="headerlink" title="请求拦截"></a>请求拦截</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加请求拦截器</span></span><br><span class="line">Axios.interceptors.request.use(<span class="function"><span class="params">config</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="comment">// 在发送请求之前做些什么，如：</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">if</span>(config.method === <span class="string">'post'</span>)&#123;</span><br><span class="line">  	<span class="comment">//将请求参数进行转换，这里是全局配置post请求参数</span></span><br><span class="line">    	config.data = qs.stringify(config.data)</span><br><span class="line">  	&#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> config;</span><br><span class="line">  &#125;, error =&gt; &#123;</span><br><span class="line">    <span class="comment">// 对请求错误做些什么</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error);</span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// 添加响应拦截器</span></span><br><span class="line">Axios.interceptors.response.use(</span><br><span class="line">    response =&gt; response</span><br><span class="line">   , error =&gt; <span class="built_in">Promise</span>.reject(error)</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<h4 id="创建实例"><a href="#创建实例" class="headerlink" title="创建实例"></a>创建实例</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 利用实例可以设置些公共配置</span></span><br><span class="line"><span class="keyword">const</span> instance = axios.create(&#123;</span><br><span class="line">    baseURL: <span class="string">'/api/'</span></span><br><span class="line">&#125;)</span><br><span class="line">instance.get(<span class="string">'/person'</span>, &#123; params &#125;)</span><br></pre></td></tr></table></figure>
+<h3 id="Jquery-ajax-Fetch介绍"><a href="#Jquery-ajax-Fetch介绍" class="headerlink" title="Jquery ajax,  Fetch介绍"></a>Jquery ajax,  Fetch介绍</h3><ul>
+<li><p>Jquery ajax</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">介绍：</span><br><span class="line">    是对原生XHR的封装</span><br><span class="line">优点：</span><br><span class="line">    使用方便，支持JSONP请求</span><br><span class="line">缺点：</span><br><span class="line">    本身是针对MVC的编程,不符合现在前端MVVM的浪潮</span><br><span class="line">    基于原生的XHR开发，XHR本身的架构不清晰，已经有了fetch的替代方案</span><br><span class="line">    只使用ajax而引入整个JQuery太大（采取个性化打包的方案又不能享受CDN服务）</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Fetch</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">介绍（结合下面代码了解）：</span><br><span class="line">    符合关注分离，没有将输入、输出和用事件来跟踪的状态混杂在一个对象里;</span><br><span class="line">    更好更方便的写法;</span><br><span class="line">	<span class="keyword">try</span> &#123;</span><br><span class="line">  		<span class="keyword">let</span> response = <span class="keyword">await</span> fetch(url);</span><br><span class="line">  		<span class="keyword">let</span> data = response.json();</span><br><span class="line">  		<span class="built_in">console</span>.log(data);</span><br><span class="line">	&#125; <span class="keyword">catch</span>(e) &#123;</span><br><span class="line">  		<span class="built_in">console</span>.log(<span class="string">"Oops, error"</span>, e);</span><br><span class="line">	&#125;</span><br><span class="line">优点：</span><br><span class="line">    更加底层，提供的API丰富（request, response）</span><br><span class="line">    脱离了XHR，是ES规范里新的实现方式</span><br><span class="line">缺点：</span><br><span class="line">    低层次的API，可考虑成原生的XHR，使用起来不舒服，需要进行封装</span><br><span class="line"></span><br><span class="line"><span class="number">1</span>）fetch只对网络请求报错，对<span class="number">400</span>，<span class="number">500</span>都当做成功的请求，需要封装去处理</span><br><span class="line"><span class="number">2</span>）fetch默认不会带cookie，需要添加配置项</span><br><span class="line"><span class="number">3</span>）fetch不支持abort，不支持超时控制，使用setTimeout及<span class="built_in">Promise</span>.reject的实现的超时控制并不能阻止请求过程继续在后台运行，造成了流量的浪费</span><br><span class="line"><span class="number">4</span>）fetch没有办法原生监测请求的进度，而XHR可以</span><br><span class="line"></span><br><span class="line">注：fetch在前端的应用上有一项xhr怎么也比不上的能力：跨域的处理。</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="具体使用"><a href="#具体使用" class="headerlink" title="具体使用"></a>具体使用</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span></span><br><span class="line"><span class="keyword">import</span> jsonpAdapter <span class="keyword">from</span> <span class="string">'axios-jsonp'</span></span><br><span class="line"><span class="keyword">import</span> Qs <span class="keyword">from</span> <span class="string">'qs'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> signinUrl = <span class="string">'http://passport.oa.com/modules/passport/signin.ashx'</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Vue.prototype.axios = axios</span></span><br><span class="line"><span class="comment">// axios.defaults.withCredentials=true</span></span><br><span class="line">axios.interceptors.response.use(<span class="function"><span class="keyword">function</span> (<span class="params">response</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> response;</span><br><span class="line">&#125;, <span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// debugger;</span></span><br><span class="line">  <span class="built_in">console</span>.log(error)</span><br><span class="line">  <span class="keyword">if</span>(!error.response) &#123;  <span class="comment">//无response，默认已经302到passport.oa，刷新页面</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'未登录，请先登录'</span>);</span><br><span class="line">    <span class="comment">// window.location.reload();</span></span><br><span class="line"></span><br><span class="line">    location.href = <span class="string">`<span class="subst">$&#123;signinUrl&#125;</span>?url=<span class="subst">$&#123;<span class="built_in">encodeURIComponent</span>(location.href)&#125;</span>`</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// Do something with response error</span></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(error);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> handleStatus = <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> res.data</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> handleResponse = <span class="function">(<span class="params">res</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">if</span> (!!res) &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.resolve(res)</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Promise</span>.reject(res)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="keyword">get</span> (url, params) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">let</span> _obj = &#123;</span><br><span class="line">        url: url,</span><br><span class="line">        params: params</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//本地请求。。用jsonp吧</span></span><br><span class="line">    <span class="keyword">if</span>(location.hostname == <span class="string">'localhost'</span>)&#123;</span><br><span class="line">        _obj.adapter = jsonpAdapter;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> axios(_obj)</span><br><span class="line">      .then(handleStatus)</span><br><span class="line">      .then(handleResponse)</span><br><span class="line">      .catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(error)</span><br><span class="line">      &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  jsonp (url, params) &#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> axios(&#123;</span><br><span class="line">        url: url,</span><br><span class="line">        adapter: jsonpAdapter,</span><br><span class="line">        params: params</span><br><span class="line">      &#125;)</span><br><span class="line">      .then(handleStatus)</span><br><span class="line">      .then(handleResponse)</span><br><span class="line">      .catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(error)</span><br><span class="line">      &#125;)</span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  post (url, params) &#123;</span><br><span class="line">    <span class="keyword">let</span> data =  Qs.stringify(params);</span><br><span class="line">    <span class="keyword">return</span> axios(&#123;</span><br><span class="line">        method: <span class="string">'POST'</span>,</span><br><span class="line">        headers: &#123;</span><br><span class="line">            <span class="string">'content-type'</span>: <span class="string">'application/x-www-form-urlencoded'</span></span><br><span class="line">        &#125;,</span><br><span class="line">        data,</span><br><span class="line">        url,</span><br><span class="line">      &#125;)</span><br><span class="line">      .then(handleStatus)</span><br><span class="line">      .then(handleResponse)</span><br><span class="line">      .catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(error)</span><br><span class="line">      &#125;)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
       
     </div>
     
@@ -419,6 +490,12 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/axios/" rel="tag"># axios</a>
+          
+        </div>
       
 
       
@@ -489,8 +566,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Le">
           <p class="site-author-name" itemprop="name">Le</p>
@@ -514,7 +600,7 @@
             
             <div class="site-state-item site-state-categories">
               <a href="/categories/index.html">
-                <span class="site-state-item-count">12</span>
+                <span class="site-state-item-count">13</span>
                 <span class="site-state-item-name">分类</span>
               </a>
             </div>
@@ -525,7 +611,7 @@
             
             <div class="site-state-item site-state-tags">
               <a href="/tags/index.html">
-                <span class="site-state-item-count">22</span>
+                <span class="site-state-item-count">23</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -548,6 +634,22 @@
         
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">2.</span> <span class="nav-text">定义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#特性"><span class="nav-number">3.</span> <span class="nav-text">特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#具体功能"><span class="nav-number">4.</span> <span class="nav-text">具体功能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#get请求"><span class="nav-number">4.1.</span> <span class="nav-text">get请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#post请求"><span class="nav-number">4.2.</span> <span class="nav-text">post请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#并发请求"><span class="nav-number">4.3.</span> <span class="nav-text">并发请求</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#请求拦截"><span class="nav-number">4.4.</span> <span class="nav-text">请求拦截</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建实例"><span class="nav-number">4.5.</span> <span class="nav-text">创建实例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Jquery-ajax-Fetch介绍"><span class="nav-number">5.</span> <span class="nav-text">Jquery ajax,  Fetch介绍</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#具体使用"><span class="nav-number">5.1.</span> <span class="nav-text">具体使用</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
