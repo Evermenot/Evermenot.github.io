@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://lecode.ltd/2018/08/26/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%94%B6%E9%9B%86/</loc>
+    <loc>http://lecode.ltd/2018/03/07/git%E4%BD%BF%E7%94%A8/</loc>
     
-    <lastmod>2019-03-11T07:07:37.584Z</lastmod>
+    <lastmod>2019-03-11T09:17:36.983Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://lecode.ltd/2019/03/07/axios%E4%BD%BF%E7%94%A8/</loc>
     
-    <lastmod>2019-03-11T06:53:21.631Z</lastmod>
+    <lastmod>2019-03-11T07:40:32.504Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://lecode.ltd/2018/08/26/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%94%B6%E9%9B%86/</loc>
+    
+    <lastmod>2019-03-11T07:07:37.584Z</lastmod>
     
   </url>
   
@@ -180,13 +187,6 @@
     <loc>http://lecode.ltd/about/index.html</loc>
     
     <lastmod>2019-02-22T06:14:17.429Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://lecode.ltd/2018/03/07/git%E4%BD%BF%E7%94%A8/</loc>
-    
-    <lastmod>2019-02-22T06:14:17.426Z</lastmod>
     
   </url>
   

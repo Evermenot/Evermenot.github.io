@@ -126,7 +126,7 @@
 <meta property="og:site_name" content="Le&#39;s Blog">
 <meta property="og:description" content="相关文章 1.关联远程仓库git remote add origin [远端仓库地址]    如：git remote add origin  http://kb-webide 2.创建分支 1234// 创建本地分支1. &apos;git branch -b [分支名]&apos;    // 创建分支并停留在当前分支2. &apos;git checkout -b [分支名]&apos;  // 创建分支并切换到该分支，区别于上面">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-02-22T06:14:17.426Z">
+<meta property="og:updated_time" content="2019-03-11T09:17:36.983Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git使用">
 <meta name="twitter:description" content="相关文章 1.关联远程仓库git remote add origin [远端仓库地址]    如：git remote add origin  http://kb-webide 2.创建分支 1234// 创建本地分支1. &apos;git branch -b [分支名]&apos;    // 创建分支并停留在当前分支2. &apos;git checkout -b [分支名]&apos;  // 创建分支并切换到该分支，区别于上面">
@@ -454,6 +454,10 @@
 <p>6.删除分支<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> git branch -d [分支名]		            <span class="comment">// 删除本地分支</span></span><br><span class="line"><span class="number">2.</span> git push origin --<span class="keyword">delete</span> [分支名]		<span class="comment">// 删除远程分支</span></span><br><span class="line"><span class="number">3.</span> git branch -dr [remote/branch]</span><br></pre></td></tr></table></figure></p>
 <p>7.删除github文件夹</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> git rm -r --cached [文件夹名]            <span class="comment">// --cached不会删除本地的对应文件</span></span><br><span class="line"><span class="number">2.</span> git commit -m <span class="string">"delete files"</span>			   <span class="comment">// 提交删除操作</span></span><br><span class="line"><span class="number">3.</span> git push origin [分支名]</span><br></pre></td></tr></table></figure>
+<p>8.删除本地文件</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git rm 文件路径（src/test.vue）</span><br><span class="line"><span class="comment">// -f 强制删除</span></span><br><span class="line"><span class="comment">// -r 删除文件夹及文件</span></span><br><span class="line">git checkout --src/test.vue 恢复被删除文件</span><br></pre></td></tr></table></figure>
+<p>9.版本回滚</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br><span class="line">git log --pretty=oneline (git log信息简洁版)</span><br><span class="line"><span class="comment">// 回滚</span></span><br><span class="line">git reset --hard 版本号</span><br><span class="line"></span><br><span class="line"><span class="comment">//注：回滚后的版本提交到GitHub上会报错，git默认是高版本覆盖低版本，但不能反过来操作，因为回滚的版本比服务器此时的版本低，所以此时常规手段是无效的，但可以进行版本的暴力提交——force</span></span><br><span class="line">git push -f</span><br></pre></td></tr></table></figure>
 
       
     </div>
