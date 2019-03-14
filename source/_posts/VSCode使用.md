@@ -84,3 +84,39 @@ description: VSCode使用
  注：我没有进行这一步(我用npm全局安装了Sass，或许是Ruby中带的？？？)  还有还有我在想如果不装Ruby直接npm全局安装Sass，然后在vscode里安装'easysass'插件再配置sass,最后生成.css文件是不是也可以？？？
 ```
 
+
+
+### 五.Vue 代码段
+
+```javascript
+{
+    "Print to console": {
+        "prefix": "vue",
+        "body": [
+            "<template>",
+            "    <div>\n",
+            "    </div>",
+            "</template>\n",
+            "<script>",
+            "export default {",
+            "    components: {\n",
+            "    },",
+            "    data () {",
+            "        return {\n",
+            "        }",
+            "    },",
+            "    mounted() {\n",
+            "    },",
+            "    methods: {\n",
+            "    }",
+            "}",
+            "</script>\n",
+            "<style scoped lang='less'>\n",
+            "</style>",
+            "$2"
+        ],
+        "description": "Log output to console"
+    }
+}
+```
+
