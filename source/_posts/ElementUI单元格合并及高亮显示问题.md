@@ -15,7 +15,7 @@ categories: [技术, vue]
 
 ### 效果（一图胜百言）
 
-![img](/images/elementui/span.png)
+![img](/images/elementui/span.webp)
 
 ### 单元格合并
 

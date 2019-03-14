@@ -13,7 +13,7 @@ categories: [技术, canvas]
 
 说那麽多废话干嘛。。。有图就别哔哔哔
 
-![img](/images/canvas/sky.png)
+![img](/images/canvas/sky.webp)
 
 **总结：**（写在前面吧）
 

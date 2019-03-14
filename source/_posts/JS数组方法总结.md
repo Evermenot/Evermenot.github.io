@@ -15,7 +15,7 @@ categories: [技术, JavaScript]
 
 知乎上看见的一张图片（挺赞的~）
 
-![img](/images/array/array.png)
+![img](/images/array/array.webp)
 
 ### sort( ) 
 

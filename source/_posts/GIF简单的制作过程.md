@@ -41,7 +41,7 @@ Photoshop，本篇博客以此为例，网上还有很多其他的编辑器甚�
 
 - 打开时间轴：
 
-  ![img](/images/gif/time.png)
+  ![img](/images/gif/time.webp)
 
 - 选择并创建帧动画
 
@@ -49,7 +49,7 @@ Photoshop，本篇博客以此为例，网上还有很多其他的编辑器甚�
 
 - 新建图层（快捷键：shift + ctrl + N）
 
-  ![img](/images/gif/tuceng.jpg)
+  ![img](/images/gif/tuceng.webp)
 
 - 创建帧
 
@@ -57,7 +57,7 @@ Photoshop，本篇博客以此为例，网上还有很多其他的编辑器甚�
 
 - 选择帧并打开对应的图层
 
-  ![img](/images/gif/zhen.jpg)
+  ![img](/images/gif/zhen.webp)
 
 **视频制作GIF**
 
@@ -65,5 +65,5 @@ Photoshop，本篇博客以此为例，网上还有很多其他的编辑器甚�
 
 注：视频制作GIF其他操作 和 上面步骤一样
 
-![img](/images/gif/music.gif)
+![img](/images/gif/music.webp)
 
