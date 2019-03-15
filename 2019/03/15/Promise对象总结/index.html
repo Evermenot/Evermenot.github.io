@@ -17,8 +17,8 @@
 <script src="https://cdn.jsdelivr.net/gh/stevenjoezhang/live2d-widget/autoload.js"></script>
 <script>
     (function(){
-        if('zxx'){
-            if (prompt('请输入文章密码') !== 'zxx'){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
                 alert('密码错误！');
                 location.href = 'http://lecode.ltd'
             }
@@ -28,8 +28,8 @@
 -->
 <script>
     (function(){
-        if('zxx'){
-            if (prompt('请输入文章密码') !== 'zxx'){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
                 alert('密码错误！');
                 location.href = 'http://lecode.ltd'
             }
@@ -102,7 +102,7 @@
 <link href="/css/main.css?v=5.1.2" rel="stylesheet" type="text/css">
 
 
-  <meta name="keywords" content="当当当,">
+  <meta name="keywords" content="JavaScript,">
 
 
 
@@ -118,20 +118,18 @@
 
 
 
-<meta name="description" content="​    于春节回家的火车上 着手写的博客 ​    长文预警，请问需要啤酒饮料矿泉水、瓜子花生八宝粥吗zxx。。。小板凳是否也来一个~.~ ​    最后买票的人，捡漏还可以捡到靠窗的位置（回家的车票很难买），开心啊哈哈哈，对于一个需要坐12个小时火车的人来说，有个靠窗的位置还是很有必要的。 ​    抱歉！又以这种方式来展示自己的内心世界（能约或者电话，谁愿意如此絮絮叨叨不知所云），好希望和她">
-<meta name="keywords" content="当当当">
+<meta name="description" content="前言艹艹艹都差不多写完了，莫名其妙的变成空白文档，没了……what fuck（黑人问号ing） 靠我干什么了？什么也没干啊我，泪奔。。。重写吧。 目的：知识总结，加深印象 注：本文中的知识点多是来自阮老师的ES6标准入门一书 定义 Promise 是异步编程的一种解决方案，比传统的解决方案，更合理和更强大。将异步操作以同步操作的流程表达出来，避免了层层嵌套的回调函数 总的来说就是一种新的编写（异步">
+<meta name="keywords" content="JavaScript">
 <meta property="og:type" content="article">
-<meta property="og:title" content="你知不知道什么是当当...当当当？">
-<meta property="og:url" content="http://lecode.ltd/2019/02/14/你知不知道什么是当当-当当当/index.html">
+<meta property="og:title" content="Promise对象总结">
+<meta property="og:url" content="http://lecode.ltd/2019/03/15/Promise对象总结/index.html">
 <meta property="og:site_name" content="Le&#39;s Blog">
-<meta property="og:description" content="​    于春节回家的火车上 着手写的博客 ​    长文预警，请问需要啤酒饮料矿泉水、瓜子花生八宝粥吗zxx。。。小板凳是否也来一个~.~ ​    最后买票的人，捡漏还可以捡到靠窗的位置（回家的车票很难买），开心啊哈哈哈，对于一个需要坐12个小时火车的人来说，有个靠窗的位置还是很有必要的。 ​    抱歉！又以这种方式来展示自己的内心世界（能约或者电话，谁愿意如此絮絮叨叨不知所云），好希望和她">
+<meta property="og:description" content="前言艹艹艹都差不多写完了，莫名其妙的变成空白文档，没了……what fuck（黑人问号ing） 靠我干什么了？什么也没干啊我，泪奔。。。重写吧。 目的：知识总结，加深印象 注：本文中的知识点多是来自阮老师的ES6标准入门一书 定义 Promise 是异步编程的一种解决方案，比传统的解决方案，更合理和更强大。将异步操作以同步操作的流程表达出来，避免了层层嵌套的回调函数 总的来说就是一种新的编写（异步">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://lecode.ltd/images/welfare/welfare.webp">
-<meta property="og:updated_time" content="2019-03-14T06:32:07.285Z">
+<meta property="og:updated_time" content="2019-03-15T08:51:10.154Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="你知不知道什么是当当...当当当？">
-<meta name="twitter:description" content="​    于春节回家的火车上 着手写的博客 ​    长文预警，请问需要啤酒饮料矿泉水、瓜子花生八宝粥吗zxx。。。小板凳是否也来一个~.~ ​    最后买票的人，捡漏还可以捡到靠窗的位置（回家的车票很难买），开心啊哈哈哈，对于一个需要坐12个小时火车的人来说，有个靠窗的位置还是很有必要的。 ​    抱歉！又以这种方式来展示自己的内心世界（能约或者电话，谁愿意如此絮絮叨叨不知所云），好希望和她">
-<meta name="twitter:image" content="http://lecode.ltd/images/welfare/welfare.webp">
+<meta name="twitter:title" content="Promise对象总结">
+<meta name="twitter:description" content="前言艹艹艹都差不多写完了，莫名其妙的变成空白文档，没了……what fuck（黑人问号ing） 靠我干什么了？什么也没干啊我，泪奔。。。重写吧。 目的：知识总结，加深印象 注：本文中的知识点多是来自阮老师的ES6标准入门一书 定义 Promise 是异步编程的一种解决方案，比传统的解决方案，更合理和更强大。将异步操作以同步操作的流程表达出来，避免了层层嵌套的回调函数 总的来说就是一种新的编写（异步">
 
 
 
@@ -160,13 +158,13 @@
 
 
 
-  <link rel="canonical" href="http://lecode.ltd/2019/02/14/你知不知道什么是当当-当当当/">
+  <link rel="canonical" href="http://lecode.ltd/2019/03/15/Promise对象总结/">
 
 
 
 
 
-  <title>你知不知道什么是当当...当当当？ | Le's Blog</title>
+  <title>Promise对象总结 | Le's Blog</title>
   
 
 
@@ -344,7 +342,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://lecode.ltd/2019/02/14/你知不知道什么是当当-当当当/">
+    <link itemprop="mainEntityOfPage" href="http://lecode.ltd/2019/03/15/Promise对象总结/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Le">
@@ -361,7 +359,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">你知不知道什么是当当...当当当？</h1>
+          <h1 class="post-title" itemprop="name headline">Promise对象总结</h1>
         
 
         <div class="post-meta">
@@ -373,8 +371,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-02-14T18:52:09+08:00">
-                2019-02-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-03-15T11:41:05+08:00">
+                2019-03-15
               </time>
             
 
@@ -396,8 +394,19 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/当当当/" itemprop="url" rel="index">
-                    <span itemprop="name">当当当</span>
+                  <a href="/categories/技术/" itemprop="url" rel="index">
+                    <span itemprop="name">技术</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/技术/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -433,32 +442,35 @@
       
 
       
-        <p>​    于春节回家的火车上 着手写的博客</p>
-<p>​    长文预警，请问需要啤酒饮料矿泉水、瓜子花生八宝粥吗zxx。。。小板凳是否也来一个~.~</p>
-<p>​    最后买票的人，捡漏还可以捡到靠窗的位置（回家的车票很难买），开心啊哈哈哈，对于一个需要坐12个小时火车的人来说，有个靠窗的位置还是很有必要的。</p>
-<p>​    抱歉！又以这种方式来展示自己的内心世界（能约或者电话，谁愿意如此絮絮叨叨不知所云），好希望和她可以互相了解彼此，即使是作为朋友…心塞呜呜😐，有好多次发动态都只是想给她看的，感觉很羞耻很虚伪ing~.~，其实就是想让她知道我的生活状态而已，想让她尽可能足够的了解我哈哈哈（感觉雷同于屌丝制造偶遇女神的机会😂。。。），在以后回忆起来可能也会觉得有点可爱ba~</p>
-<p>​    记得一次英语课上（大学期间），老师让我们用一个单词来形容对一个人的爱（啊？脑子里只有‘不知道’仨字飘过），老师最后说是touch，爱一个人就是伸出手想要触碰她，却又收了回来（爱是想触碰又收回的手）……鬼知道他从哪看到的这么煽情的话哈哈哈，可能也是个有故事的人？</p>
-<p>​    记不清有多少次打开和她的聊天窗口，在敲下简单的问候后，却在怯懦的情绪作祟下，亦可能是在可笑的自尊心支配下，按下返回键（如果说我对她隐藏了什么，也就是隐藏了我有多爱她吧），最后终于把自己深深喜欢着的女孩子给弄丢了……很伤心~。</p>
-<p>   我不是不知道我们本是有机会走到一起的，如果家中 ‘有矿’ 亦或自己足够优秀，我想我不会让感情停滞不前了吧！因为别的女孩希望拥有的稳定生活以及安全感我也想给她ne…曾还上网搜过她所在城市的房价哈哈哈，想了下自己那还未突破到五位数的工资…凉凉~.~，虽然每个月都有规划并控制收支，但有些东西我暂时给不了（虽然我知道她不是很物质的女生，但她不要我却不能不给）</p>
-<p>​    除了物质，对于感情我希望和她走到一起是因为相互喜欢而非被我打动，因为担心被感动而得到的爱情不能天长地久（不对等的爱情会很累）~.~…感受到处女座的洁癖了吗zxx？其实我很少在乎星座一说的，但在我身上多少可以看到些处女座的影子，有时在想何须这么认真追求完美，先骗到手再说哈哈，理智告诉我，我需要的是简单而真挚的爱情（彼此信任），而不是被寂寞和欲望支配自己去做决定……可是我好想带着她一起去跑步、一起去爬山、一起做顿晚餐，一起做倒立看看谁坚持的更久😄，一起去经历生活中的喜怒哀乐，体会其中的种种乐趣…</p>
-<p>​    临近春节前，在给她做那个‘土星’的网页时，其实大致已经知道她离我渐行渐远了，那段时间真的好伤心 好伤心，真的是胸口抽痛，胃里难受，夜不能寐（第一次失恋时的感觉，没有让她内疚的意思），虽然之后每晚都有运动，但然并卵…现在心中任然充斥爱她的情愫以及想要拥抱她的冲动，但骚动的心因为理性已然渐渐归于平静（很会调整自己的嘛小伙子🙃）。</p>
-<p>​    喜欢她的几年里我从未向谁提起过，开心也好、伤心也罢都一个人独自承受并默默消化着，期间同学也曾介绍过对象，都被我以无心恋爱为由躲避掉（况且自己也不优秀出众，何至于让别人这么上心。。。），我不想心里还装着她去开始新的感情（对她人不公平），多少也因为担心开始后就真的无法回头了吧（不愿伤害任何女孩子）。。。毕竟我是个好人…好人卡一张两张我是不会收的，起码要一打起步才行哦ing😊哈哈哈哈</p>
-<p>​    说了这么多无非是没能彻底放下她吧，其实现在很想知道那男孩子人怎么样，温柔吗，有责任感吗，喜欢运动吗，坐车会给小朋友让座吗、会扶老奶奶过马路吗😂、会在她不舒服的时候让她多喝热水吗ing，至少对她足够的温柔尊重、细心体贴吧……麻哒麻哒（还有还有）会为了她改变自己吗!important……</p>
-<p>​    记得上次和室友对话：</p>
-<p>​    我：希望现在和她在一起的那个臭小子比我好</p>
-<p>​    室友：想什么呢？没你好才好呢吧</p>
-<p>​    我：要是那个臭小子还没有我好，lao ge我心里会极度忧伤和失落，想给她抢回来。。。</p>
-<p>​    真心希望她能够过的很好，这样自己的心中多少也有些宽慰，在和她的这段感情里自己也成长了很多，对于感情也变得更加成熟了吧！可是这成长的代价真够沉重的啊!（问：成熟稳重的大叔是如何练成的？）</p>
-<p>​    最后，愿她不管在任何时候都能够率真、独立（话说她一向如此吧），<code>我姐今年春节出嫁前我也是这样和她说的，希望她不要把自己的生活交由他人支配、依赖他人，因为担心陪在她身边的人不够好，让她受到委屈...，说到底人的幸福都是靠自己争取的，目前看来姐夫脾气很好也很疼她，挺好~.~</code> ，最后希望她勿要因担心韶华易逝而将自己托付出去，如果说整个世界只有一个人愿意牵起她的手，那这个人不是我还能是谁ne…（大家都在排队，你个屌丝往后站别插队，看什么看说的就是你😂，em…街角还有位置，去吧）</p>
-<p>​    头都没秃还在这凑热闹，回去搬砖撸键盘吧！！！</p>
-<p>​    越秃越强买车买房（行话）😄……秃是一种光荣（骄傲脸ing）</p>
-<p>​    可以耐着性子看到这里，我很开心🙃。。。道理都懂，再说下去就真的成当当…当当dang了！！！</p>
-<p>​    这么长的博客lao niang都看完了，难道连个文末福利都没有吗？？？</p>
-<p>​    呐。。。给你！</p>
-<p><img src="/images/welfare/welfare.webp" alt="img"></p>
-<p>​    被玩坏了的抱枕😋😜，以前爱的小心翼翼没发给她，如今希望能逗她一笑~.~</p>
-<p>​    前年突发奇想这么玩下。。。现在感觉还挺帅😉</p>
-<p>​    老板，好友位有吗？给我来几个，谨以此篇博文愿能消除我和她之间的隔阂，愿她偶尔也能打开心扉和我分享自己的喜怒哀乐，乐意之至。</p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>艹艹艹都差不多写完了，莫名其妙的变成空白文档，没了……what fuck（黑人问号ing）</p>
+<p>靠我干什么了？什么也没干啊我，泪奔。。。重写吧。</p>
+<p>目的：知识总结，加深印象</p>
+<p>注：本文中的知识点多是来自阮老师的ES6标准入门一书</p>
+<h3 id="定义"><a href="#定义" class="headerlink" title="定义"></a>定义</h3><blockquote>
+<p>Promise 是异步编程的一种解决方案，比传统的解决方案，更合理和更强大。将异步操作以同步操作的流程表达出来，避免了层层嵌套的回调函数</p>
+<p>总的来说就是一种新的编写（异步）代码的方式</p>
+</blockquote>
+<h4 id="缺点："><a href="#缺点：" class="headerlink" title="缺点："></a>缺点：</h4><blockquote>
+<p>首先，无法取消Promise，一旦新建它就会立即执行，无法中途取消。</p>
+<p>其次，如果不设置回调函数，Promise内部抛出的错误，不会反应到外部。</p>
+<p>第三，当处于pending状态时，无法得知目前进展到哪一个阶段（刚刚开始还是即将完成）。</p>
+</blockquote>
+<h3 id="用法"><a href="#用法" class="headerlink" title="用法"></a>用法</h3><h4 id="创建Promise实例"><a href="#创建Promise实例" class="headerlink" title="创建Promise实例"></a>创建Promise实例</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> promise = <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span>(<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span> (<span class="comment">/* 异步操作成功 */</span>)&#123;</span><br><span class="line">    <span class="keyword">return</span> resolve(<span class="string">'value'</span>); <span class="comment">// 将成功的结果传递出去</span></span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> reject(error);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">注：resolve函数的作用是，将<span class="built_in">Promise</span>对象的状态从“未完成”变为“成功”（即从 pending 变为 resolved），在异步操作成功时调用，并将异步操作的结果，作为参数传递出去；</span><br></pre></td></tr></table></figure>
+<h4 id="then-方法"><a href="#then-方法" class="headerlink" title="then()方法"></a>then()方法</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">promise.then(<span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// success</span></span><br><span class="line">  <span class="built_in">console</span>.log(value)	<span class="comment">// 字符串'value'</span></span><br><span class="line">&#125;, <span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// failure</span></span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">注<span class="number">1</span>：then方法的第一个参数是resolved状态的回调函数，第二个参数（可选）是rejected状态的回调函数。这两个函数都接受<span class="built_in">Promise</span>对象传出的值作为参数。</span><br><span class="line"></span><br><span class="line">注<span class="number">2</span>：then方法返回的是一个新的<span class="built_in">Promise</span>实例（注意，不是原来那个<span class="built_in">Promise</span>实例）。因此可以采用链式写法，即then方法后面再调用另一个then方法。</span><br></pre></td></tr></table></figure>
+<h4 id="catch-方法"><a href="#catch-方法" class="headerlink" title="catch()方法"></a>catch()方法</h4><blockquote>
+<p>catch方法是.then(null, rejection)或.then(undefined, rejection)的别名，用于指定发生错误时的回调函数。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">promise.then(<span class="function"><span class="keyword">function</span>(<span class="params">value</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;).catch(<span class="function"><span class="keyword">function</span>(<span class="params">error</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'发生错误！'</span>, error);</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line">注：一般来说，不要在then方法里面定义 Reject 状态的回调函数（即then的第二个参数）</span><br><span class="line"></span><br><span class="line"><span class="comment">// bad</span></span><br><span class="line">promise</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// success</span></span><br><span class="line">  &#125;, <span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// error</span></span><br><span class="line">  &#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment">// good</span></span><br><span class="line">promise</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123; <span class="comment">//cb</span></span><br><span class="line">    <span class="comment">// success</span></span><br><span class="line">  &#125;)</span><br><span class="line">  .catch(<span class="function"><span class="keyword">function</span>(<span class="params">err</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// error</span></span><br><span class="line">  &#125;);</span><br><span class="line">注：第二种写法要好于第一种写法，理由是第二种写法可以捕获前面then方法执行中的错误，</span><br></pre></td></tr></table></figure>
+<h4 id="finally-方法"><a href="#finally-方法" class="headerlink" title="finally()方法"></a>finally()方法</h4><blockquote>
+<p><code>finally</code>方法用于指定不管 Promise 对象最后状态如何，都会执行的操作。该方法是 ES2018 引入标准的。</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 例子，服务器使用 Promise 处理请求，然后使用finally方法关掉服务器</span></span><br><span class="line">server.listen(port)</span><br><span class="line">  .then(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// ...</span></span><br><span class="line">  &#125;)</span><br><span class="line">  .finally(server.stop);</span><br><span class="line"></span><br><span class="line"><span class="keyword">finally</span>方法的回调函数不接受任何参数，这意味着没有办法知道，前面的 <span class="built_in">Promise</span> 状态到底是fulfilled还是rejected。这表明，<span class="keyword">finally</span>方法里面的操作，应该是与状态无关的，不依赖于 <span class="built_in">Promise</span> 的执行结果。</span><br></pre></td></tr></table></figure>
+<h4 id="all-方法"><a href="#all-方法" class="headerlink" title="all()方法"></a>all()方法</h4><blockquote>
+<p>all方法用于将多个 Promise 实例，包装成一个新的 Promise 实例</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> p = <span class="built_in">Promise</span>.all([p1, p2, p3])</span><br><span class="line">  .then([data1, data2, data3] =&gt; &#123;</span><br><span class="line">  	<span class="comment">// 已拿到全部的data，可以处理了</span></span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+<h4 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  resolve(<span class="number">1</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line">&#125;).then(<span class="function"><span class="params">r</span> =&gt;</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(r);</span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// 2</span></span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line">调用resolve(<span class="number">1</span>)以后，后面的<span class="built_in">console</span>.log(<span class="number">2</span>)还是会执行，并且会首先打印出来。这是因为立即 resolved 的 <span class="built_in">Promise</span> 是在本轮事件循环的末尾执行，总是晚于本轮循环的同步任务。</span><br><span class="line"></span><br><span class="line"><span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> resolve(<span class="number">1</span>);</span><br><span class="line">  <span class="comment">// 后面的语句不会执行</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="number">2</span>);</span><br><span class="line">&#125;)</span><br><span class="line">一般来说，调用resolve或reject以后，<span class="built_in">Promise</span> 的使命就完成了，后继操作应该放到then方法里面，而不应该直接写在resolve或reject的后面。所以，最好在它们前面加上<span class="keyword">return</span>语句，这样就不会有意外。</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Promise</span>.resolve方法允许调用时不带参数，直接返回一个resolved状态的 <span class="built_in">Promise</span> 对象。所以，如果希望得到一个 <span class="built_in">Promise</span> 对象，比较方便的方法就是直接调用<span class="built_in">Promise</span>.resolve方法</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> p = <span class="built_in">Promise</span>.resolve();</span><br><span class="line">p.then(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="comment">// ...</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -476,7 +488,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/当当当/" rel="tag"># 当当当</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
         </div>
       
@@ -489,8 +501,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/01/19/canvas绘制星空/" rel="next" title="canvas绘制星空">
-                <i class="fa fa-chevron-left"></i> canvas绘制星空
+              <a href="/2019/03/07/axios使用/" rel="next" title="axios使用">
+                <i class="fa fa-chevron-left"></i> axios使用
               </a>
             
           </div>
@@ -498,10 +510,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/02/18/傅雷夫妇给孩子们的信/" rel="prev" title="傅雷夫妇给孩子们的信">
-                傅雷夫妇给孩子们的信 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -553,8 +561,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Le">
           <p class="site-author-name" itemprop="name">Le</p>
@@ -612,6 +629,22 @@
         
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义"><span class="nav-number">2.</span> <span class="nav-text">定义</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#缺点："><span class="nav-number">2.1.</span> <span class="nav-text">缺点：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用法"><span class="nav-number">3.</span> <span class="nav-text">用法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#创建Promise实例"><span class="nav-number">3.1.</span> <span class="nav-text">创建Promise实例</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#then-方法"><span class="nav-number">3.2.</span> <span class="nav-text">then()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#catch-方法"><span class="nav-number">3.3.</span> <span class="nav-text">catch()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#finally-方法"><span class="nav-number">3.4.</span> <span class="nav-text">finally()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#all-方法"><span class="nav-number">3.5.</span> <span class="nav-text">all()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#例子"><span class="nav-number">3.6.</span> <span class="nav-text">例子</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
