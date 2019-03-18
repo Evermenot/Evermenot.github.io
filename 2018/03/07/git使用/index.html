@@ -118,18 +118,18 @@
 
 
 
-<meta name="description" content="相关文章 1.关联远程仓库git remote add origin [远端仓库地址]    如：git remote add origin  http://kb-webide 2.创建分支 1234// 创建本地分支1. &apos;git branch -b [分支名]&apos;    // 创建分支并停留在当前分支2. &apos;git checkout -b [分支名]&apos;  // 创建分支并切换到该分支，区别于上面">
+<meta name="description" content="相关文章 关联远程仓库 git remote add origin [远端仓库地址]  如：git remote add origin  http://kb-webide  创建分支1234// 创建本地分支1. &apos;git branch -b [分支名]&apos;    // 创建分支并停留在当前分支2. &apos;git checkout -b [分支名]&apos;  // 创建分支并切换到该分支，区别于上面的命令3.">
 <meta name="keywords" content="git">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git使用">
 <meta property="og:url" content="http://lecode.ltd/2018/03/07/git使用/index.html">
 <meta property="og:site_name" content="Le&#39;s Blog">
-<meta property="og:description" content="相关文章 1.关联远程仓库git remote add origin [远端仓库地址]    如：git remote add origin  http://kb-webide 2.创建分支 1234// 创建本地分支1. &apos;git branch -b [分支名]&apos;    // 创建分支并停留在当前分支2. &apos;git checkout -b [分支名]&apos;  // 创建分支并切换到该分支，区别于上面">
+<meta property="og:description" content="相关文章 关联远程仓库 git remote add origin [远端仓库地址]  如：git remote add origin  http://kb-webide  创建分支1234// 创建本地分支1. &apos;git branch -b [分支名]&apos;    // 创建分支并停留在当前分支2. &apos;git checkout -b [分支名]&apos;  // 创建分支并切换到该分支，区别于上面的命令3.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-15T10:30:02.527Z">
+<meta property="og:updated_time" content="2019-03-18T09:09:47.518Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git使用">
-<meta name="twitter:description" content="相关文章 1.关联远程仓库git remote add origin [远端仓库地址]    如：git remote add origin  http://kb-webide 2.创建分支 1234// 创建本地分支1. &apos;git branch -b [分支名]&apos;    // 创建分支并停留在当前分支2. &apos;git checkout -b [分支名]&apos;  // 创建分支并切换到该分支，区别于上面">
+<meta name="twitter:description" content="相关文章 关联远程仓库 git remote add origin [远端仓库地址]  如：git remote add origin  http://kb-webide  创建分支1234// 创建本地分支1. &apos;git branch -b [分支名]&apos;    // 创建分支并停留在当前分支2. &apos;git checkout -b [分支名]&apos;  // 创建分支并切换到该分支，区别于上面的命令3.">
 
 
 
@@ -443,26 +443,29 @@
 
       
         <p><a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html" target="_blank" rel="noopener">相关文章</a></p>
-<p>1.关联远程仓库<code>git remote add origin [远端仓库地址]</code>    如：git remote add origin  <a href="http://kb-webide" target="_blank" rel="noopener">http://kb-webide</a></p>
-<p>2.创建分支</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建本地分支</span></span><br><span class="line"><span class="number">1.</span> <span class="string">'git branch -b [分支名]'</span>    <span class="comment">// 创建分支并停留在当前分支</span></span><br><span class="line"><span class="number">2.</span> <span class="string">'git checkout -b [分支名]'</span>  <span class="comment">// 创建分支并切换到该分支，区别于上面的命令</span></span><br><span class="line"><span class="number">3.</span> <span class="string">'git push origin [分支名]'</span>  <span class="comment">// 将本地分支提交到远程仓库   即在远程仓库创建分支</span></span><br></pre></td></tr></table></figure>
-<p>3.查看分支</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 列出分支名</span></span><br><span class="line"><span class="number">1.</span> git branch				 <span class="comment">// 列出本地分支</span></span><br><span class="line"><span class="number">2.</span> git branch -r			 <span class="comment">// 列出远程分支</span></span><br><span class="line"><span class="number">3.</span> git branch -a			 <span class="comment">// 列出本地和远程分支</span></span><br></pre></td></tr></table></figure>
-<p>4.切换分支</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 切换到其他分支</span></span><br><span class="line"><span class="number">1.</span> git checkout [分支名]	   <span class="comment">// 切换到指定分支</span></span><br><span class="line"><span class="number">2.</span> git checkout -			 <span class="comment">// 切换到上个分支</span></span><br></pre></td></tr></table></figure>
-<p>5.恢复暂存区文件到工作区 <code>git checkout .</code>   等于是撤销操作           </p>
-<p>6.删除分支<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> git branch -d [分支名]		            <span class="comment">// 删除本地分支</span></span><br><span class="line"><span class="number">2.</span> git push origin --<span class="keyword">delete</span> [分支名]		<span class="comment">// 删除远程分支</span></span><br><span class="line"><span class="number">3.</span> git branch -dr [remote/branch]</span><br></pre></td></tr></table></figure></p>
-<p>7.删除github文件夹</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> git rm -r --cached [文件夹名]            <span class="comment">// --cached不会删除本地的对应文件</span></span><br><span class="line"><span class="number">2.</span> git commit -m <span class="string">"delete files"</span>			   <span class="comment">// 提交删除操作</span></span><br><span class="line"><span class="number">3.</span> git push origin [分支名]</span><br></pre></td></tr></table></figure>
-<p>8.删除本地文件</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git rm 文件路径（src/test.vue）</span><br><span class="line"><span class="comment">// -f 强制删除</span></span><br><span class="line"><span class="comment">// -r 删除文件夹及文件</span></span><br><span class="line">git checkout --src/test.vue 恢复被删除文件</span><br></pre></td></tr></table></figure>
-<p>9.版本回滚</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br><span class="line">git log --pretty=oneline (git log信息简洁版)</span><br><span class="line"><span class="comment">// 回滚</span></span><br><span class="line">git reset --hard 版本号</span><br><span class="line"></span><br><span class="line"><span class="comment">//注：回滚后的版本提交到GitHub上会报错，git默认是高版本覆盖低版本，但不能反过来操作，因为回滚的版本比服务器此时的版本低，所以此时常规手段是无效的，但可以进行版本的暴力提交——force</span></span><br><span class="line">git push -f</span><br></pre></td></tr></table></figure>
-<p>10.git同步代码到Coding和Github</p>
-<p>修改.git文件夹下的config文件</p>
+<h4 id="关联远程仓库"><a href="#关联远程仓库" class="headerlink" title="关联远程仓库"></a>关联远程仓库</h4><blockquote>
+<p><code>git remote add origin [远端仓库地址]</code> </p>
+<p>如：git remote add origin  <a href="http://kb-webide" target="_blank" rel="noopener">http://kb-webide</a></p>
+</blockquote>
+<h4 id="创建分支"><a href="#创建分支" class="headerlink" title="创建分支"></a>创建分支</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 创建本地分支</span></span><br><span class="line"><span class="number">1.</span> <span class="string">'git branch -b [分支名]'</span>    <span class="comment">// 创建分支并停留在当前分支</span></span><br><span class="line"><span class="number">2.</span> <span class="string">'git checkout -b [分支名]'</span>  <span class="comment">// 创建分支并切换到该分支，区别于上面的命令</span></span><br><span class="line"><span class="number">3.</span> <span class="string">'git push origin [分支名]'</span>  <span class="comment">// 将本地分支提交到远程仓库   即在远程仓库创建分支</span></span><br></pre></td></tr></table></figure>
+<h4 id="查看分支"><a href="#查看分支" class="headerlink" title="查看分支"></a>查看分支</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 列出分支名</span></span><br><span class="line"><span class="number">1.</span> git branch				 <span class="comment">// 列出本地分支</span></span><br><span class="line"><span class="number">2.</span> git branch -r			 <span class="comment">// 列出远程分支</span></span><br><span class="line"><span class="number">3.</span> git branch -a			 <span class="comment">// 列出本地和远程分支</span></span><br></pre></td></tr></table></figure>
+<h4 id="切换分支"><a href="#切换分支" class="headerlink" title="切换分支"></a>切换分支</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 切换到其他分支</span></span><br><span class="line"><span class="number">1.</span> git checkout [分支名]	   <span class="comment">// 切换到指定分支</span></span><br><span class="line"><span class="number">2.</span> git checkout -			 <span class="comment">// 切换到上个分支</span></span><br></pre></td></tr></table></figure>
+<h4 id="恢复暂存区文件到工作区"><a href="#恢复暂存区文件到工作区" class="headerlink" title="恢复暂存区文件到工作区"></a>恢复暂存区文件到工作区</h4><blockquote>
+<p><code>git checkout .</code>   等于是撤销操作           </p>
+</blockquote>
+<h4 id="删除分支"><a href="#删除分支" class="headerlink" title="删除分支"></a>删除分支</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> git branch -d [分支名]		            <span class="comment">// 删除本地分支</span></span><br><span class="line"><span class="number">2.</span> git push origin --<span class="keyword">delete</span> [分支名]		<span class="comment">// 删除远程分支</span></span><br><span class="line"><span class="number">3.</span> git branch -dr [remote/branch]</span><br></pre></td></tr></table></figure>
+<h4 id="删除github文件夹"><a href="#删除github文件夹" class="headerlink" title="删除github文件夹"></a>删除github文件夹</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> git rm -r --cached [文件夹名]            <span class="comment">// --cached不会删除本地的对应文件</span></span><br><span class="line"><span class="number">2.</span> git commit -m <span class="string">"delete files"</span>			   <span class="comment">// 提交删除操作</span></span><br><span class="line"><span class="number">3.</span> git push origin [分支名]</span><br></pre></td></tr></table></figure>
+<h4 id="删除本地文件"><a href="#删除本地文件" class="headerlink" title="删除本地文件"></a>删除本地文件</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git rm 文件路径（src/test.vue）</span><br><span class="line"><span class="comment">// -f 强制删除</span></span><br><span class="line"><span class="comment">// -r 删除文件夹及文件</span></span><br><span class="line">git checkout --src/test.vue 恢复被删除文件</span><br></pre></td></tr></table></figure>
+<h4 id="版本回滚"><a href="#版本回滚" class="headerlink" title="版本回滚"></a>版本回滚</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br><span class="line">git log --pretty=oneline (git log信息简洁版)</span><br><span class="line"><span class="comment">// 回滚</span></span><br><span class="line">git reset --hard 版本号</span><br><span class="line"></span><br><span class="line"><span class="comment">//注：回滚后的版本提交到GitHub上会报错，git默认是高版本覆盖低版本，但不能反过来操作，因为回滚的版本比服务器此时的版本低，所以此时常规手段是无效的，但可以进行版本的暴力提交——force</span></span><br><span class="line">git push -f</span><br></pre></td></tr></table></figure>
+<h4 id="git同步代码到Coding和Github"><a href="#git同步代码到Coding和Github" class="headerlink" title="git同步代码到Coding和Github"></a>git同步代码到Coding和Github</h4><ul>
+<li><p>修改.git文件夹下的config文件</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">	repositoryformatversion = 0</span><br><span class="line">	filemode = false</span><br><span class="line">	bare = false</span><br><span class="line">	logallrefupdates = true</span><br><span class="line">	symlinks = false</span><br><span class="line">	ignorecase = true</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">	url = git@github.com:Evermenot/Evermenot.github.io.git</span><br><span class="line">	fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">[remote &quot;second&quot;]</span><br><span class="line">	url = git@git.dev.tencent.com:Evermenot/Evermenot.git</span><br><span class="line">	fetch = +refs/heads/*:refs/remotes/second/*</span><br></pre></td></tr></table></figure>
-<p>代码push命令</p>
+</li>
+<li><p>代码push命令</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push second hexo</span><br></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ul>
 
       
     </div>
@@ -557,8 +560,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="Le">
           <p class="site-author-name" itemprop="name">Le</p>
@@ -616,6 +628,22 @@
         
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#关联远程仓库"><span class="nav-number">1.</span> <span class="nav-text">关联远程仓库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建分支"><span class="nav-number">2.</span> <span class="nav-text">创建分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看分支"><span class="nav-number">3.</span> <span class="nav-text">查看分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#切换分支"><span class="nav-number">4.</span> <span class="nav-text">切换分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#恢复暂存区文件到工作区"><span class="nav-number">5.</span> <span class="nav-text">恢复暂存区文件到工作区</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除分支"><span class="nav-number">6.</span> <span class="nav-text">删除分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除github文件夹"><span class="nav-number">7.</span> <span class="nav-text">删除github文件夹</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#删除本地文件"><span class="nav-number">8.</span> <span class="nav-text">删除本地文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#版本回滚"><span class="nav-number">9.</span> <span class="nav-text">版本回滚</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git同步代码到Coding和Github"><span class="nav-number">10.</span> <span class="nav-text">git同步代码到Coding和Github</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
