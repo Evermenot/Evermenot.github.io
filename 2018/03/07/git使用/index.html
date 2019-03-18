@@ -126,7 +126,7 @@
 <meta property="og:site_name" content="Le&#39;s Blog">
 <meta property="og:description" content="相关文章 1.关联远程仓库git remote add origin [远端仓库地址]    如：git remote add origin  http://kb-webide 2.创建分支 1234// 创建本地分支1. &apos;git branch -b [分支名]&apos;    // 创建分支并停留在当前分支2. &apos;git checkout -b [分支名]&apos;  // 创建分支并切换到该分支，区别于上面">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-14T01:55:48.142Z">
+<meta property="og:updated_time" content="2019-03-15T10:30:02.527Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git使用">
 <meta name="twitter:description" content="相关文章 1.关联远程仓库git remote add origin [远端仓库地址]    如：git remote add origin  http://kb-webide 2.创建分支 1234// 创建本地分支1. &apos;git branch -b [分支名]&apos;    // 创建分支并停留在当前分支2. &apos;git checkout -b [分支名]&apos;  // 创建分支并切换到该分支，区别于上面">
@@ -458,6 +458,11 @@
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git rm 文件路径（src/test.vue）</span><br><span class="line"><span class="comment">// -f 强制删除</span></span><br><span class="line"><span class="comment">// -r 删除文件夹及文件</span></span><br><span class="line">git checkout --src/test.vue 恢复被删除文件</span><br></pre></td></tr></table></figure>
 <p>9.版本回滚</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br><span class="line">git log --pretty=oneline (git log信息简洁版)</span><br><span class="line"><span class="comment">// 回滚</span></span><br><span class="line">git reset --hard 版本号</span><br><span class="line"></span><br><span class="line"><span class="comment">//注：回滚后的版本提交到GitHub上会报错，git默认是高版本覆盖低版本，但不能反过来操作，因为回滚的版本比服务器此时的版本低，所以此时常规手段是无效的，但可以进行版本的暴力提交——force</span></span><br><span class="line">git push -f</span><br></pre></td></tr></table></figure>
+<p>10.git同步代码到Coding和Github</p>
+<p>修改.git文件夹下的config文件</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[core]</span><br><span class="line">	repositoryformatversion = 0</span><br><span class="line">	filemode = false</span><br><span class="line">	bare = false</span><br><span class="line">	logallrefupdates = true</span><br><span class="line">	symlinks = false</span><br><span class="line">	ignorecase = true</span><br><span class="line">[remote &quot;origin&quot;]</span><br><span class="line">	url = git@github.com:Evermenot/Evermenot.github.io.git</span><br><span class="line">	fetch = +refs/heads/*:refs/remotes/origin/*</span><br><span class="line">[remote &quot;second&quot;]</span><br><span class="line">	url = git@git.dev.tencent.com:Evermenot/Evermenot.git</span><br><span class="line">	fetch = +refs/heads/*:refs/remotes/second/*</span><br></pre></td></tr></table></figure>
+<p>代码push命令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push second hexo</span><br></pre></td></tr></table></figure>
 
       
     </div>
