@@ -5,6 +5,10 @@ tags: Javascript
 categories: [技术, JavaScript]
 ---
 
+### 前言
+
+本身是准备放在[面试题收集](http://lecode.ltd/2018/08/26/%E9%9D%A2%E8%AF%95%E9%A2%98%E6%94%B6%E9%9B%86/)里的，写的过程中发现，虽然只是简单的前端存储知识点总结，但是内容还是挺多的，所以就单独抽出来了
+
 ###  Web storage 和 cookie
 
 - Web storage（HTML5新增客户端存储数据方法）：
