@@ -1,7 +1,7 @@
 ---
 title: rename命令批量修改文件名
 date: 2018-01-08 14:13:27
-tags: DOS命令
+tags: [冷宫, DOS命令]
 categories: [技术, 冷宫]
 ---
 

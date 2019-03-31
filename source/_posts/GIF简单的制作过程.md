@@ -1,7 +1,7 @@
 ---
 title: "GIF简单的制作过程"
 date: 2019-03-07 10:28:27
-tags: PS
+tags: [冷宫, PS]
 categories: [技术, 冷宫]
 ---
 

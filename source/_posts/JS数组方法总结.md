@@ -107,12 +107,22 @@ categories: [技术, JavaScript]
 1.作用：返回一个新的Array Iterator对象，该对象包含数组中每个索引的键值对。
 2.语法：arr.entries()
 
-3.实例：
+3.实例1：
 	var arr = ["a", "b", "c"];
 	var iterator = arr.entries();
 	console.log(iterator.next());
+实例2：
+	var arr = ["a", "b", "c"];
+    for(let a of arr.entries()) {
+        console.log(a)
+    }
 注：Array Iterator对象原型上有一个next方法，可用于遍历迭代器取得原数组的[key,value]。
 个人看法：感觉数组的entries方法，没有对象的Object.entries()实用，比如：使用接口参数params对象拼接表格按钮的下载链接（entries() 结合 for...of 使用）
+实例：
+	let obj = {ss: 22,ff: 33}
+	for (let a of Object.entries(obj)) {
+		console.log(a);
+	}
 ```
 
 ### every( )

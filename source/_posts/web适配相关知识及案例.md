@@ -48,10 +48,10 @@ Less支持在编写样式时使用：变量、嵌套、混合、函数 & 运算�
   border-radius: @radius;
 }
 #header {
-  .rounded-corners;
+  .rounded;
 }
 #footer {
-  .rounded-corners(10px);
+  .rounded(10px);
 }
 // 生成的CSS
 #header {

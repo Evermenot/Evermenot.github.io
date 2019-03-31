@@ -80,3 +80,28 @@ module.exports = {
 }
 ```
 
+### webpack 中的 Loader 的作用是什么？
+
+```
+1. 实现对不同格式的文件的处理，比如说将 scss 转换为 css，或者 typescript 转化为 js
+2. 转换这些文件，从而使其能够被添加到依赖图中
+常用的loader：
+babel-loader：让下一代的js文件转换成现代浏览器能够支持的JS文件；
+babel有些复杂，所以大多数都会新建一个.babelrc 进行配置；
+css-loader,style-loader:两个建议配合使用，用来解析 css 文件，能够解释@import,url()如果需要解析 less 就在后面加一个 less-loader
+file-loader: 生成的文件名就是文件内容的 MD5 哈希值并会保留所引用资源的原始扩展名
+url-loader: 功能类似 file-loader,但是文件大小低于指定的限制时，可以返回一个 DataURL 
+事实上，在使用less,scss,stylus 这些的时候，npm 会提示你差什么插件，差什么，你就安上就行了
+
+```
+
+### webpack多入口文件页面打包配置
+
+[参考文章](https://juejin.im/post/5a534cb9f265da3e4674ebeb)
+
+单页面应用程序的入口配置
+
+~~~javascript
+entry: resolve(__dirname, "src/home/index.js")
+~~~
+

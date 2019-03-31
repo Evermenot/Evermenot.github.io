@@ -1,7 +1,7 @@
 ---
 title: DOS命令创建文件
 date: 2018-03-27 16:54:09
-tags: DOS命令
+tags: [冷宫, DOS命令]
 categories: [技术, 冷宫]
 ---
 
