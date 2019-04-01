@@ -1,4 +1,3 @@
-<div sn='ll'>222222222</div>
 <canvas id="canvas"></canvas>
 <script>
     function init(win, doc) {
