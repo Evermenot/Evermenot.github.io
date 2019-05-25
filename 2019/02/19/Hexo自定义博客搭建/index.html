@@ -126,7 +126,7 @@
 <meta property="og:site_name" content="Le&#39;s Blog">
 <meta property="og:description" content="前言​    一直以来都希望搭建一个简约而不简单的个人装X博客（本质目的还是为了写写心得哒~），最近因为时间宽裕的原因（其实是之前太懒233~），所以着手开始搭建，并记录下折腾的过程，以便之后回顾。 准备 下载安装Node.js （作用：生成静态页面；默认安装npm）  注：hexo使用node开发，使用node进行markdown文件解析，生成html文件.   下载安装Git（作用：提交本地的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-25T12:14:05.672Z">
+<meta property="og:updated_time" content="2019-05-25T12:56:42.049Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo自定义博客搭建">
 <meta name="twitter:description" content="前言​    一直以来都希望搭建一个简约而不简单的个人装X博客（本质目的还是为了写写心得哒~），最近因为时间宽裕的原因（其实是之前太懒233~），所以着手开始搭建，并记录下折腾的过程，以便之后回顾。 准备 下载安装Node.js （作用：生成静态页面；默认安装npm）  注：hexo使用node开发，使用node进行markdown文件解析，生成html文件.   下载安装Git（作用：提交本地的">
@@ -363,6 +363,10 @@
         
 
         <div class="post-meta">
+          
+          
+          
+
           <span class="post-time">
             
               <span class="post-meta-item-icon">
@@ -475,6 +479,10 @@
 <li><p>推送到GitHub上：hexo d 或 hexo deploy</p>
 </li>
 <li><p>可能会用到的命令：hexo clean（清除缓存文件和已生成的静态文件）</p>
+</li>
+<li><p>本地启动：hexo server</p>
+</li>
+<li><p>创建新文章：hexo new 文章名 （手动到source/_posts下创建md文件也可以）</p>
 </li>
 <li><p>测试：<a href="http://Evermenot.github.io" target="_blank" rel="noopener">http://Evermenot.github.io</a></p>
 </li>
@@ -589,10 +597,22 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"> // 将下面代码插入到你希望的位置，记得将下面id的值换成你想要的歌曲id</span><br><span class="line">&lt;iframe frameborder=&quot;no&quot; border=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; width=330 height=86 src=&quot;//music.163.com/outchain/player?type=2&amp;id=1371207&amp;auto=0&amp;height=66&quot;&gt;&lt;/iframe&gt;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><ul>
-<li><p><a href="http://www.monster1935.com/2017/04/20/hexo%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/" target="_blank" rel="noopener">http://www.monster1935.com/2017/04/20/hexo%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/</a></p>
+<h4 id="添加置顶功能"><a href="#添加置顶功能" class="headerlink" title="添加置顶功能"></a>添加置顶功能</h4><ul>
+<li><p>修改本地博客文件夹下的 <code>node_modules/hexo-generator-index/lib/generator.js</code>文件</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加代码 在 var posts = locals.posts.sort(config.index_generator.order_by); 之后加</span></span><br><span class="line">posts.data = posts.data.sort(function(first, second) &#123;</span><br><span class="line">    <span class="keyword">if</span> (first.top &amp;&amp; second.top) &#123; <span class="comment">// 两篇文章top都有定义</span></span><br><span class="line">    	<span class="comment">//若top值一样则按照文章日期降序排, 否则按照top值降序排</span></span><br><span class="line">        <span class="keyword">return</span> first.top == second.top ? second.date - first.date : second.top - first.top</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (first.top &amp;&amp; !second.top) &#123; <span class="comment">// 以下是只有一篇文章top有定义，将有top的排在前面</span></span><br><span class="line">        <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> <span class="keyword">if</span> (!first.top &amp;&amp; second.top) &#123;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">return</span> second.date - first.date;  <span class="comment">// 都没定义top，按照文章日期降序排</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
 </li>
-<li><p><a href="https://thief.one/2017/03/03/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/" target="_blank" rel="noopener">https://thief.one/2017/03/03/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/</a></p>
+<li><p>在要置顶文章的 front-matter 中添加 top 值</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 近期任务清单</span><br><span class="line">date: 2019-05-25 20:55:06</span><br><span class="line">categories: [Blog&apos;s]</span><br><span class="line">top: true</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加置顶文字标识</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">// 打开：/blog/themes/next/layout/_macro 目录下的post.swig文件，定位到&lt;div class=&quot;post-meta&quot;&gt;标签下，插入如下代码：</span><br><span class="line">&#123;% if post.top %&#125;</span><br><span class="line">  &lt;i class=&quot;fa fa-thumb-tack&quot;&gt;&lt;/i&gt;</span><br><span class="line">  &lt;font color=f79533&gt;置顶&lt;/font&gt;</span><br><span class="line">  &lt;span class=&quot;post-meta-divider&quot;&gt;|&lt;/span&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ul>
+<h3 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h3><ul>
+<li><p><a href="http://www.monster1935.com/2017/04/20/hexo%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/" target="_blank" rel="noopener">nMask’s Blog</a></p>
+</li>
+<li><p><a href="https://blog.minhow.com/2017/08/20/hexo/article-top/" target="_blank" rel="noopener">置顶功能</a></p>
 <p>感谢大佬们的知识分享</p>
 </li>
 </ul>
@@ -794,7 +814,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#准备"><span class="nav-number">2.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地搭建"><span class="nav-number">3.</span> <span class="nav-text">本地搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关联Github"><span class="nav-number">4.</span> <span class="nav-text">关联Github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绑定域名"><span class="nav-number">5.</span> <span class="nav-text">绑定域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主题"><span class="nav-number">6.</span> <span class="nav-text">主题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#下载及使用"><span class="nav-number">6.1.</span> <span class="nav-text">下载及使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义菜单"><span class="nav-number">6.2.</span> <span class="nav-text">自定义菜单</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文章加密"><span class="nav-number">6.3.</span> <span class="nav-text">文章加密</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加看板娘"><span class="nav-number">6.4.</span> <span class="nav-text">添加看板娘</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加网易云音乐歌单"><span class="nav-number">6.5.</span> <span class="nav-text">添加网易云音乐歌单</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文章"><span class="nav-number">7.</span> <span class="nav-text">参考文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同步博客"><span class="nav-number">8.</span> <span class="nav-text">同步博客</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#目的"><span class="nav-number">8.1.</span> <span class="nav-text">目的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#出现的问题："><span class="nav-number">8.2.</span> <span class="nav-text">出现的问题：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决问题："><span class="nav-number">8.3.</span> <span class="nav-text">解决问题：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#步骤："><span class="nav-number">8.4.</span> <span class="nav-text">步骤：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#补充："><span class="nav-number">8.5.</span> <span class="nav-text">补充：</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#准备"><span class="nav-number">2.</span> <span class="nav-text">准备</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地搭建"><span class="nav-number">3.</span> <span class="nav-text">本地搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关联Github"><span class="nav-number">4.</span> <span class="nav-text">关联Github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#绑定域名"><span class="nav-number">5.</span> <span class="nav-text">绑定域名</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主题"><span class="nav-number">6.</span> <span class="nav-text">主题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#下载及使用"><span class="nav-number">6.1.</span> <span class="nav-text">下载及使用</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#自定义菜单"><span class="nav-number">6.2.</span> <span class="nav-text">自定义菜单</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#文章加密"><span class="nav-number">6.3.</span> <span class="nav-text">文章加密</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加看板娘"><span class="nav-number">6.4.</span> <span class="nav-text">添加看板娘</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加网易云音乐歌单"><span class="nav-number">6.5.</span> <span class="nav-text">添加网易云音乐歌单</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#添加置顶功能"><span class="nav-number">6.6.</span> <span class="nav-text">添加置顶功能</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#参考文章"><span class="nav-number">7.</span> <span class="nav-text">参考文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#同步博客"><span class="nav-number">8.</span> <span class="nav-text">同步博客</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#目的"><span class="nav-number">8.1.</span> <span class="nav-text">目的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#出现的问题："><span class="nav-number">8.2.</span> <span class="nav-text">出现的问题：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#解决问题："><span class="nav-number">8.3.</span> <span class="nav-text">解决问题：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#步骤："><span class="nav-number">8.4.</span> <span class="nav-text">步骤：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#补充："><span class="nav-number">8.5.</span> <span class="nav-text">补充：</span></a></li></ol></li></ol></div>
             
 
           </div>
