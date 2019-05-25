@@ -1,0 +1,9 @@
+创建新的文章
+hexo new [layout] <title>
+
+生成静态文件（发布使用）
+hexo generate 或 g
+
+发布
+hexo deploy
+
