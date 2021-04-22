@@ -67,6 +67,14 @@ git rm 文件路径（src/test.vue）
 git checkout --src/test.vue 恢复被删除文件
 ```
 
+#### 抽取提交合并到其他分支
+
+```
+git cherry-pick commitId
+```
+
+
+
 #### 版本回滚
 
 ```javascript

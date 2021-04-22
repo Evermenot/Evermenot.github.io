@@ -52,6 +52,10 @@ categories: [技术, Blog]
 
 - 可能会用到的命令：hexo clean（清除缓存文件和已生成的静态文件）
 
+- 本地启动：hexo server
+
+- 创建新文章：hexo new 文章名 （手动到source/_posts下创建md文件也可以）
+
 - 测试：http://Evermenot.github.io
 
 ### 绑定域名
@@ -287,11 +291,55 @@ categories: [技术, Blog]
    // 将下面代码插入到你希望的位置，记得将下面id的值换成你想要的歌曲id
   <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=1371207&auto=0&height=66"></iframe>
   ```
+#### 添加置顶功能
+
+- 修改本地博客文件夹下的 `node_modules/hexo-generator-index/lib/generator.js`文件
+
+  ~~~java
+  // 添加代码 在 var posts = locals.posts.sort(config.index_generator.order_by); 之后加
+  posts.data = posts.data.sort(function(first, second) {
+      if (first.top && second.top) { // 两篇文章top都有定义
+      	//若top值一样则按照文章日期降序排, 否则按照top值降序排
+          return first.top == second.top ? second.date - first.date : second.top - first.top
+      } else if (first.top && !second.top) { // 以下是只有一篇文章top有定义，将有top的排在前面
+          return -1;
+      } else if (!first.top && second.top) {
+          return 1;
+      } else {
+          return second.date - first.date;  // 都没定义top，按照文章日期降序排
+      }
+  });
+  ~~~
+
+- 在要置顶文章的 front-matter 中添加 top 值
+
+  ~~~
+  ---
+  title: 近期任务清单
+  date: 2019-05-25 20:55:06
+  categories: [Blog's]
+  top: true
+  ---
+  ~~~
+
+- 添加置顶文字标识
+
+  ~~~
+  // 打开：/blog/themes/next/layout/_macro 目录下的post.swig文件，定位到<div class="post-meta">标签下，插入如下代码：
+  {% if post.top %}
+    <i class="fa fa-thumb-tack"></i>
+    <font color=f79533>置顶</font>
+    <span class="post-meta-divider">|</span>
+  {% endif %}
+  ~~~
+
+  ​
+
 ### 参考文章
 
-- http://www.monster1935.com/2017/04/20/hexo%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/
+- [nMask's Blog](http://www.monster1935.com/2017/04/20/hexo%E6%B7%BB%E5%8A%A0%E8%87%AA%E5%AE%9A%E4%B9%89%E9%A1%B5%E9%9D%A2/)
 
-- https://thief.one/2017/03/03/Hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2%E6%95%99%E7%A8%8B/
+- [置顶功能](https://blog.minhow.com/2017/08/20/hexo/article-top/)
 
   感谢大佬们的知识分享
 

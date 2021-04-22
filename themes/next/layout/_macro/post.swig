@@ -61,6 +61,14 @@
         {% endif %}
 
         <div class="post-meta">
+          {# me--start #}
+          {% if post.top %}
+            <i class="fa fa-thumb-tack"></i>
+            <font color=f79533>置顶</font>
+            <span class="post-meta-divider">|</span>
+          {% endif %}
+          {# me--end #}
+
           <span class="post-time">
             {% if theme.post_meta.created_at %}
               <span class="post-meta-item-icon">
