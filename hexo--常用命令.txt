@@ -9,5 +9,3 @@ hexo generate �� g
 
 ����
 hexo deploy
-
-测试
