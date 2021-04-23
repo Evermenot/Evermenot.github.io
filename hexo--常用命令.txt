@@ -1,11 +1,13 @@
-╢╢╫╗пб╣дндуб
+О©╫О©╫О©╫О©╫О©╫б╣О©╫О©╫О©╫О©╫О©╫
 hexo new [layout] <title>
 
-и╬ЁЩиЗЁи╬╡л╛нд╪Ч
+и╬О©╫О©╫О©╫О©╫О©╫и╬О©╫л╛О©╫д╪О©╫
 hexo clean
 
-иЗЁи╬╡л╛нд╪Чё╗╥╒╡╪й╧сцё╘
-hexo generate ╩Р g
+О©╫О©╫О©╫и╬О©╫л╛О©╫д╪О©╫О©╫О©╫О©╫О©╫О©╫О©╫й╧О©╫цёО©╫
+hexo generate О©╫О©╫ g
 
-╥╒╡╪
+О©╫О©╫О©╫О©╫
 hexo deploy
+
+Ф╣▀Х╞∙
