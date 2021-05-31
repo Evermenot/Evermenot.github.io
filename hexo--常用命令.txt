@@ -9,3 +9,5 @@ hexo generate �� g
 
 ����
 hexo deploy
+
+// 最新的node版本 hexo g 会生成空白文档
