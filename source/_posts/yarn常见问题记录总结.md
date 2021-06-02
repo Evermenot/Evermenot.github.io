@@ -25,6 +25,7 @@ yarn add <packageName>
 yarn add <packageName> --dev  // devDependencies开发依赖
 yarn add <packageName> global // 添加全局依赖
 yarn remove <packageName>     // 移除依赖
+// 注：yarn add <packageName> --registry=https://registry.yarnpkg.com //指定下载地址（如果不指定，yarn-lock上包的下载库，可能是其他地址）
 ```
 
 #### yarn 配置
