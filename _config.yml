@@ -80,8 +80,8 @@ theme: next
 deploy:
   type: git
   repo: 
-    - git@github.com:Evermenot/Evermenot.github.io.git
-    # - git@git.dev.tencent.com:Evermenot/Evermenot.git
+    - git@github.com:Evermenot/Evermenot.github.io.git # 需要配置ssh
+    - git@e.coding.net:Evermenot/Evermenot.git  # https://coding.net 需要配置ssh
   branch: master
 
 # Security
