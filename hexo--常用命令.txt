@@ -9,3 +9,6 @@ hexo generate 或 g
 
 发布
 hexo deploy
+
+本地启动
+hexo s
