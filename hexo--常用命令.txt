@@ -12,3 +12,11 @@ hexo deploy
 
 本地启动
 hexo s
+
+https://coding.net (腾讯代码托管平台)
+[remote "second"]
+	url = git@e.coding.net:Evermenot/Evermenot.git
+	fetch = +refs/heads/*:refs/remotes/second/*
+
+git push section master
+git push section hexo
